@@ -1,0 +1,1814 @@
+<resources>
+    <string name="app_name">ModdakirApps</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="the_easiest_way_to_learn_the_quran">The Easiest Way to Learn the Quran</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+
+    <string name="teacher_notification">Teacher notification</string>
+    <string name="teachers_list_female">All teacher</string>
+    <string name="favorite_teachers_female">Fav teachers</string>
+    <string name="teacher_notification_female">Notify Teachers </string>
+    <string name="history">History</string>
+    <string name="details">Details</string>
+    <string name="invitation">Invitations</string>
+    <string name="shareMyLink">share invitation link</string>
+
+    <string name="myCode">Share my URL:</string>
+    <string name="RegistrationCount">Registration Count</string>
+    <string name="PurchaseCount">Purchase Count</string>
+    <string name="charCount">Characters Count</string>
+
+    <string name="login_en_ar" translatable="false"> دخول / Log in </string>
+    <string name="sign_up_en_ar" translatable="false">  تسجيل / Sign up</string>
+    <string name="purchaced">Purchased</string>
+    <string name="registered">Registered</string>
+    <string name="empty_invitations">Not statistics found,share  your code with friends to see invitation statistics.</string>
+    <string name="unAuthentication">unAuthenticated</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="accept_terms_and_conditions"><u>By creating an account, you agree to our terms and conditions</u></string>
+    <string name="each_dependent_minutes">%s minutes will be added to each dependent</string>
+    <string name="add_user">Add a beneficiary</string>
+    <string name="contactus_via_whatsapp"><u>Contact us </u></string>
+    <string-array name="CountryCodes">
+        <item>93,AF</item>
+        <item>355,AL</item>
+        <item>213,DZ</item>
+        <item>376,AD</item>
+        <item>244,AO</item>
+        <item>672,AQ</item>
+        <item>54,AR</item>
+        <item>374,AM</item>
+        <item>297,AW</item>
+        <item>61,AU</item>
+        <item>43,AT</item>
+        <item>994,AZ</item>
+        <item>973,BH</item>
+        <item>880,BD</item>
+        <item>375,BY</item>
+        <item>32,BE</item>
+        <item>501,BZ</item>
+        <item>229,BJ</item>
+        <item>975,BT</item>
+        <item>591,BO</item>
+        <item>387,BA</item>
+        <item>267,BW</item>
+        <item>55,BR</item>
+        <item>673,BN</item>
+        <item>359,BG</item>
+        <item>226,BF</item>
+        <item>95,MM</item>
+        <item>257,BI</item>
+        <item>855,KH</item>
+        <item>237,CM</item>
+        <item>1,CA</item>
+        <item>238,CV</item>
+        <item>236,CF</item>
+        <item>235,TD</item>
+        <item>56,CL</item>
+        <item>86,CN</item>
+        <item>61,CX</item>
+        <item>61,CC</item>
+        <item>57,CO</item>
+        <item>269,KM</item>
+        <item>242,CG</item>
+        <item>243,CD</item>
+        <item>682,CK</item>
+        <item>506,CR</item>
+        <item>385,HR</item>
+        <item>53,CU</item>
+        <item>357,CY</item>
+        <item>420,CZ</item>
+        <item>45,DK</item>
+        <item>253,DJ</item>
+        <item>670,TL</item>
+        <item>593,EC</item>
+        <item>20,EG</item>
+        <item>503,SV</item>
+        <item>240,GQ</item>
+        <item>291,ER</item>
+        <item>372,EE</item>
+        <item>251,ET</item>
+        <item>500,FK</item>
+        <item>298,FO</item>
+        <item>679,FJ</item>
+        <item>358,FI</item>
+        <item>33,FR</item>
+        <item>689,PF</item>
+        <item>241,GA</item>
+        <item>220,GM</item>
+        <item>995,GE</item>
+        <item>49,DE</item>
+        <item>233,GH</item>
+        <item>350,GI</item>
+        <item>30,GR</item>
+        <item>299,GL</item>
+        <item>502,GT</item>
+        <item>224,GN</item>
+        <item>245,GW</item>
+        <item>592,GY</item>
+        <item>509,HT</item>
+        <item>504,HN</item>
+        <item>852,HK</item>
+        <item>36,HU</item>
+        <item>91,IN</item>
+        <item>62,ID</item>
+        <item>98,IR</item>
+        <item>964,IQ</item>
+        <item>353,IE</item>
+        <item>44,IM</item>
+        <item>972,IL</item>
+        <item>39,IT</item>
+        <item>225,CI</item>
+        <item>81,JP</item>
+        <item>962,JO</item>
+        <item>7,KZ</item>
+        <item>254,KE</item>
+        <item>686,KI</item>
+        <item>965,KW</item>
+        <item>996,KG</item>
+        <item>856,LA</item>
+        <item>371,LV</item>
+        <item>961,LB</item>
+        <item>266,LS</item>
+        <item>231,LR</item>
+        <item>218,LY</item>
+        <item>423,LI</item>
+        <item>370,LT</item>
+        <item>352,LU</item>
+        <item>853,MO</item>
+        <item>389,MK</item>
+        <item>261,MG</item>
+        <item>265,MW</item>
+        <item>60,MY</item>
+        <item>960,MV</item>
+        <item>223,ML</item>
+        <item>356,MT</item>
+        <item>692,MH</item>
+        <item>222,MR</item>
+        <item>230,MU</item>
+        <item>262,YT</item>
+        <item>52,MX</item>
+        <item>691,FM</item>
+        <item>373,MD</item>
+        <item>377,MC</item>
+        <item>976,MN</item>
+        <item>382,ME</item>
+        <item>212,MA</item>
+        <item>258,MZ</item>
+        <item>264,NA</item>
+        <item>674,NR</item>
+        <item>977,NP</item>
+        <item>31,NL</item>
+        <item>599,AN</item>
+        <item>687,NC</item>
+        <item>64,NZ</item>
+        <item>505,NI</item>
+        <item>227,NE</item>
+        <item>234,NG</item>
+        <item>683,NU</item>
+        <item>850,KP</item>
+        <item>47,NO</item>
+        <item>968,OM</item>
+        <item>92,PK</item>
+        <item>680,PW</item>
+        <item>507,PA</item>
+        <item>675,PG</item>
+        <item>595,PY</item>
+        <item>51,PE</item>
+        <item>63,PH</item>
+        <item>870,PN</item>
+        <item>48,PL</item>
+        <item>351,PT</item>
+        <item>1,PR</item>
+        <item>974,QA</item>
+        <item>40,RO</item>
+        <item>7,RU</item>
+        <item>250,RW</item>
+        <item>590,BL</item>
+        <item>685,WS</item>
+        <item>378,SM</item>
+        <item>239,ST</item>
+        <item>966,SA</item>
+        <item>221,SN</item>
+        <item>381,RS</item>
+        <item>248,SC</item>
+        <item>232,SL</item>
+        <item>65,SG</item>
+        <item>421,SK</item>
+        <item>386,SI</item>
+        <item>677,SB</item>
+        <item>252,SO</item>
+        <item>27,ZA</item>
+        <item>82,KR</item>
+        <item>34,ES</item>
+        <item>94,LK</item>
+        <item>290,SH</item>
+        <item>508,PM</item>
+        <item>249,SD</item>
+        <item>597,SR</item>
+        <item>268,SZ</item>
+        <item>46,SE</item>
+        <item>41,CH</item>
+        <item>963,SY</item>
+        <item>886,TW</item>
+        <item>992,TJ</item>
+        <item>255,TZ</item>
+        <item>66,TH</item>
+        <item>228,TG</item>
+        <item>690,TK</item>
+        <item>676,TO</item>
+        <item>216,TN</item>
+        <item>90,TR</item>
+        <item>993,TM</item>
+        <item>688,TV</item>
+        <item>971,AE</item>
+        <item>256,UG</item>
+        <item>44,GB</item>
+        <item>380,UA</item>
+        <item>598,UY</item>
+        <item>1,US</item>
+        <item>998,UZ</item>
+        <item>678,VU</item>
+        <item>39,VA</item>
+        <item>58,VE</item>
+        <item>84,VN</item>
+        <item>681,WF</item>
+        <item>967,YE</item>
+        <item>260,ZM</item>
+        <item>263,ZW</item>
+    </string-array>
+    <string name="accounts_settings">Accounts </string>
+    <string name="create_account">Create a new account</string>
+    <string name="add_existing_account">Add an existing account</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="are_you_sure_to_delete_the_account">Are you sure to delete the account?</string>
+
+    <string name="switch_account_message">Do you want to switch to ?</string>
+    <string name="delete_account_message">Delete Account</string>
+    <string name="auth_title">Finger authentication</string>
+    <string name="auth_error">Authentication error</string>
+    <string name="select_type">Select type</string>
+    <string name="activate"> <u>Activate</u></string>
+    <string name="verification_message">Your verification code is sent to %s</string>
+    <string name="your_name">Enter your name</string>
+    <string name="enter_your_mail">Enter your mail</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="type_dialog_message">Please choice your account type,we will use it for better teachers selection</string>
+    <string name="verify">Verify</string>
+    <string name="enter_promo_code">Enter promo code first</string>
+    <!--    home preview -->
+    <string name="home_packages_target_title">Current packages</string>
+    <string name="home_packages_target_des">Here you will see the remaining minutes in all your current packages</string>
+    <string name="home_teachers_target_title_male">Teacher List</string>
+    <string name="home_teachers_target_des_male">You can search for your preferred teacher</string>
+    <string name="home_teachers_target_title_female">Teacher List</string>
+    <string name="home_teachers_target_des_female">You can search for your preferred teacher</string>
+    <string name="home_direct_Call_target_title">Direct Call</string>
+    <string name="home_direct_call_target_des_male">You can call the best available teacher directly with one click</string>
+    <string name="home_direct_call_target_des_female">You can call the best available teacher directly with one click</string>
+    <string name="home_buy_package_target_title">Subscribe To A New Package</string>
+    <string name="home_buy_package_target_des">Ran out of minutes?\nDon\'t worry, subscribe to a new package anytime from here</string>
+
+    <!--teachers preview-->
+    <string name="teachers_layout_target_title_male">Call A Teacher</string>
+    <string name="teachers_layout_target_title_female">Call A Teacher</string>
+    <string name="teachers_layout_target_des_male">You can call any teacher (Audio or Video) while he is available</string>
+    <string name="teachers_layout_target_des_female">You can call any teacher (Audio or Video) while she is available</string>
+    <string name="teachers_status_target_des_male">There are three statuses for every teacher,\n- Online/ Available (Green): the teacher is available and you can call him.\n- Busy (red): the teacher is currently in a call with another student.\n- Offline/ Not Available (Gray): the teacher is not available now for receiving calls from any student.</string>
+    <string name="teachers_status_target_des_female">There are three statuses for every teacher,\n- Online/ Available (Green): the teacher is available and you can call her.\n- Busy (red): the teacher is currently in a call with another student.\n- Offline/ Not Available (Gray): the teacher is not available now for receiving calls from any student.</string>
+
+    <!--    packages preview -->
+
+    <string name="packages_target_title">Select the suitable package for you</string>
+    <string name="packages_target_desc">Here, you can see the package details, and the package discount if exists,\n every package has its expiration duration and the minutes that you will receive
+    after buying it. e.g (60 minutes / 1 month) means this package will give you 60 minutes valid for one month.</string>
+    <string name="promo_target_title">If you have a discount code, you can type it here then press  apply to activate your discount.</string>
+    <string name="total_target_des">Here, you will see the total amount you will pay after deducting all discounts if exist.</string>
+    <string name="custom_packages_target_title">Custom Package!</string>
+    <string name="custom_packages_target_des">If you have a custom package code, you can type it here then press  apply  to activate your package.</string>
+
+    <!--dependent preview-->
+
+    <string name="manage_dependent_target_title">Manage Dependents</string>
+    <string name="add_dependent_target">Add a new dependent</string>
+    <string name="all_dependent_balance_target">Here, you will see all distributed minutes to all dependents.</string>
+    <string name="dependent_options_target">Here, you can add/retrieve minutes to/from the selected dependents, or delete the selected dependents</string>
+    <!--transfer balance preview-->
+    <string name="balance_transfer_target">Balance Transfer</string>
+    <string name="select_package_to_transfer_target">Select the package to transfer the minutes from it.</string>
+    <string name="balance_transfer_minutes_target">Type the minutes count to transfer, or select all remaining balance to transfer all available minutes from the selected package. </string>
+    <string name="balance_transfer_comments_target">Optionally, type a comment to be sent with the transferred minutes</string>
+    <string name="balance_transfer_search">Search for any registered user by his username, or any other user (even if not register) by his email or phone number.</string>
+    <string name="balance_transfer_beneficiary">Add the selected user to the beneficiaries list to be able to transfer the minutes to him</string>
+    <string name="balance_transfer_remaining_target">Here you can see your total balance after the transfer</string>
+    <string name="balance_transfer_lst_guide">Here you can see the list of users to whom the transferred minutes will be divided equally</string>
+    <string name="completed_payment_message">Payment has been successful and your order is being processed, the reference number is </string>
+    <string name="payment_error">Payment Error %s</string>
+    <string name="payment_cancelled">Payment cancelled</string>
+    <string name="package_added_sucessfully">The payment has been finished successfully, and the package added to your balance</string>
+    <string name="renew_package_autmatically">Renew  automatically</string>
+    <string name="no_session_avaliable">No session available</string>
+    <string name="auto_renew">Auto renew</string>
+    <string name="cancel_auto_renew">Cancel the auto renew</string>
+
+
+    <string name="payment_pending">Your order is being processed</string>
+    <string name="select_payment_method">Select payment method  </string>
+    <string name="stcpay_mobile_message">Use this mobile with STC Pay</string>
+    <string name="select_plan_part">Select plan part</string>
+    <string name="select_plan_surah">Select plan surah</string>
+    <string name="no_plans_found"> No plans found  </string>
+    <string name="add_new_plan">Add new plan</string>
+    <string name="delete_plan_path">Do you want to delete Plan path?</string>
+    <string name="delete_plan">Do you want to delete Plan ?</string>
+    <string name="order">Order:</string>
+    <string name="pages_can_save">Pages you can save at a time:</string>
+    <string name="session_type">Session type</string>
+    <string name="complete_plan_or_normal_call">Do you want to complete your plan or make normal education session?</string>
+    <string name="select_plan_paht">Please select plan path</string>
+    <string name="plan_alert_title">We are glad to hear your voice. Would you like to help you build your plan?</string>
+    <string name="teacher_categories">Teacher categories</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="path_selection_error">Sorry, you can\'t select paths from different plans</string>
+
+    <string name="add_your_rating">ٍSelect rating stars</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="rate_us_body">Thanks for rating us,do you want to rate us on play store also?</string>
+    <string name="enjoy_moddakir">Enjoying Moddakir</string>
+    <string name="complete_your_registration_now">Complete your registration now!</string>
+    <string name="Complete_the_registration_process_now">Complete the registration process now, simple steps to join the Madker family and start the journey of memorizing the Holy Quran.</string>
+    <string name="register_with_us_now">Register with us now!</string>
+    <string name="Take_your_first_step_now_register">Take your first step now and register with us to join the Madker family and start the journey of memorizing the Holy Quran.</string>
+    <string name="backAction">Press to return to the previous screen</string>
+    <string name="change_language_button">Change language button to Arabic</string>
+    <string name="googleLoginAction">Press to sign in with your Google account</string>
+    <string name="twitterLoginAction">Press to sign in with your Twitter account</string>
+    <string name="facebookLoginAction">Press to sign in with your Facebook account</string>
+    <string name="whatsappButtonContactUsAcction">Press to sign in instead of creating a new account</string>
+    <string name="loginInsteadAction">Press to sign in instead of creating a new account</string>
+    <string name="emailRegisterAction">Press to sign up using your email and password</string>
+    <string name="bioAction">Press to sign in using your fingerprint</string>
+    <string name="loginAction">Press to complete the sign in process</string>
+    <string name="forgotPasswordAction">Press to open the forgot password screen</string>
+    <string name="pressToSeeTerms">Press to open the forgot password screen</string>
+    <string name="openLoginAction">Press to open the sign in screen</string>
+    <string name="nextAction">Press to go to the next screen</string>
+    <string name="openRegisterAction">Press to open the sign up screen</string>
+    <string name="cancelRegisterAction">Press to cancel the sign up process</string>
+    <string name="sendAction">Press to send your request</string>
+    <string name="resetEmailAction">Press to reset your password by your email</string>
+    <string name="resetPhoneAction">Press to reset your password by your phone number</string>
+    <string name="verifyCodeAction">Press to verify the code</string>
+    <string name="audioCallAction">Press to call the teacher with an audio call</string>
+    <string name="videoCallAction">Press to call the teacher with a video call</string>
+    <string name="teacherRating">Teacher rating</string>
+    <string name="searchTeacherAction">Press to search for a teacher by his name</string>
+    <string name="filterTeacherAction">"Press to open the filter options</string>
+    <string name="closeFilterAction">Press to hide the filter popup</string>
+    <string name="clearFilterAction">Press to clear all filters</string>
+    <string name="nationalityAction">Press to select the nationality</string>
+    <string name="languageAction">Press to select the language</string>
+    <string name="ejazaAction">Press to select the Ejaza</string>
+    <string name="categoriesAction">Press to select the category</string>
+    <string name="deleteSession">press to delete session</string>
+    <string name="reportTeacher">press to report teacher</string>
+    <string name="shareAction">press to share</string>
+    <string name="commentAction">press to add your comment</string>
+    <string name="showMoreAction">press to show more</string>
+    <string name="show_more">Show more</string>
+    <string name="add_new_dependentAction">press to Add Dependent</string>
+    <string name="rate_us_play">Tap a start to rate us</string>
+    <string name="write_comment2">Write A Comment</string>
+    <string name="intro_title">Welcome to the\nQuickBird Studios\nHealth Survey</string>
+    <string name="intro_text">Get ready for a bunch of super random questions!</string>
+    <string name="intro_start">Let\'s go!</string>
+    <string name="finish_question_title">Done!</string>
+    <string name="finish_question_text">Thanks for taking the survey, we will contact you soon!</string>
+    <string name="finish_question_submit">Submit survey</string>
+    <string name="skip_here">skip here.</string>
+    <string name="title">Survey </string>
+    <string name="message">Are you sure you want to quit the survey?</string>
+    <string name="videocall">Video Call</string>
+    <string name="voicecall">Voice call</string>
+    <string name="reservedate">Reserve Date</string>
+
+    <string name="add_to_favourites">Add to favourites</string>
+    <string name="activate_notifications">Activate notifications</string>
+    <string name="remove_from_favourites">Remove from favourites</string>
+    <string name="de_activate_notifications">Deactivate notifications</string>
+
+
+    <string name="Unlimited">Unlimited</string>
+    <string name="Unlimited2">Unlimited</string>
+    <string name="Unlimited3">Thank you for choosing the open package 💚</string>
+    <string name="basic_user_only">
+- Unlimited minutes / for a month
+- Dedicated to a single user
+- It does not support adding followers, or transferring credit</string>
+    <string name="zeroPart">0 Part</string>
+    <string name="scholarship">Scholarship for indigent students</string>
+    <string name="scholarshipGuideMessage">You can send minutes as a scholarship for indigent students to help them learn the Qur’an</string>
+    <string name="amountOfMemorizedQuran">Amount of memorized Quran</string>
+    <string name="account_details">Account details</string>
+    <string name="customer_language">Customer language</string>
+    <string name="professional_status">Professional status</string>
+    <string name="age_group1">Age group</string>
+    <string name="path">path</string>
+    <string name="saved_amount">Parts Memorized </string>
+    <string name="use_moddakir">use Moddakir</string>
+    <string name="session_quality">Session type</string>
+    <string name="how_to_reply">Reply type</string>
+    <string name="teacher_s_compatibility">Teacher\'s Compatibility</string>
+    <string name="TheTeacherIsBeingReached">The teacher is being reached</string>
+    <string name="confirm_deletion_of_the_account_please_enter_the_password">Please enter your password to confirm deletion of the account:</string>
+    <string name="you_will_lose_your_booked_sessions_subscriptions_recorded_session_teachers_comments_interactive_quran">The account will be deleted directly, and you will lose your booked sessions, subscriptions, recorded session and the teacher\'s comments on the interactive holy Quran.</string>
+    <string name="record_of_any_violations_will_be_if_the_user_registers_again_with_the_same_email">Warning: A record of any violations will be retained, if the user registered again with the same email the previous sanctions will be as is.</string>
+    <string name="freezed">Freezed</string>
+    <string name="freezedp">Freezed</string>
+    <string name="newP">active</string>
+    <string name="currentP">active</string>
+    <string name="consumedP">consumed</string>
+    <string name="expireP">expired</string>
+    <string name="refundedP">refunded</string>
+
+    <string name="package_valid_for">Valid For</string>
+    <string name="resetof">Reset Of</string>
+    <string name="remaining_of_it">remaining of it</string>
+    <string name="start_from">start from</string>
+
+
+    <string name="languagechangedsuccessfully">language changed successfully to</string>
+
+    <string name="indonesia">Bahasa Indonesia</string>
+    <string name="add_dependent_info">Add Dependent Information</string>
+    <string name="edit_dependent_info">Edit Dependent Information</string>
+
+    <string name="choose_dependent_age">choose dependent age</string>
+
+    <string name="chooseeducationalpathforchild">Choose Educational Path For Your Children</string>
+    <string name="chooseeducationalplanforchild">Choose Educational Plan For Your Children</string>
+    <string name="learningquantitypersession">Choose Quantity Of Learning Per Session</string>
+    <string name="numberofeduactionalssesionsatweek">Choose Number of Learning sessions at Week</string>
+    <string name="pleasemakesureaddeightenminutes">Please make sure to add </string>
+    <string name="assessionduration">,as the session duration is </string>
+    <string name="minutesperweek"> minutes per week </string>
+
+    <string name="choose_nationality">choose nationality</string>
+    <string name="choose_language">choose language</string>
+    <string name="please_choose">Please choose</string>
+    <string name="please_choose_teacher">Please choose teacher</string>
+
+
+    <string name="addnumberoflinespersession">Enter the number of lines to learn in one session</string>
+    <string name="fieldrequired">This field is required</string>
+    <string name="valuegreatzero">Value Must be greater than 0</string>
+    <string name="valuegreaterthanfiften">Value Must be less than or equal 15</string>
+
+    <string name="educationalpathrequired">you should choose educational path</string>
+    <string name="educationalplanrequired">you should choose educational plan</string>
+    <string name="educationalsessionsequired">you should choose educational sessions</string>
+    <string name="newlessonsuploaded">New lessons have been uploaded page number</string>
+    <string name="oldlessonsuploaded">Old lessons have been uploaded page number</string>
+    <string name="lessonsuploaded"> lessons have been uploaded</string>
+    <string name="totalOfTransferedMinutes">Total Of Transfered Minutes</string>
+    <string name="totalOfUsedMinutes">Total Of Used Minutes</string>
+    <string name="totalOfremainingMinutes">Total Of Remaining Minutes</string>
+
+
+    <string name="age1">3-6</string>
+    <string name="age2">7-9</string>
+    <string name="age3">10-12</string>
+    <string name="age4">13-19</string>
+    <string name="age5">20-39</string>
+    <string name="age6">40-59</string>
+    <string name="age7">60+</string>
+
+    <string name="agerequired">please choose age</string>
+    <string name="teacherrating">Teacher Rating</string>
+    <string name="parentevaluateTeacher">Parent Evaluate Teacher</string>
+    <string name="evaluate">Evaluate</string>
+    <string name="evaluate_teacher">Evaluate teacher</string>
+    <string name="reason_for_evaluate">The reason for evaluation</string>
+    <string name="call_evaluation">How satisfied are you with the call quality?</string>
+    <string name="additional_comment">additional comment</string>
+
+
+    <string name="evaluaterequired">you should press starts to evaluate the teacher</string>
+    <string name="packages">packages</string>
+    <string name="add_package">Add Package</string>
+    <string name="enter_valid_data">Enter valid data</string>
+    <string name="comments2">Comments</string>
+    <string name="reserve_session">Reserve a session</string>
+    <string name="begining_session">Beginning of the session</string>
+    <string name="ending_session">Ending of the session</string>
+    <string name="send_request">Send Request</string>
+    <string name="teacher_profile">Teacher profile</string>
+    <string name="notifywhenteacheronline">Notify when teacher available</string>
+    <string name="connection_evaluation_required">Please evaluate the connection</string>
+    <string name="package_not_available">This Package is not available!</string>
+    <string name="you_must_active">you must activate your phone number</string>
+    <string name="valid_mobile_num">please add valid mobile number</string>
+    <string name="by_using">Using</string>
+    <string name="or">Or</string>
+    <string name="male1">Male</string>
+    <string name="female1">Female</string>
+    <string name="already_have_account1">Already have an account?</string>
+    <string name="calmness_and_attentiveness">The teacher\'s calmness and attentiveness</string>
+    <string name="style_and_interaction">style and interaction with me</string>
+    <string name="opinion_of_the_teacher">What is your opinion of the teacher</string>
+    <string name="mistake_and_correction">attention to my mistakes and correcting</string>
+    <string name="comment_for_the_teacher">A comment for the teacher</string>
+    <string name="a_comment">Type here</string>
+    <string name="connection">What do you think of the call quality and internet connection</string>
+    <string name="email_optional">Email (optional)</string>
+    <string name="select_donation_amount">Specify the number of hours you want to donate:</string>
+    <string name="donate_educational_minutes">Do you want to donate educational minutes?</string>
+    <string name="number_of_min">Write the number of minutes you want to donate.</string>
+    <string name="educational_gift">Educational gifts</string>
+    <string name="Contribute_to_teaching_the_Quran">Contribute to teaching the Quran to orphans!</string>
+    <string name="provide_educational_grants_to_contribute">You can provide educational grants to contribute to teaching the Holy Quran to orphans.</string>
+    <string name="provide_educational_gifts">Provide educational gifts</string>
+    <string name="total_grants">Total grants</string>
+    <string name="grant_amount">Grant amount</string>
+    <string name="number_of_recipients">Number of recipients</string>
+    <string name="date">date</string>
+    <string name="benefit_percentage">Benefit percentage</string>
+    <string name="grant_details">grant details</string>
+    <string name="the_beneficiaries">The beneficiaries</string>
+    <string name="this_educational_grant">This educational grant</string>
+    <string name="provided_in_collaboration_with">Provided in collaboration with</string>
+    <string name="specialized_sub_council_for_orphanages">The Specialized Sub-Council for Orphanages in the Kingdom of Saudi Arabia aims to facilitate Quranic learning for orphans through an initiative providing educational grants. Orphans can learn the Quran through the Muddakir app</string>
+    <string name="share_the_reward_with_us">Share the reward with us</string>
+    <string name="contribute_to_teaching_the_holy_quran_to_orphans">Contribute to teaching the Holy Quran to orphans</string>
+    <string name="another_amount">Another amount</string>
+    <string name="write_the_amount_you_wish_to_donate">Write the amount you wish</string>
+    <string name="educational_grant">Educational grant</string>
+    <string name="total_donation">Total donation</string>
+    <string name="number_of_beneficiaries">Number of beneficiaries</string>
+    <string name="character_read">Character read</string>
+    <string name="number_of_countries">Number of countries</string>
+    <string name="people">People</string>
+    <string name="letter">Letter</string>
+    <string name="The_purchase_has_been_successfully_cancelled">The purchase has been successfully cancelled</string>
+    <string name="The_purchase_has_been_not_successfully_cancelled">The purchase hasn\'t been successfully cancelled</string>
+    <string name="please_select_the_checkbox_below_to_proceed">Please select the checkbox below to proceed</string>
+    <string name="i_m_not_a_robot">I\\\'m not a robot</string>
+    <string name="please_confirm_that_you_are_not_a_robot">Please verify that you are not a robot</string>
+    <string name="benefiting">Benefiting</string>
+    <string name="benefit_completed">Benefit completed</string>
+    <string name="there_s_no_beneficiaries_until_now">there\'s no beneficiaries until now</string>
+    <string name="sar_1">SAR</string>
+    <string name="do_you_want_to_contribute_to_teaching_the_quran">Do you want to contribute to teaching the Quran?</string>
+    <string name="share_the_reward_and_contribute_to_providing_educational_grants">Share the reward and contribute to providing educational grants to facilitate Quran learning for orphans through the Mudakir app, in collaboration with the Specialized Subsidiary Council of Orphan Associations in Saudi Arabia.</string>
+    <string name="yes_proceed_with_the_purchase_and_grant_provision">Yes, proceed with the purchase and grant provision</string>
+    <string name="no_proceed_with_the_purchase_only">No, proceed with the purchase only</string>
+
+    <string name="no_internet">Please check your internet connection and try again</string>
+    <string name="network_error">Network error, couldn\'t get data,please try again!</string>
+    <string-array name="agesArray">
+        <item>@string/choose_dependent_age</item>
+        <item>@string/age1</item>
+        <item>@string/age2</item>
+        <item>@string/age3</item>
+        <item>@string/age4</item>
+        <item>@string/age5</item>
+        <item>@string/age6</item>
+        <item>@string/age7</item>
+
+
+    </string-array>
+
+
+    <string name="loading">Loading …</string>
+    <string name="ok">OK</string>
+    <string name="all">All</string>
+    <string name="month">months</string>
+    <string name="threemonth">last 3 months</string>
+    <string name="sixmonth">last 6 months</string>
+    <string name="permission_request">We need access to your microphone  and camera to be able to make calls through the app</string>
+    <string name="permissions">Permissions</string>
+    <string name="permissions_from_settings">Please allow the permissions from the settings to use the app</string>
+    <string name="permission_request_bultooth">We need access to your Bultooth</string>
+
+    <!-- Take Photo -->
+    <string name="chooseimage">Choose the image source  </string>
+    <string name="takephoto">Capture New Image</string>
+    <string name="choosefromgallery">From The Gallery     </string>
+    <string name="delete_image">Delete image</string>
+    <string name="image_selected">Image selected</string>
+    <string name="cancel">Cancel</string>
+    <string name="checkinbox">Please Check Your Inbox</string>
+    <string name="add_reason">You have to select the reasons for this report</string>
+    <string name="other_Reasons">Other Reasons</string>
+    <!-- Choose Language -->
+    <string name="welcome_text" translatable="false">مرحبا بك في مدكّر\nيسعى لمساعدتك في حفظ وتلاوة القرآن الكريم\nمع شيوخ متميزين</string>
+    <string name="please_choose_language" translatable="false">يُرجى اختيار اللغة</string>
+    <string name="arabic" translatable="false">عربي</string>
+    <string name="english" translatable="false">English</string>
+    <string name="french" translatable="false">Français</string>
+    <string name="indonsian" translatable="false">bahasa Indonesia</string>
+    <string name="urdu" translatable="false">اردو</string>
+
+    <string name="app_name_student">Moddakir</string>
+    <string name="app_name_Teacher">Moddakir Teacher</string>
+    <string name="internetConnectionError">Sorry, there is no internet connection</string>
+    <string name="confirmation_message">Are you Sure ?</string>
+    <string name="emailorpasswordwrong">invalid user name or password</string>
+    <string name="server_error">Sorry, there is something went wrong, please try again later</string>
+    <string name="password_invalid">The password is invalid</string>
+    <string name="apologize">We apologize for not answering the teacher</string>
+    <string name="apologize_busy">Sorry teacher is busy now</string>
+    <string name="loginmessageverify">Please Verify your account first and try to sign in
+
+- Please check your spam box -</string>
+
+    <!-- Login -->
+    <string name="log_in">Login</string>
+    <string name="email">E-mail</string>
+    <string name="emailorusername">E-mail or Username</string>
+    <string name="email_required">Enter your email</string>
+    <string name="email_invalid">Enter a valid email</string>
+    <string name="email_username_invalid">Please enter a valid e-mail or valid Username</string>
+    <string name="sourah_invalid">Please choose the correct Surah</string>
+    <string name="email_to_transfer_for">email for a person to be transferred to</string>
+
+    <string name="password">Password</string>
+    <string name="password_required">Enter your password</string>
+    <string name="forget_your_password">Forget your password ?</string>
+    <string name="login">Login</string>
+    <string name="logout">Logging Out!</string>
+    <string name="profile">Profile</string>
+    <string name="or_using">Or using</string>
+    <string name="dont_have_account">Don"'"t have an account?</string>
+    <string name="create_new_account"><u>Create a new account</u></string>
+    <string name="alert_balance">Your current balance is less than 10%, please buy a new package to avoid stopping the service</string>
+
+    <!-- RegisterWays -->
+    <string name="using">using</string>
+    <string name="your_email">Your Email</string>
+    <string name="already_have_account">Do you already have an account?</string>
+
+    <!-- Register1 -->
+    <string name="step_1from3">3/1</string>
+    <string name="step_1from2">1/2</string>
+
+
+    <!-- Register2 -->
+    <string name="step_2from3">3/2</string>
+    <string name="step_2from2">2/2</string>
+    <string name="full_name">Full name</string>
+    <string name="name"> Name</string>
+    <string name="full_name_restrictions">Number of digits from 4 – 50</string>
+    <string name="full_name_required">Please enter Valid   name</string>
+    <string name="mobile_number">Mobile number</string>
+    <string name="mobile_number_required">Please enter Valid mobile number</string>
+    <string name="gender">Gender</string>
+    <string name="type">Type</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
+    <string name="boy">Boy</string>
+    <string name="girl">Girl</string>
+    <!-- Register3 -->
+    <string name="step_3from3">3/3</string>
+    <string name="user_name">User name</string>
+    <string name="user_name_required">Please enter user name</string>
+    <string name="user_name_restrictions">In English, username must be 4 – 15 characters length and may contains uppercase letters, lowercase letters, dot ., hyphen - and underscores _</string>
+    <!--    <string name="user_name_restrictions">In English, numbers, _, and symbols (number of digits 4 - 15)</string>-->
+    <string name="password_restrictions">8 or more characters  </string>
+    <!--    <string name="password_restrictions">8 - 15 digits - uppercase and lowercase in English and number</string>-->
+    <string name="confirm_password">Confirm password</string>
+    <string name="retype_password">Retype the password</string>
+    <string name="agree_terms">I agree to the  terms and condition of the system</string>
+    <string name="agree_terms_required">Please agree to the terms and condition of the system</string>
+    <string name="register">Register</string>
+    <string name="user">User</string>
+
+    <!-- VerificationSMS -->
+    <string name="verification_code">Verification Code</string>
+    <string name="verification_code_required">Please enter verification code</string>
+    <string name="resend_code">Resend code</string>
+    <string name="resend_after">You can resend after </string>
+    <string name="resend_code_message">You can resend after ( %s ) seconds </string>
+    <string name="seconds">seconds</string>
+
+    <!-- ResetPassword -->
+    <string name="change_password">Change password</string>
+    <string name="reset_password">Reset password</string>
+    <string name="send">Send</string>
+
+    <!-- ResetPasswordMessage -->
+    <string name="reset_password_message">An email has been sent to your email. Please check and click the link</string>
+
+    <!-- NewPassword -->
+    <string name="a_new_password">A new password</string>
+    <string name="please_enter_new_password">Please enter the new password</string>
+    <string name="new_password">New password</string>
+    <string name="new_password_required">Please enter new password</string>
+    <string name="confirm_new_password">Confirm new password</string>
+    <string name="confirm_new_password_required">Please enter confirm new password</string>
+    <string name="password_not_match">Password not match</string>
+    <string name="reset">Reset</string>
+    <string name="gender_required">Please Select Gender</string>
+    <string name="type_required">Please Select Type</string>
+
+    <!-- StudentHome -->
+    <string name="welcome">Welcome</string>
+    <string name="welcome_home">Welcome</string>
+    <string name="talk_to_teacher">Talk to a teacher</string>
+    <string name="talk_to_teacher_female">Talk to a teacher</string>
+    <string name="buy_new_package">Subscribe to a new package</string>
+    <string name="buy_package">Subscribe to a package</string>
+
+    <string name="minutes">Minutes</string>
+    <string name="remaining">remaining</string>
+    <string name="no_subscribed_packages">You are not subscribed to any packages</string>
+    <string name="subscribe_now">Subscribe now</string>
+    <string name="free_minutes">Free minutes</string>
+
+    <!-- TeacherHome -->
+    <string name="your_current_balance">Current balance</string>
+    <string name="todays_balance">Today\'s balance</string>
+    <string name="due_for_completing">due for completing</string>
+    <string name="performance_measurement_indicator">Performance meter</string>
+    <string name="hours">hours</string>
+    <string name="scheduled_for_week">scheduled for this week.</string>
+    <string name="week_almost_over">The week is almost over. Try to receive more calls</string>
+    <string name="your_average_ratings">Average ratings</string>
+    <string name="for_">For</string>
+    <string name="hours_from">Hours from</string>
+    <string name="successful_calls">Successful calls</string>
+
+    <!-- StudentBalanceReport -->
+    <string name="consumed_since_beginning_account">Consumed since the beginning of your account</string>
+    <string name="consumed">consumed</string>
+    <string name="consumepackage">consumed</string>
+
+    <string name="transferred">transferred</string>
+    <string name="balance_report">Balance report</string>
+    <string name="total_packages">Total packages</string>
+    <string name="active_packages">Active packages</string>
+    <string name="active">Active</string>
+    <string name="expired">Expired</string>
+
+    <string name="month_package">History</string>
+    <string name="six_months_package">6 months package</string>
+    <string name="valid_until">valid until</string>
+    <string name="package_details">Package details</string>
+    <string name="package_">Package</string>
+    <string name="you_have">You have</string>
+    <string name="days_left_until_renewal">days remaining till the expiry date</string>
+    <string name="the_package_purchased_date">The package was purchased on a date</string>
+    <string name="the_package_received_date">The package was received on a date</string>
+    <string name="package_days_left">You have %s days of learning </string>
+
+    <!-- Balance Transfer -->
+
+    <string name="balance_transfer">Balance transfer</string>
+    <string name="no_any_paid_package">You have no any paid package to transfer from</string>
+    <string name="number_minutes_transferred_per_person">Number minutes transferred per person</string>
+
+    <string name="package_to_transfer_from">Please choose the package</string>
+    <string name="write_number_minutes">Write the number of minutes</string>
+    <string name="all_remaining_balance">All remaining balance</string>
+    <string name="all_balance">All balance</string>
+
+    <string name="search_through">Search through</string>
+    <string name="transferee_list">Transferee list</string>
+    <string name="choose_transferee_first">Please choose the transferee list first</string>
+    <string name="balance_after_transfer_will_be">Your balance after transfer will be</string>
+    <string name="complete_transfer">Complete the transfer</string>
+    <string name="minutes_more_than_remaining">The minutes to be transferred are more than the remaining minutes</string>
+    <string name="cannot_transfer_balance_to_yourself">You cannot transfer balance to yourself</string>
+    <string name="confirm_transfer_unregsiter_user">There is a user who is not registered in the system. Are you sure you want to transfer the balance, knowing that the transferred balance cannot be returned</string>
+    <string name="confirm_transfer">Are you sure you want to transfer the balance, knowing that the transferred balance cannot be returned</string>
+    <string name="student_already_on_list">The student is already on the transferee list</string>
+
+    <!-- StudentProfile -->
+
+    <string name="gender_is">Gender:</string>
+    <string name="country_is">Country:</string>
+    <string name="city_is">City:</string>
+    <string name="address_is">Address:</string>
+    <string name="address_required">Please enter address</string>
+    <string name="email_is">Email:</string>
+    <string name="requierd">This field is required</string>
+    <string name="valid_number">Please enter valid number</string>
+    <string name="specialchar">This field can not accept symbols</string>
+    <string name="upgrade_to_dependent_manager">Upgrade To Dependent Manager</string>
+    <string name="upgrade_request_approved">The upgrade request was approved. Please sign in again</string>
+    <string name="ensure_block_student">Are you sure you want to block</string>
+    <string name="ensure_unblock_student">Are you sure you want to unblock</string>
+    <!-- teacherInfo -->
+    <string name="full_name_ar">Arabic Full Name:</string>
+    <string name="full_name_en">English Full Name:</string>
+
+
+    <!-- StudentEditProfile -->
+    <string name="country">Country</string>
+    <string name="city">City</string>
+    <string name="address">Address</string>
+    <string name="upgrade_to_student">Upgrade To Student</string>
+    <string name="confirmation_of_upgrade">Are you sure you want to upgrade to a student?
+once the upgrade request approved all of your balance will return to the account manager</string>
+    <string name="upgrade">Upgrade</string>
+    <string name="upgrade_requested_on">The upgrade was requested on</string>
+    <string name="summary_is_s">Summary:</string>
+
+    <!-- TeacherExperienceProfile -->
+    <string name="experience">Experience</string>
+    <string name="summary_is">English Brief Summary:</string>
+    <string name="summary_is_ar">Arabic Brief Summary:</string>
+
+    <string name="university_degree_is">University degree:</string>
+    <string name="ejazat_is">Ejazat:</string>
+    <string name="languages_is">Languages:</string>
+    <string name="years_experience_is">Years of Experience:</string>
+    <string name="number_graduates_is">Number of graduates:</string>
+    <string name="expected_working_hours_week_is">Expected working hours\week:</string>
+    <string name="technical_expertise_is">Technical expertise:</string>
+    <string name="schedule">schedule</string>
+    <string name="comments">Comments :</string>
+    <string name="language_validation_message">Please choose at least one language</string>
+    <string name="please_update_languages">Please update the languages you master through the profile</string>
+    <string name="update_languages_request_not_approved">The request to modify your profile has not been approved yet, please wait for the admin approval</string>
+
+
+    <!-- TeacherInformationProfile -->
+    <string name="profile_picture">Profile picture</string>
+    <string name="information">Personal information</string>
+    <string name="fluent_languages_is">Fluent languages:</string>
+    <string name="mobile_number_is">Mobile number:</string>
+    <string name="changes_waiting_approval">Your edits have been saved successfully, but  will not be changed until approved by the admin</string>
+
+    <!-- TeacherRatingProfile -->
+    <string name="ratings">Ratings</string>
+    <string name="students_evaluation_is">Students evaluation:</string>
+    <string name="evaluators_evaluation_is">Evaluators evaluation:</string>
+    <string name="automated_evaluation_is">Automated evaluation:</string>
+
+    <!-- TeacherEvaluation -->
+    <string name="teacher_evaluation">Teacher evaluation</string>
+
+    <string name="what_liked_things_during_conversation">What are the most liked things during the conversation</string>
+    <string name="what_disliked_things_during_conversation">What are the most disliked things during the conversation</string>
+    <string name="add_comment">Add comment</string>
+    <string name="other">other</string>
+    <string name="no_save">No,Save</string>
+    <string name="submit_session">Submit</string>
+    <string name="add_new_session">Add new session</string>
+    <string name="save">Save</string>
+
+    <string name="rate_teacher_first">Please rate the teacher first</string>
+
+    <!-- Report -->
+    <string name="report_teacher">Report teacher</string>
+    <string name="report_student">Report student</string>
+
+    <!-- TeacherScheduleProfile -->
+    <string name="weekly_schedule">Weekly schedule</string>
+    <string name="weekly">Schedule</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="available">Available</string>
+    <string name="unavailable">Unavailable</string>
+
+    <!-- EditTeacherScheduleProfile -->
+    <string name="select_day_first">Select the day first</string>
+    <string name="enter_least_one_interval">Enter at least one interval</string>
+    <string name="atmostseven">Can not add more than 7 days</string>
+    <string name="enter_intervals_correctly">Please enter the periods correctly</string>
+    <string name="enter_intervals_correctly_in_day">Please enter the periods correctly %s</string>
+
+
+    <!-- EditTeacherExperienceProfile -->
+    <string name="summary">English Brief Summary</string>
+    <string name="summary_ar">Arabic Brief Summary</string>
+    <string name="university_degree">University degree</string>
+    <string name="ejazat">Ejazat</string>
+    <string name="languages">Languages</string>
+    <string name="years_experience">Years of Experience</string>
+    <string name="number_graduates">Number of graduates</string>
+    <string name="expected_working_hours_week">Expected working hours\week</string>
+    <string name="technical_expertise">Technical expertise</string>
+    <string name="no_results_found">Sorry, no results found</string>
+    <string name="no_changes">There are no changes</string>
+
+    <!-- Student SideMenu -->
+    <string name="balance_is">Balance:</string>
+    <string name="manage_dependents">  Dependents</string>
+    <string name="subscription_packages">Subscription packages</string>
+    <string name="send_minutes_to_friend">Send minutes to a friend</string>
+    <string name="share_app">Share the app</string>
+    <string name="promotion_to_affiliate_manager">Promotion to affiliate manager</string>
+    <string name="settings">Settings</string>
+    <string name="send_minutes">Send minutes</string>
+
+    <!-- Teacher SideMenu -->
+    <string name="terms_and_conditions">Terms and conditions</string>
+    <string name="about_moddakir">About moddakir</string>
+    <string name="contact_us">Contact us</string>
+    <string name="about_us">About us</string>
+    <!-- TeacherList -->
+    <string name="teachers_list">Teachers List</string>
+    <string name="all_teachers_female">All teachers</string>
+    <string name="startwithteacher">Start With Teacher</string>
+    <string name="teacher">Teacher</string>
+    <string name="teachers">Teachers</string>
+    <string name="sessions">Sessions</string>
+    <string name="choose_from_time">Choose from time firstً</string>
+
+    <string name="all_teachers">All teachers</string>
+    <string name="favorite_teachers">Favorite teachers</string>
+    <string name="find_teacher">Find a teacher…</string>
+    <string name="call">Call</string>
+    <string name="teacher_is_offline">The teacher is offline</string>
+    <string name="teacher_is_busy">The teacher is busy</string>
+    <string name="teacher_is_NotAVa">Teacher is not available</string>
+
+    <!-- ChooseCallWay -->
+    <string name="voice_call">Voice call</string>
+    <string name="video_call">Video call</string>
+    <string name="call_type">Call type</string>
+    <string name="voice">Voice</string>
+    <string name="video">Video</string>
+
+    <!-- Filter -->
+    <string name="search">Search</string>
+    <string name="submit">Submit</string>
+    <string name="filters">Filters</string>
+    <string name="clear_all">Clear all</string>
+    <string name="teacher_nationality">Teacher Nationality</string>
+    <string name="language">Language</string>
+    <string name="status">Status</string>
+    <string name="show_results">Show results</string>
+    <string name="online">Online</string>
+    <string name="offline">Offline</string>
+    <string name="busy">Busy</string>
+    <string name="ejaza_invalid">Please enter a valid ejaza</string>
+
+    <!-- Call Log -->
+    <string name="call_log">Call log</string>
+    <string name="missed_calls_2">Missed calls</string>
+    <string name="minutes_call_completed">minutes call\ncompleted</string>
+    <string name="missed_calls">missed\ncalls</string>
+    <string name="minutes_online">minutes\nonline</string>
+    <string name="student_is">Student:</string>
+    <string name="teacher_is">Teacher:</string>
+    <string name="duration_is">Duration:</string>
+    <string name="call_duration">Call Duration:</string>
+
+    <string name="student_call_log">Student call log</string>
+    <string name="minutes_short">M</string>
+    <string name="seconds_short">S</string>
+    <string name="today">Today</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="current_month">Current month</string>
+    <string name="balance_is_2">Balance is</string>
+    <string name="online_2">Online</string>
+    <string name="completed_calls">Completed calls</string>
+    <string name="call_duration_is">Call duration:</string>
+    <string name="call_details">Call details</string>
+
+    <!-- Calling -->
+    <string name="calling">Calling</string>
+    <string name="voice_calling">Voice calling</string>
+    <string name="video_calling">Video calling</string>
+    <string name="callingfr">Call from</string>
+    <string name="internet_speed">Internet speed</string>
+    <string name="internet_speed_low">Internet speed is Low</string>
+    <string name="no_internet_speed">No Internet</string>
+    <string name="pause">Pause</string>
+    <string name="resume">Resume</string>
+    <string name="call_will_end_message">The call will be ended automatically after 30 seconds, are you want to continue the call after this time?</string>
+    <string name="end">End</string>
+    <string name="balance_withdrawn">Your balance has been withdrawn</string>
+    <string name="call_interruption_message">Sorry, the call from the other person was interrupted, trying to reconnect again</string>
+
+    <!-- OnCall -->
+    <string name="speaker">Speaker</string>
+    <string name="mute">Mute</string>
+    <string name="camera">Camera</string>
+    <string name="camera_2">Camera</string>
+    <string name="decline">Decline</string>
+
+    <!-- IncomingCall -->
+    <string name="calling_from">Call From</string>
+    <string name="voice_calling_from">Voice call from</string>
+    <string name="video_calling_from">Video call from</string>
+    <string name="answer">Answer</string>
+
+    <!-- Student Package -->
+    <string name="payment_package">Current package</string>
+    <string name="repurchase">Repurchase</string>
+    <string name="refund"><u>Refund</u></string>
+    <string name="validto">Valid until</string>
+    <string name="discount">Discount</string>
+    <string name="promo_code">Promo code</string>
+    <string name="promo_code_hint">  write promo code</string>
+
+    <string name="total_after_discount">Total after discount</string>
+    <string name="proceed_purchase">Proceed the purchase</string>
+    <string name="continue_">Continue</string>
+    <string name="in">in</string>
+    <string name="payment_number">Payment No.</string>
+    <string name="price">Price</string>
+    <string name="select_package">Select a package</string>
+    <string name="choose_package_first">Please choose the package first</string>
+    <string name="new_package_added">The new package has been added successfully</string>
+
+    <!-- AboutUs -->
+    <string name="app_version">Version</string>
+
+    <!-- PaymentMethods -->
+    <string name="payment">Payment</string>
+    <string name="total_required">Total required</string>
+    <string name="choose_payment_method">Choose your payment method</string>
+    <string name="pay">Pay</string>
+    <string name="payment_completed_successfully">The payment has been finished successfully, and the package added to your balance</string>
+    <string name="payment_failed">Payment failed</string>
+
+    <!-- Dependent Profile -->
+    <string name="dependent_profile">Dependent profile</string>
+    <string name="dependent_list">Dependents</string>
+    <string name="edit_profile">Edit profile</string>
+
+    <!-- Notifications -->
+    <string name="new_notifications">New notifications</string>
+    <string name="previous_notifications">Old notifications</string>
+
+    <string name="title_activity_home_page">HomePage</string>
+    <string name="navigation_drawer_open">Press to open the side menu</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Sessions</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_map">Map</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_fav">Fav</string>
+    <string name="calllogtext">Conversations were received from</string>
+    <string name="more">More</string>
+    <string name="title_balance">Balance</string>
+    <string name="title_calllog">Call Log</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!-- Twitter Login -->
+    <string name="twitter_consumer_key" translatable="false">2LWsCOuM0MkQ0tIOTKBjVF6Y4</string>
+    <string name="twitter_consumer_secret" translatable="false">tIs1MLG38f6jvqTA99lqpNQys9kLz2KGEdgSwRHeKocQfPdCwx</string>
+
+    <!--    <string name="twitter_consumer_key" translatable="false">Rmd0N1B5TWRidVRxZm9xNnJydWE6MTpjaQ</string>-->
+    <!--    <string name="twitter_consumer_secret" translatable="false">zK-f2nZB5z7PLAEcS9mea0pzflWJGs8UMVJVV7eP2IynXt5qCA</string>-->
+
+    <string name="facebook_app_id" translatable="false">1511016089497384</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb491493482447628</string>
+    <string name="day">Day</string>
+    <string name="addanothertime">Add another period</string>
+    <string name="addanotherday">Add another day</string>
+    <string name="record">Session</string>
+    <string name="record_item">Session:</string>
+    <string name="soura">Surah : </string>
+    <string name="fromaya">from verse :</string>
+    <string name="select_verse">Select verse  </string>
+    <string name="toaya">to verse :</string>
+    <string name="fromsoura">From Surah :</string>
+    <string name="tosoura">To Surah :</string>
+    <string name="comment">Comment</string>
+    <string name="sessionTitle">Session details</string>
+    <string name="addsession">Add a session</string>
+    <string name="studentname">Student Name :</string>
+    <string name="teacher_name_is">Teacher Name :</string>
+    <string name="sessiontyp">Session type</string>
+    <string name="sessionNumber">Session Number</string>
+
+    <string name="rate">Evaluation</string>
+    <string name="session">Session</string>
+    <string name="pleaseenterrate">Please enter an evaluation </string>
+    <string name="aya_invalid">Please choose the correct verse number</string>
+    <string name="mytime">Local time</string>
+    <string name="meccatime">Mecca time</string>
+    <string name="expired_at">Expired at</string>
+    <string name="expiry_at">Expired at %s</string>
+    <string name="aya">aya</string>
+
+    <string name="sar">SAR</string>
+    <string name="ryalsar">SAR</string>
+
+    <string name="kwd">KWD</string>
+    <string name="dinarkwd">KWD</string>
+
+    <string name="usd">USD</string>
+    <string name="dollarusd">USD</string>
+
+    <string name="dont_have_balance">Sorry, you don\'t have enough balance to continue this call</string>
+    <string name="confirm_add_session">Do you want to add another record or do you want to finish and submit?</string>
+    <string name="teacher_evaluation_required">Please evaluate the teacher</string>
+
+    <string name="add_new_dependent">Add Dependent</string>
+    <string name="select_all">Select All</string>
+    <string name="unselect_all"> Unselect all</string>
+    <string name="add_balance">Add Balance</string>
+    <string name="get_balance">Balance recovery</string>
+    <string name="delete_dependent">Delete Dependents</string>
+    <string name="add_balance_warnning">Add balance to the selected dependents equally</string>
+    <string name="available_minutes_is">Available Minutes :</string>
+    <string name="added_minutes">Added Minutes :</string>
+    <string name="minutes_count_to_be_transfered">Minutes count to be transfered</string>
+
+    <string name="add">Add</string>
+    <string name="balance_exceeded">Balance should be less than available minutes</string>
+    <string name="please_select_package">Please select package</string>
+    <string name="delete_dependent_warinning">Are you sure you want to delete dependent ?</string>
+    <string name="delete">Delete</string>
+    <string name="nodependentselected">Please Select at least one dependent</string>
+    <string name="get_balance_warn">Are you sure you want to recover the Dependents balance?</string>
+    <string name="you_dont_have_dependent">You don\'t have dependents </string>
+    <string name="no_sessions">There are no sessions</string>
+    <string name="change_lang">Change Language</string>
+    <string name="please_select_reason">Please Select at least one reason</string>
+    <string name="add_all">Add All</string>
+    <string name="please_add_comment">Please add comment</string>
+    <string name="add_message">Clarify your message *</string>
+    <string name="about_text" translatable="false">تطبيق تعليم القرآن الكريم عن بعد  بالصوت والصورة  يقدم جلسات قرآنية للطلاب على مدار الساعة من خلال أمهر المقرئين، بتكاليف ميسرة.</string>
+    <string name="about_us_title" translatable="false"> من نحن :</string>
+    <string name="vision_text" translatable="false">الريادة في تعليم القرآن الكريم  عن بعد  عالمياً.</string>
+    <string name="message_text" translatable="false">تيسير تعلُم القرآن الكريم ) تلاوةً و تسميعاً و تلقيناً( لمختلف الفئات، من خلال تطبيق إلكتروني، بأمهر المقرئين على مدار الساعة.</string>
+    <string name="goals_text" translatable="false">
+ مساعدة المسلمين على تلاوة كتاب ربهم حق تلاوته.\n
+تقديم أنموذج  تعليم قرآني إلكتروني فعال يلائم الفئات المختلفة.\n
+تخريج حفاظ وحافظات لكتاب الله مجازين بالسند المتصل.\n
+    </string>
+    <string name="scu_message_contact">Your message has been sent successfully, thanks for using Moddakir</string>
+    <string name="update">Update</string>
+    <string name="update_message">Sorry, you are using an old version of the app, you must update to continue using the app, Thanks for using Moddakir app</string>
+    <string name="startnow">ابدأ الآن</string>
+    <string name="completing_data">Completing data</string>
+    <string name="notCompleted">Not Completed</string>
+    <string name="completed">Completed</string>
+
+
+    <string-array name="days">
+        <item>SUN</item>
+        <item>MON</item>
+        <item>TU</item>
+        <item>WE</item>
+    </string-array>
+
+    <string-array name="days_schedule">
+        <item>Saturday</item>
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+    </string-array>
+
+    <string-array name="days_ids">
+        <item>saturday</item>
+        <item>sunday</item>
+        <item>monday</item>
+        <item>tuesday</item>
+        <item>wednesday</item>
+        <item>thursday</item>
+        <item>friday</item>
+    </string-array>
+
+    <string-array name="calllog_filter_ids">
+        <item>0</item>
+        <item>-1</item>
+        <item>-3</item>
+        <item>-6</item>
+        <item>-12</item>
+        <item>custom</item>
+
+    </string-array>
+
+    <string-array name="calllog_filter">
+        <item>Filter</item>
+        <item>All</item>
+        <item>Last month</item>
+        <item>Three months</item>
+        <item>Six months</item>
+        <item>Last year</item>
+        <item>Custom</item>
+    </string-array>
+    <string-array name="calllog_filter1">
+        <item>Last seven day</item>
+        <item>Last month</item>
+        <item>Three months</item>
+        <item>Six months</item>
+        <item>Last year</item>
+        <item>Custom</item>
+    </string-array>
+
+    <string-array name="technical_levels">
+        <item>Advanced</item>
+        <item>Intermediate</item>
+        <item>Beginner</item>
+    </string-array>
+
+    <string-array name="technical_levels_ids">
+        <item>advanced</item>
+        <item>medium</item>
+        <item>weak</item>
+    </string-array>
+
+    <string-array name="university_degrees">
+        <item>Primary</item>
+        <item>Medium</item>
+        <item>Secondary</item>
+        <item>University</item>
+    </string-array>
+
+    <string-array name="university_degrees_ids">
+        <item>primary</item>
+        <item>medium</item>
+        <item>secondary</item>
+        <item>university</item>
+    </string-array>
+    <string-array name="university_degrees_s">
+        <item>Primary</item>
+        <item>Medium</item>
+        <item>Secondary</item>
+        <item>University</item>
+        <item>Masters</item>
+        <item>Doctorates</item>
+    </string-array>
+
+    <string-array name="university_degrees_ids_s">
+        <item>primary</item>
+        <item>medium</item>
+        <item>secondary</item>
+        <item>university</item>
+        <item>masters</item>
+        <item>doctorates</item>
+    </string-array>
+
+    <string-array name="professional_statusDegList_s">
+        <item>Student</item>
+        <item>Employee</item>
+        <item>Not Employee</item>
+        <item>Free Business</item>
+    </string-array>
+
+    <string-array name="professional_statusDegList_ids_s">
+        <item>student</item>
+        <item>employee</item>
+        <item>notEmployee</item>
+        <item>freeBusinees</item>
+    </string-array>
+
+
+    <string name="gift1">We are happy for your joining in Moddakir</string>
+    <string name="gift2">Where you can learn the Quran with </string>
+    <string name="gift3">The most skilled Reciters around th clock </string>
+    <string name="gift4">We give you </string>
+    <string name="gift5">  minutes to experience learning with Moddakir </string>
+
+    <string name="connecting">Connecting</string>
+    <string name="callEnded">Call Ended</string>
+    <string name="internet_speed_weak">Weak Connection.</string>
+    <string name="internet_speed_bad">Bad Connection.</string>
+    <string name="internet_speed_good">Good Connection.</string>
+    <string name="date_required">Please select at least one date</string>
+    <string name="verification_email">Verification</string>
+    <string name="resend">Resend</string>
+    <string name="send_verification_email">Send Verification Email</string>
+    <string name="vat">Tax</string>
+    <string name="invoice">Invoice details</string>
+    <string name="verification_code_method">Verify Method</string>
+    <string name="emailtext">Email</string>
+    <string name="mobiletext">Phone</string>
+    <string name="activiation_code">Activation Code</string>
+    <string name="activiation_account">Activate Account</string>
+    <string name="appLang">App Language</string>
+    <string name="enableVoiceRecording">Activate voice call recording :</string>
+    <string name="enableVideoRecording">Activate video call recording :</string>
+    <string name="close">Close</string>
+    <string name="currency">Currency</string>
+    <string name="empty_session_comment">Please, enter what happened in the last session</string>
+
+    <string name="BiometricPromptTitle"> Sign in </string>
+    <string name="BiometricPromptSubtitle">You can Sign in using Fingerprint</string>
+    <string name="selectaccount">Select an account to login.</string>
+    <string name="stoerAccount">Account Saving</string>
+    <string name="storeAccountMessage">Do you want to save the current account to login with your Touch Id in the future?</string>
+    <string name="back">Back</string>
+    <string name="type_message">Type message</string>
+    <string name="message_lb">Message:</string>
+    <string name="title_message">Type the title</string>
+    <string name="title_lb">Title:</string>
+    <string name="ticket_lb">Ticket</string>
+    <string name="reply">Reply</string>
+    <string name="content_lb">Content</string>
+    <string name="no_items_found">No replies found</string>
+    <string name="sendError">Error</string>
+    <string name="sendSucc">Success</string>
+    <string name="sendError_text">Look out!  </string>
+    <string name="sendScuc_text">Well done</string>
+    <string name="newStudent">New student</string>
+    <string name="student_category">Student Category</string>
+    <string name="accomplished">Accomplished : </string>
+    <string name="page">Page</string>
+    <string name="logout_confirmation">Are you sure you want to logout from your account?</string>
+    <string name="teacher_is_Not_aVa">    Sorry, the requested teacher isn\'t available now, please try again later</string>
+    <string name="teacher_is_busy_now">Sorry, the requested teacher is busy now, please try again later </string>
+    <string name="delete_selected_notification_title">Are you sure you want to delete the selected notifications?</string>
+
+    <string name="dep_user_name"> Type the dependent\'s username </string>
+    <string name="depUsernameNotValid">The dependent username must be in English and from 4 – 15 characters length and may contains uppercase letters, lowercase letters, dot ., hyphen - and underscores</string>
+    <string name="depEmptyPassword">Type the dependent\'s password</string>
+    <string name="typeDepFullname">Type dependent\'s full name</string>
+    <string name="typeDepCity"> Type dependent\'s city</string>
+    <string name="typeDepAddress">Type dependent\'s address</string>
+    <string name="typeDepEmail">Type dependent\'s email</string>
+    <string name="typeDepUsername"> Type dependent\'s username </string>
+
+
+    <string name="am">AM</string>
+    <string name="pm">PM</string>
+    <string name="addRange">Add Range</string>
+
+    <string name="somethingWrong">Something went wrong</string>
+    <string name="reservations">Reservations</string>
+    <string name="join_session">Join Session</string>
+    <string name="cancel_all">Cancel All</string>
+    <string name="cancel_Reason">Cancel Reason</string>
+    <string name="cancel_Reason_title">Are you want to cancel Reservation ?</string>
+    <string name="cancel_now">   Cancel now</string>
+    <string name="cancel_later">  Don`t Cancel  </string>
+    <string name="reason_is_required">  Please add your cancellation reason</string>
+    <string name="enter_from_first">Enter from first</string>
+    <string name="add_Range">Add Range</string>
+    <string name="schedule_updated_successfully">Schedule updated successfully</string>
+    <string name="default_Time">00:00</string>
+    <string name="select_notification_to_Delete">Select notification to delete</string>
+    <string name="notifications_deleted_successfully">Notifications deleted successfully</string>
+    <string name="no_notifications_found">No notifications found</string>
+
+    <string name="freeze_account">Freeze Account</string>
+    <string name="freeze_message">Your account will be unfrozen in %s </string>
+    <string name="confirm_freeze_account">When freezing your account, you will not be able to make new calls or reservations, and all of your previous reservations will be canceled, are you sure you want to freeze your account?</string>
+    <string name="confirm_unfreeze_account">Are you sure you want to Unfreeze your account?</string>
+    <string name="unfreeze_account_message"> Your account has been frozen, Do you want to unfrozen it?</string>
+    <string name="add_teacher_categories">Add  Teacher categories</string>
+
+
+    <string name="select_more_teacher_category">You can select more than one category</string>
+    <string name="select_at_least_one_category"> Select at least one category</string>
+    <string name="categories">Categories:</string>
+    <string name="categories_title">Categories </string>
+    <string name="write_comment">Write comment</string>
+    <string name="select_comment">   Comments   </string>
+    <string name="max_selected_comment_message">Select at most 3 comments</string>
+    <string name="continue_with_twitter">Continue with Twitter</string>
+    <string name="continue_with_gmail">Continue with Gmail</string>
+    <string name="new_teacher_male">New Teacher</string>
+    <string name="new_teacher_female">New Teacher</string>
+    <string name="cancel_reservation">Cancel Reservation</string>
+    <string name="schedule_now">Schedule  </string>
+    <string name="confirm_cancel_Reservation">Do you want to cancel this reservation?</string>
+    <string name="confirm_add_Reservation">Do you want to add to your reservations?</string>
+    <string name="add_video">Add Video</string>
+    <string name="video_resterction">select mp4 video </string>
+    <string name="help">Help</string>
+    <string name="end_Call_message"> We are delighted to hear your voice. We await you in the next session</string>
+    <string name="delete_video">delete video</string>
+    <string name="confirm_delete_video">Are you want to delete video?</string>
+    <string name="teacher_video">Introductory video:</string>
+    <string name="receive_updates">Receive emails from Moddakir featuring our latest news, inspiration, and special offers</string>
+    <string name="teacher_app_login_message">This app for teachers only, you can download the student app .</string>
+    <string name="download_Student_app"> Student app</string>
+    <string name="video_duration_restrections"> Video duration Should be between 3 to 60 seconds</string>
+    <string name="unfrezee_account">Unfreeze account</string>
+    <string name="freezed_package">Freezed package</string>
+    <string name="account_unfrozen_sucessfully">Account unfrozen successfully</string>
+    <string name="reserved_slot_message"> Slot is Reserved by Another student</string>
+    <string name="unvalid_slot_time">can`t reserve past slot</string>
+
+    <string name="busy_in_minutes">Busy in</string>
+
+
+    <string name="busy_in_seconds">  Busy in  </string>
+    <string name="change_your_status_to_online">Sorry, you can\'t join a call while your status is offline</string>
+    <string name="intersection_dates_message">You can\'t select a time that comes in another day, please select a time before 12:00 AM</string>
+    <string name="join_session_confirmation">Do you want to join session?</string>
+    <string name="cant_join_reservation">Sorry, you can\'t join this reservation now.</string>
+    <string name="new_call">A New Call</string>
+    <string name="teachers_male">Teachers</string>
+    <string name="teachers_female">Teachers</string>
+
+    <string name="no_teachers_found_female">Sorry, no teachers were found.</string>
+    <string name="no_teachers_found_male">Sorry, no teachers were found.</string>
+
+    <string name="no_teachers_fav_found_female"> Sorry, you haven\'t added your favorite teachers yet  </string>
+    <string name="no_teachers_fav_found_male">  Sorry, you haven\'t added your favorite teachers yet  </string>
+    <string name="share_message">I had the pleasure of trying the Moddakir app 📲 to teach the Noble Qur’an remotely
+                                    With skilled teachers 🎖
+                                    Available all day long ⏱️
+                                    Download the app now and take advantage of the trial session 👌🏻</string>
+    <string name="leave_your_message">Leave your message</string>
+    <string name="add_valid_minutes">Add valid minutes value</string>
+    <string name="or_mobile">Mobile number</string>
+    <string name="or_email">Or Email </string>
+    <string name="or_user_name">Or user name</string>
+    <string name="logout_message">All your data will be deleted if you log out. Continue logging out?</string>
+    <string name="divide">%s/%s</string>
+    <string name="join_as_a_teacher"><u>Join us as a teacher </u></string>
+    <string name="free_minutes_hint">  write package code  </string>
+    <string name="apply">Apply</string>
+
+
+    <string name="free_minutes_title">Free Minutes</string>
+    <string name="custom_package">Custom package</string>
+    <string name="select_Session_type">Select session type</string>
+    <string name="select_sorah">Select Surah </string>
+    <string name="select_from_sorah"> Select from Surah</string>
+    <string name="select_to_sorah"> Select to Surah</string>
+    <string name="select_from_aya"> Select from verse</string>
+    <string name="select_to_aya"> Select from verse</string>
+    <string name="custom">Custom</string>
+
+    <string name="select_education_path">Select education path</string>
+    <string name="select_education_level">select education level</string>
+    <string name="education_path">Education path</string>
+    <string name="education_level">Education level</string>
+    <string name="Memorizing">Memorizing</string>
+    <string name="indoctrination">Initiation</string>
+    <string name="recitation_correction">Recitation correction</string>
+    <string name="recite">Recite</string>
+    <string name="read_and_license">Read and ejazat</string>
+    <string name="beginner">Beginner</string>
+    <string name="intermediate">Intermediate</string>
+    <string name="advanced">Advanced</string>
+    <string name="unkown">Unknown</string>
+    <string name="cant_join_call">Sorry, you can\'t join a call while you are in another call</string>
+    <string name="incoming_call">Incoming call</string>
+    <string name="not_found">Not found</string>
+
+
+    <!--Plan-->
+    <string name="add_plan">Add plan</string>
+
+    <string name="step1of2">Step 1 of 2</string>
+    <string name="plan_title">Plan title</string>
+    <string name="plans">Plans  </string>
+    <string name="paths">Paths</string>
+    <string name="memorize">memorize</string>
+    <string name="review">Review</string>
+    <string name="installation">installing</string>
+    <string name="affirmation">affirmation</string>
+    <string name="plan_organization_message">Do you want to organize this plan in parts or surah or pages?</string>
+    <string name="part">Part</string>
+    <string name="surah">Surah</string>
+    <string name="choose_plan_path">Choose plan path</string>
+    <string name="choose_plan_type">Choose plan type</string>
+    <string name="select_plan_path_part">Select which Part you\'d like to learn?</string>
+    <string name="select_plan_path_surah">Select which Surah you\'d like to learn?</string>
+    <string name="select_plan_pages">How many pages you can save at a time?</string>
+    <string name="pages">Pages</string>
+    <string name="read_direction">Do you want to read  </string>
+    <string name="step2of2">Step 2 of 2</string>
+    <string name="juz">Juz %s</string>
+    <string name="juzText">Juz</string>
+    <string name="from_juz">From juz:  </string>
+    <string name="from_juz_str">From juz %s </string>
+    <string name="to_juz_str">To juz %s </string>
+    <string name="to_juz">To juz:  </string>
+    <string name="from_str">From %s</string>
+    <string name="to_str">To %s</string>
+    <string name="tow_str" formatted="false">%s   %s</string>
+    <string name="quarter">Quarter</string>
+    <string name="haf">Half</string>
+    <string name="done">Done</string>
+    <string name="get_to_know">Get to know moddakir</string>
+    <string name="worng_words_errors"> Words \n errors</string>
+    <string name="tajweed_errors"> tajweed  \n errors </string>
+    <string name="wrong_words__errors"> Words  errors:</string>
+    <string name="tajweed__errors"> tajweed errors: </string>
+    <string name="initiation__errors"> Hesitation:</string>
+    <string name="initiation_errors"> Hesitation</string>
+    <string name="assignmentValue">Number of aspects:</string>
+    <string name="hesitation_errors">Hesitation</string>
+    <string name="last_sessions">last sessions</string>
+    <string name="plan_details">Plan details</string>
+    <string name="close2">cancel</string>
+    <string name="information_session_information">information \n session information</string>
+    <string name="answeredAndConnecting">Answered, Calling is in progress…</string>
+    <string name="resetPasswordAction">Press to reset your password</string>
+    <string name="statistics">Statistics</string>
+    <string name="total">Total:</string>
+    <string name="call_interrupted_message_teacher">Sorry, the call has been interrupted by the teacher please wait a while for reconnecting the call or hang up the call now</string>
+    <string name="call_interrupted_message_student">Sorry, the call has been interrupted by the student please wait a while for reconnecting the call or hang up the call now</string>
+    <string name="open_share_screen">open share screen</string>
+    <string name="close_share_screen">close share screen</string>
+    <string name="list_of_book">List Of book</string>
+    <string name="start_screen_sharing">Start screen sharing</string>
+    <string name="screen_student">Do you want to share your screen with the student?</string>
+    <string name="files">Files</string>
+    <string name="file_viewer">File Viewer</string>
+    <string name="Please_Enable_the_additional_permissions">Please Enable the additional permissions</string>
+    <string name="appbackground_you_disable_these_permissions">You will not receive notifications while the app is in background if you disable these permissions</string>
+    <string name="session_preferences">Session preferences</string>
+    <string name="your_teacher_will_be_notified_and_may_be_able_to_accommodate">Your teacher will be notified and may be able to accommodate your preferences</string>
+    <string name="your_preferences_are_based_on_edit_anything">Your preferences are built based on the last education session, go straight to the Save Session Preferences button if you don\'t want to edit anything</string>
+    <string name="reading_path">Reading path</string>
+    <string name="recitation_is_your_default_choice_based_on_your_path_in_the_memory_you_can_change_the_path_of_your_readers">Recitation is your default choice based on your path in the memory. You can change the path of your readers</string>
+    <string name="recitation">Recitation</string>
+    <string name="Recite">Recite</string>
+    <string name="Permit_and_read">Read and Ejaza</string>
+    <string name="type_of_reading">Reading Type</string>
+    <string name="intonation">Tajweed</string>
+    <string name="haider_speed_hreading">Hadr - Fast Reading</string>
+    <string name="reply_from_the_teacher">How quickly will the teacher respond?</string>
+    <string name="after_the_alarm">After Alarm</string>
+    <string name="Immediately_after_the_mistake">After Mistakes</string>
+    <string name="end_of_the_session">End of session</string>
+    <string name="save_session_preferences">Save session preferences</string>
+    <string name="recitin_while_observing_the_provisions_of_tweed">Reading the Noble Qur’an calmly and correctly, while observing the provisions of Tajweed</string>
+    <string name="read_the_qur_an_quickly_without_stressing_the_provisions_of_tajweed">Reading the Noble Qur’an quickly without stressing the provisions of Tajweed</string>
+    <string name="define_your_plan">Select your plan</string>
+    <string name="please_select_teacher_response">Please select teacher response</string>
+    <string name="please_select_reading_type">Please select reading type</string>
+    <string name="myEducationalPreferences">My educational preferences</string>
+    <string name="myEducationalPreferences_title"> Filling out this information will help you develop your educational experience and facilitate access to the right Qur’an teacher for you.</string>
+    <string name="ageGroup"> The age group you belong to </string>
+    <string name="pathToLearn"> The educational path to be learned</string>
+    <string name="combinePaths"> You can combine Recitation and Recite as two paths</string>
+    <string name="initiationDesc"> Hearing a verse from the teacher, then reading it and repeating it to thepoint of mastery</string>
+    <string name="recitationDesc"> Correcting obvious errors and intonation rulings by looking at the Qur’an</string>
+    <string name="reciteDesc"> Correcting obvious errors and intonation rulings by reciting from the memory</string>
+    <string name="ejazaDes">This path is for those who have mastered the Noble Qur’an and would like to offerto recite it or take an Ejaza</string>
+    <string name="saveMyPreferences">Save My Preferences</string>
+    <string name="readingLevel">Reading and recitation level</string>>
+    <string name="beginnerDes">A new and inexperienced class in learning the Qur’an</string>>
+    <string name="intermediatDesc">A class that has some experience in learning the Qur’an and needs moreexperience</string>
+    <string name="advancedDesc">A class with high experience in learning the Noble Qur’an</string>
+    <string name="favoriteTeacherLanguage">Teacher\'s favorite language</string>
+    <string name="multipleChoice">Multiple choice</string>
+    <string name="student_preferences">Student preferences</string>
+    <string name="reading_type">Reading type</string>
+    <string name="response_speed">Response speed</string>
+    <string name="normal_call">Normal session</string>
+    <string name="plan">Session On Plan</string>
+    <string name="plan1">Plan</string>
+    <string name="no_calls">There are no calls</string>
+
+    <string name="AppUsage_myself">For Yourself</string>
+    <string name="AppUsage_myChild">"For Your Child</string>
+    <string name="AppUsage_both">Both</string>
+    <string name="useAppFor">Using the app for?</string>
+    <string name="part1">Parts </string>
+    <string name="teacherPreferences">Teacher\'s Preferences </string>
+    <string name="myPreferences_title">It is a service that helps determine who are the right students for you</string>
+    <string name="educationalPath">Educational Path</string>
+    <string name="myPreferencesHint">Multiple choice, The sum should be 100%</string>
+    <string name="initiationDescT">Learning by reading the verse to the student and then hearing it from him, and this is repeated until the student masters the pronunciation of the verse correctly</string>
+    <string name="recitationDescT">Correcting obvious errors and intonation rulings, bearing in mind that the student reads by looking at the Qur’an</string>
+    <string name="reciteDescT">  Correcting obvious errors and intonation rulings, bearing in mind that the student is reciting from his memory</string>
+    <string name="ejazaDesT"> This path is for those who have mastered the Noble Qur’an and would like to offer to recite it or take an Ejaza"</string>
+    <string name="readingLevelT">Reading and recitation level</string>
+    <string name="ageToTaught">The age group to be taught</string>
+    <string name="TeacherPreferenceLabel_matchesYourPreferance">A teacher that matches your desires</string>
+    <string name="TeacherPreferenceLabel_closeEnoughToYourPreferance">A teacher who will fulfill your desires</string>
+    <string name="TeacherPreferenceLabel_doesntMatchesYourPreferance">A teacher with different preferences your desires</string>
+
+    <string name="matchesYourPreferance">Teacher matches your educational desires</string>
+    <string name="closeEnoughToYourPreferance">Teacher fulfill your educational desires</string>
+    <string name="doesntMatchesYourPreferance">Teacher with different preferences educational desires</string>
+
+    <string name="compatibility">Compatibility</string>
+    <string name="quran">The Holy Quran</string>
+    <string name="teacher_is_not_available" translatable="false">Teacher is not available, please call another teacher</string>
+    <string name="your_bandwidth" translatable="false">Your bandwidth is too low for video</string>
+    <string name="wearesorryforteachernotresponding">We apologize for the teacher lack of response</string>
+    <string name="yes1">Yes</string>
+    <string name="no1">No</string>
+    <string name="pass1">password</string>
+    <string name="foundation">foundation</string>
+    <string name="errors_number">Errors number</string>
+    <string name="lessonaccomplished">Lesson accomplished</string>
+    <string name="startfrom">Start From</string>
+    <string name="enter_number_of_errors">Enter number of errors</string>
+
+    <string name="areyousuretodelete">Are You Sure To Delete</string>
+    <string name="chooseddependent">From Choosed Dependents?</string>
+
+    <string name="areyousuretodeletethisdependent">Are you sure To delete this dependent?</string>
+    <string name="current_minutes_number_not_enough">Current minutes number not enough !</string>
+    <string name="recharge_your_package_or_add_minutes_from_here">recharge your package or add minutes from here</string>
+    <string name="add_minutes">Add Minutes</string>
+    <string name="not_subscribed_at_any_package">You aren\'t subscribed to any package. please subscribe to package send minutes now</string>
+
+    <string name="are_you_sure_from_sending_minutes">Are you sure from sending the minutes?</string>
+    <string name="minutes_sent_successfully">Minutes sent successfully</string>
+    <string name="back_to_home">Back to home page</string>
+    <string name="giftshape">Gift shape</string>
+    <string name="giftMessage">Gift Message</string>
+
+    <string name="person_to_be_transferred">The person to be transferred to</string>
+    <string name="transformation_method">Transformation method</string>
+    <string name="send_via_mobile_phone">Send via mobile phone</string>
+    <string name="send_via_mobile_email">Send via Email</string>
+
+
+    <string name="NONE">Call None</string>
+    <string name="TIME_OUT">Call Time out</string>
+    <string name="CANCELED">Call canceled</string>
+    <string name="DENIED">Call denied</string>
+    <string name="FAILURE">Call failure</string>
+    <string name="HUNG_UP">call hung up</string>
+    <string name="NO_ANSWER">Call no answer</string>
+    <string name="OTHER_DEVICE_ANSWERED">other device answer</string>
+    <string name="PROGRESSING">Call progressing</string>
+    <string name="TRANSFERRED">Call transferred</string>
+    <string name="ANSWERED">Call answered</string>
+    <string name="INITIATE">Call initiate</string>
+    <string name="NOTCOMPLETED">Call not completed</string>
+    <string name="CREATED">Call created</string>
+    <string name="ERROR">error</string>
+    <string name="JOINED">Call joined</string>
+
+
+    <string name="educational_path_preferences">Educational path preferences</string>
+    <string name="your_preferences_age_group">Your preferences age group</string>
+    <string name="your_preferences_student_levels">Your preferences student levels</string>
+    <string name="achievement_plan">Achievement plan</string>
+    <string name="weekly_completion_hours">Expected completion hours for the coming week</string>
+    <string name="_30_hour">30</string>
+    <string name="modify_your_preferences_after">Modify your preferences after</string>
+    <string name="modify_your_preferences">Modify your preferences</string>
+    <string name="Days">Days</string>
+    <string name="Day">Day</string>
+    <string name="Now">Now</string>
+    <string name="fill_all_perferences">please fill all your preferences</string>
+    <string name="min_1_max_100">minimum weekly hours is an hour and maximum 100 hours</string>
+    <string name="renew_plan">Renew your plan now</string>
+    <string name="last_week_s_performance">last week\'s performance</string>
+    <string name="total_choice_not_more_100">Total choices shouldn\'t be more than 100</string>
+
+    <string name="from_page_str">From page %s </string>
+    <string name="to_page_str">To page %s </string>
+    <string name="please_choose_time_first">please choose time slot for first session</string>
+    <string name="please_choose_time_sec">please choose time slot for second session</string>
+    <string name="please_choose_time_third">please choose time slot for third session</string>
+    <string name="please_add_weekly_hours">please add your expected completion hours for the coming week</string>
+
+    <string name="revision">Revision</string>
+    <string name="save_and_install">Memorizing &amp; Affirmation</string>
+    <string name="add_plan_title_here">Add plan title here</string>
+    <string name="choose_plan_start_date">choose plan start date</string>
+    <string name="choose_preferred_days_for_session">choose preferred days for session</string>
+    <string name="choose_sessions_count_per_day">choose sessions count per day</string>
+    <string name="please_add_plan_title">please add plan title</string>
+    <string name="select_session_count">Please select session count per day</string>
+    <string name="select_plan_date">Please select plan start date</string>
+    <string name="select_preferred_days">Please select preferred days for session</string>
+    <string name="add_the_path_you_want_in_the_plan">Add the path you want in the plan</string>
+    <string name="plan_objectives">Plan objectives</string>
+    <string name="please_add_valid_num">please add valid number from 1 to 100</string>
+    <string name="try_another_teacher">Teacher is not available ,try calling another one</string>
+    <string name="choose_the_learning_objectives">Choose the learning objectives</string>
+    <string name="or_you_can_choose_the_range_by_clicking_here">Or you can choose the range by clicking here</string>
+    <string name="refresh_plan">Refresh Plan</string>
+    <string name="refresh_plan_des">When you refresh your plan it reset the beginning date of the plan to today ,are you sure you want to refresh it</string>
+
+    <string name="the_call_is_being_prepared_please_wait">The call is being prepared, please wait</string>
+    <string name="preparing_the_call_step2">Preparing the call</string>
+    <string name="preparing_session">Preparing the session</string>
+    <string name="preparing_the_call">Preparing the call</string>
+    <string name="plan_start_date">Plan start date</string>
+    <string name="one_session">1 Session</string>
+    <string name="two_session">2 Sessions</string>
+    <string name="three_sessions">3 Sessions</string>
+    <string name="select_which_page_you_d_like_to_learn">Select which Page you\'d like to learn?</string>
+    <string name="from_page">From Page:  </string>
+    <string name="to_page">To Page:  </string>
+    <string name="connection_failed_try_again">Connection failed,try again later</string>
+    <string name="select_plan_page">Select plan pages</string>
+    <string name="edit_plan">Edit plan</string>
+    <string name="are_you_achieving_your_goal_with_this_amount_of_your_plan">Are you achieving your goal with this amount of your plan?</string>
+    <string name="are_you_sure_to_save">Are you sure to save your edits, because you won\'t be able to edit them again until next Sunday</string>
+    <string name="add_pages_count_here">add pages count here</string>
+    <string name="login_with_mobile_number">Login with mobile number</string>
+    <string name="do_you_want_schaduale">do you want to change your schedule range?</string>
+    <string name="student_leave">Student leave the call</string>
+    <string name="teacher_has_problem">Teacher has problem with call</string>
+    <string name="trying_reach_teacher">Trying to reach Teacher</string>
+    <string name="trying_reach_student">Trying reach Student</string>
+    <string name="you_do_not_have_any_available_appointments">You do not have any available appointments</string>
+    <string name="adding_available_appointments_for_reservations_helps_increase_the_number_of_student_reservations_you_have">Adding available appointments for reservations helps increase the number of student reservations you have!</string>
+    <string name="add_appointments_for_reservations">Add appointments for reservations</string>
+    <string name="session_start_after">Session start after:</string>
+    <string name="waiting_student_start_call">Waiting for the student to start the call:</string>
+    <string name="appointment_schedule">Scheduler</string>
+    <string name="peak_hours_are_mostly_between">Peak hours are mostly between 4 to 8 pm</string>
+    <string name="choose_the_days_and_times">Choose the days and times you want to offer lessons:</string>
+    <string name="calling_from_app">Call from:</string>
+    <string name="reservation_call">Reservation call</string>
+    <string name="please_note_that_this_time_table_is_for_one_month">Please note that this time table is for one month</string>
+    <string name="available_to_attend_the_session">Yes, available to attend the session</string>
+    <string name="skip_attendance_confirmation">Skip attendance confirmation</string>
+    <string name="or_using_mobile_num">or using mobile number</string>
+    <string name="or_using_email_username">or using Email/UserName</string>
+    <string name="delete_session_cution">You can cancel reservations up to 3 hours before the session, and in case of a no-show, 30% of the session duration will be deducted from your account balance</string>
+    <string name="private_live_sessions">Private Live Sessions</string>
+    <string name="learn_quran_directly_with_over_2000_teachers">Learn Quran directly with over 2000 teachers</string>
+    <string name="flexible_learning_anytime">Flexible learning anytime</string>
+    <string name="teachers_available_24_7">Teachers available 24/7</string>
+    <string name="customized_learning_plan">Customized learning plan</string>
+    <string name="set_your_goals_and_level_and_design_your_own_plan">Set your goals and level, and design your own plan</string>
+    <string name="join_over_700_000">Join over +700,000</string>
+    <string name="learners_worldwide">learners worldwide</string>
+    <string name="skip">skip</string>
+    <string name="start">Start</string>
+    <string name="dont_have_acc">Don\'t have account?  <font color='#40BFB4'>Create new account</font></string>
+    <string name="congratulations_your_account_has_been_created_successfully">congratulations your account has been created successfully</string>
+    <string name="please_complete_your_account_creation_information">please complete your account creation information</string>
+    <string name="or_using_mobile_number">or using mobile number</string>
+    <string name="password_changed_successfully">Password changed successfully!</string>
+    <string name="you_are_already_available_at_this_time">You are already available at this time</string>
+    <string name="call_will_close_now">current call will be closed now and after rating it your reservations call will start automatically</string>
+    <string name="you_do_not_have_any_available_reservation">You do not have any available reservation</string>
+    <string name="student_is_allowed_to_interact_with_you_on_the_whiteboard">student is allowed to interact with you on the whiteboard</string>
+    <string name="you">(You)</string>
+    <string name="student_is_not_allowed_to_interact_with_you_on_the_whiteboard">student is not allowed to interact with you on the whiteboard</string>
+    <string name="white_board">WhiteBoard</string>
+    <string name="select_file_type">Select File Type</string>
+    <string name="select_PDF_file">PDF File</string>
+    <string name="select_word_file">Word File</string>
+    <string name="select_ppt_file">PowerPoint File</string>
+    <string name="student_have_miss_connection">student have miss connection please wait</string>
+    <string name="didnt_recive_otp">Didn\'t receive SMS with OTP ? Skip now</string>
+
+    //tallam
+    <string name="education_ministry_program" translatable="false">Education Ministry Program in Qassim</string>
+    <string name="community_partnership_programs">Community partnership programs</string>
+
+    //maqratac
+    <string name="join_us1">Join The Maqraa</string>
+    <string name="join_the_general_program" translatable="false">Join The General program</string>
+
+    //Rattel
+    <string name="join_the_programs">Join the paths</string>
+    <string name="sign_up">Sign up</string>
+
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
+        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
+        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
+        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
+        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
+        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
+        bibendum, vel congue leo egestas.\n\n
+        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
+        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
+        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
+        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
+        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
+        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
+        est.\n\n
+        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
+        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
+        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
+        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
+        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
+        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
+        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
+        convallis.\n\n
+        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
+        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
+        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
+        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
+        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
+        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
+    </string>
+
+</resources>

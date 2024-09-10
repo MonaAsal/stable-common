@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.moddakir.moddakir.view.widget.TextViewCalibriBold
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:gravity="center"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:text="@string/login_with_mobile_number"
+        android:textColor="@color/colorBlack"
+        android:textSize="22sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.moddakir.moddakir.view.widget.TextViewCalibriBold
+        android:id="@+id/phone_title_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/mobile_number"
+        android:textColorHint="@android:color/darker_gray"
+        android:theme="@style/CustomEditTextTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:layout_marginHorizontal="@dimen/_20sdp"/>
+
+    <include
+        android:id="@+id/linear"
+        layout="@layout/country_code_picker"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:gravity="bottom"
+        app:layout_constraintEnd_toEndOf="@+id/phone_title_tv"
+        app:layout_constraintStart_toStartOf="@+id/phone_title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/phone_title_tv"
+        app:layout_constraintWidth_percent=".9" />
+    <include
+        android:id="@+id/recaptcha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        layout="@layout/recaptcha_layout"
+        app:layout_constraintTop_toBottomOf="@id/linear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_20sdp"/>
+    <com.moddakir.moddakir.view.widget.ButtonCalibriBold
+        android:id="@+id/btn_next"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/custom_turquoise_solid"
+        android:gravity="center"
+        android:text="@string/next"
+        android:contentDescription="@string/nextAction"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/linear"
+        app:layout_constraintStart_toStartOf="@id/linear"
+        app:layout_constraintTop_toBottomOf="@+id/recaptcha"
+        app:layout_constraintWidth_percent=".6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

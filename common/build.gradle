@@ -1,0 +1,237 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+//    id("com.google.dagger.hilt.android")
+
+}
+
+android {
+    namespace 'com.example.moddakirapps'
+    compileSdk 35
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+    defaultConfig {
+        applicationId "com.example.moddakirapps"
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    configurations.all {
+        resolutionStrategy {
+            force("androidx.core:core-ktx:1.9.0")
+        }
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    signingConfigs {
+        config {
+            keyAlias 'moddakir'
+            keyPassword 'arabdt123'
+            storeFile file('D:\\androidApps\\modakkir_android\\moddakir.jks')
+            storePassword 'arabdt123'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            if (getGradle().getStartParameter().getTaskRequests().toString().toLowerCase().contains("google")) {
+
+                lintOptions {
+                    disable 'MissingTranslation'
+                    checkReleaseBuilds false
+                    abortOnError false
+                    splits.abi.enable = false
+                    splits.density.enable = false
+                    aaptOptions.cruncherEnabled = false
+                    ext.alwaysUpdateBuildId = false
+                    firebaseCrashlytics {
+                        // If you don't need crash reporting for your debug build,
+                        // you can speed up your build by disabling mapping file uploading.
+                        mappingFileUploadEnabled false
+                    }
+                }
+            }
+
+            signingConfig signingConfigs.config
+
+            shrinkResources false
+            manifestPlaceholders = [BranchDebug: false]
+            buildConfigField "String", BASE_URL, "\"https://" + URLAPi + "/" + VersionPro + "/api/\""
+            buildConfigField "String", SOCKET_URL, "\"https://" + SOCKETURL + "\""
+            buildConfigField "String", "CAPTCHA_KEY_ID", "\"$captchaKeyId\""
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            if (getGradle().getStartParameter().getTaskRequests().toString().toLowerCase().contains("google")) {
+
+                splits.abi.enable = false
+                splits.density.enable = false
+                aaptOptions.cruncherEnabled = false
+                ext.alwaysUpdateBuildId = false
+            }
+            signingConfig signingConfigs.config
+            shrinkResources false
+            buildConfigField "String", BASE_URL, "\"https://" + URLAPi + "/" + VersionPro + "/api/\""
+            buildConfigField "String", SOCKET_URL, "\"https://" + SOCKETURL + "\""
+            buildConfigField "String", "CAPTCHA_KEY_ID", "\"$captchaKeyId\""
+            manifestPlaceholders = [BranchDebug: true]
+        }
+        innerTest {
+            //...
+            matchingFallbacks = ['debug', 'release']
+        }
+    }
+    packagingOptions {
+        pickFirst 'META-INF/kotlinx-io.kotlin_module'
+        pickFirst 'META-INF/atomicfu.kotlin_module'
+        pickFirst 'META-INF/kotlinx-coroutines-core.kotlin_module'
+        pickFirst 'META-INF/kotlinx-coroutines-io.kotlin_module'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.3.0-rc01'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.core:core-ktx:+'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.7'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.7.7'
+    implementation 'androidx.activity:activity:1.9.1'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+
+    //coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core-common:1.3.7'
+
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.8.4"
+
+    //Logging
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.8'
+
+    // retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.7'
+
+    //dagger
+    implementation 'com.google.dagger:hilt-android:2.52'
+    annotationProcessor 'com.google.dagger:hilt-compiler:2.52'
+    implementation "androidx.hilt:hilt-navigation-compose:1.2.0"
+
+
+
+    // encrypt shared pref data
+    implementation "androidx.security:security-crypto:1.1.0-alpha06"
+
+    api 'com.android.support:multidex:1.0.3'
+
+    //clevertap
+    implementation 'com.clevertap.android:clevertap-android-sdk:5.2.2'
+
+    //firebase
+    implementation 'com.google.firebase:firebase-messaging:17.3.3'
+    implementation(platform("com.google.firebase:firebase-bom:23.0.0"))
+    implementation("com.google.firebase:firebase-auth:23.0.0")
+    implementation 'com.google.firebase:firebase-invites:9.6.1'
+    implementation 'com.google.firebase:firebase-crashlytics:18.3.2'
+    api "com.google.firebase:firebase-analytics"
+
+    //play-services
+    implementation 'com.google.android.gms:play-services-safetynet:18.0.1'
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+
+    //facebook
+    implementation 'com.facebook.android:facebook-android-sdk:16.0.0'
+
+    //Captcha
+    implementation 'com.google.android.recaptcha:recaptcha:18.6.0'
+
+    //branch
+    implementation 'io.branch.sdk.android:library:5.12.2'
+
+    //localization
+    api 'com.akexorcist:localization:1.2.11'
+
+    //multidex
+    api 'com.android.support:multidex:1.0.3'
+
+    //timber
+    api 'com.jakewharton.timber:timber:4.7.1'
+
+    //font size
+    api 'com.intuit.sdp:sdp-android:1.0.6'
+
+    //progress loading
+    implementation 'io.github.maitrungduc1410:AVLoadingIndicatorView:2.1.4'
+
+    //fingerPrint
+    implementation 'co.infinum:goldfinger:2.0.1'
+
+    api "io.reactivex.rxjava2:rxandroid:2.1.1"
+    api "io.reactivex.rxjava2:rxjava:2.2.17"
+
+    //sweetAlarat
+    api 'com.github.f0ris.sweetalert:library:1.6.2'
+
+    //countryCodePicker
+    api 'com.hbb20:ccp:2.6.1'
+
+//recaptcha
+    implementation 'com.google.android.recaptcha:recaptcha:18.5.0-beta02'
+
+
+    api "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.1.1"
+
+
+    //Testing
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.mockito:mockito-core:2.11.0'
+    testImplementation 'android.arch.core:core-testing:1.1.1'
+    testImplementation "com.google.truth:truth:1.1"
+// For Robolectric tests.
+    testImplementation("com.google.dagger:hilt-android-testing:2.28-alpha")
+// For instrumented tests.
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.28-alpha")
+// ...with Kotlin.
+    kaptTest("com.google.dagger:hilt-android-compiler:2.40.5")
+
+}
+kapt {
+    correctErrorTypes = true
+    javacOptions {
+        // These options are normally set automatically via the Hilt Gradle plugin, but we
+        // set them manually to workaround a bug in the Kotlin 1.5.20
+        option("-Adagger.fastInit=ENABLED")
+        option("-Adagger.hilt.android.internal.disableAndroidSuperclassValidation=true")
+    }
+}
+

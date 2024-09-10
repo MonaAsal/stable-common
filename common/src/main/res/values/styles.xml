@@ -1,0 +1,24 @@
+<resources>
+
+    <style name="Widget.Theme.ModdakirApps.ActionBar.Fullscreen" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black75</item>
+    </style>
+
+    <style name="Widget.Theme.ModdakirApps.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/black75</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    </style>
+    <style name="CustomDialog" parent="android:Theme.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <style name="CustomEditTextTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlNormal">@color/colorGray</item>
+        <item name="colorControlActivated">@color/colorPrimaryStudentTeacher</item>
+        <item name="colorControlHighlight">@color/colorPrimaryStudentTeacher</item>
+
+    </style>
+    <style name="ToolbarTitle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">20dp</item>
+    </style>
+</resources>
