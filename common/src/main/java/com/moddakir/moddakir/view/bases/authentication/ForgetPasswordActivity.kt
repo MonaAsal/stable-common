@@ -14,7 +14,6 @@ import com.moddakir.moddakir.helper.LocaleHelper
 import com.moddakir.moddakir.model.RecaptchaImpl.Companion.recaptchaTasksClient
 import com.moddakir.moddakir.model.base.BaseActivity
 import com.moddakir.moddakir.utils.ValidationUtils
-import com.moddakir.moddakir.view.bases.authentication.LoginActivity.Companion
 import com.moddakir.moddakir.viewModel.AutViewModel
 import dagger.hilt.android.AndroidEntryPoint
 

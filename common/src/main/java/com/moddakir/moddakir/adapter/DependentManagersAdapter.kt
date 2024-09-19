@@ -1,7 +1,6 @@
 package com.moddakir.moddakir.adapter
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,15 +10,11 @@ import com.example.moddakirapps.R
 import com.moddakir.moddakir.model.Student
 
 class DependentManagersAdapter(
-    normalPathModels: List<Student>,
-    planClickListener: (Any) -> Unit,
-    selectedPosition: Int
-)  :
+    private val normalPathModels: List<Student>,
+    val planClickListener: () -> Unit,
+    private var selectedPosition: Int
+) :
     RecyclerView.Adapter<DependentManagersAdapter.ViewHolder>() {
-    private var selectedPosition = 0
-    private val normalPathModels: List<Student>? = null
-    private val planClickListener:PlanClickListener? =
-        null
 
 
     interface PlanClickListener {
@@ -42,7 +37,7 @@ class DependentManagersAdapter(
                 notifyItemChanged(selectedPosition)
                 selectedPosition = position
                 notifyItemChanged(selectedPosition)
-                planClickListener?.onPlanClicked(position)
+                //planClickListener?.onPlanClicked(position)
             }
         }
 

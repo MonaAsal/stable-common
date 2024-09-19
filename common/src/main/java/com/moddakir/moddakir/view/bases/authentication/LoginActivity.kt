@@ -10,6 +10,7 @@ import android.text.InputType
 import android.view.MotionEvent
 import android.view.View
 import android.view.View.OnTouchListener
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.fragment.app.FragmentActivity
 import cn.pedant.SweetAlert.SweetAlertDialog
@@ -33,6 +34,7 @@ import com.moddakir.moddakir.utils.FingerBiometricAuthenticator
 import com.moddakir.moddakir.utils.Language
 import com.moddakir.moddakir.utils.LanguageOptionFragment
 import com.moddakir.moddakir.utils.getLanguageCode
+import com.moddakir.moddakir.utils.observe
 import com.moddakir.moddakir.view.widget.ButtonCalibriBold
 import com.moddakir.moddakir.viewModel.AutViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -47,17 +49,15 @@ class LoginActivity : BaseActivity(),OnTouchListener {
     private var fingerBiometricAuthenticator: FingerBiometricAuthenticator? = null
     private var passwordHideShow = false
     private val authViewModel: AutViewModel by viewModels()
-    companion object{
         lateinit var username :String
         lateinit var password :String
         lateinit var lang :String
-    }
     override fun initializeViewModel() {}
     override fun observeViewModel() {}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // enableEdgeToEdge()
+         enableEdgeToEdge()
         //setContent { intit() }
         bindingScreenDesign()
        lang= LocaleHelper.getLocale(this).toString()
@@ -76,7 +76,7 @@ class LoginActivity : BaseActivity(),OnTouchListener {
                     username=bindingStudent.etEmail.text.toString()
                     password=bindingStudent.etPassword.text.toString()
                 }
-                // observe(authViewModel.loginLiveData, ::handleLoginResponse)
+                 observe(authViewModel.loginLiveData, ::handleLoginResponse)
             }
             App.AppVersion.Version2.toString() -> {
                 showStudentAppDialog()
@@ -87,7 +87,7 @@ class LoginActivity : BaseActivity(),OnTouchListener {
                 }
                 bindingTeacher.tvForgetPassword.setOnClickListener { navigateToForgetPasswordScreen() }
 
-                // observe(authViewModel.loginTeacherLiveData, ::handleLoginTeacherResponse)
+                observe(authViewModel.loginTeacherLiveData, ::handleLoginTeacherResponse)
             }
             App.AppVersion.Version3.toString() -> {
 
@@ -108,7 +108,7 @@ class LoginActivity : BaseActivity(),OnTouchListener {
                 bindingWhiteLabel.tvForgetPassword.setOnClickListener { navigateToForgetPasswordScreen() }
                 bindingWhiteLabel.whatsappCotactTv.setOnClickListener { openWhatsApp(WhatsAppNum) }
 
-                // observe(authViewModel.loginLiveData, ::handleLoginResponse)
+                observe(authViewModel.loginLiveData, ::handleLoginResponse)
             }
         }
     }
@@ -343,9 +343,7 @@ class LoginActivity : BaseActivity(),OnTouchListener {
     }*/
    enum class ProgramType(val value: String) {
        Maqraatec("Maqraatec"),
-
        Ministry("Ministry"),
-
        General("General");
    }
 }

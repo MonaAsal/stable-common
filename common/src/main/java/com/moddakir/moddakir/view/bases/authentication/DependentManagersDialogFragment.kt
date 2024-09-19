@@ -17,13 +17,11 @@ import com.example.moddakirapps.R
 import com.example.moddakirapps.databinding.FragmentDependentManagersDialogBinding
 import com.moddakir.moddakir.adapter.DependentManagersAdapter
 import com.moddakir.moddakir.model.Student
-import com.moddakir.moddakir.model.User
 
 class DependentManagersDialogFragment() : DialogFragment() {
     private var pagenum = 1
     private val students: List<Student> = ArrayList<Student>()
     private var dependentManagersAdapter: DependentManagersAdapter? = null
-    var user: User? = null
     var studentId: String = ""
     private var id = ""
     private var layoutManager: RecyclerView.LayoutManager? = null
@@ -32,7 +30,7 @@ class DependentManagersDialogFragment() : DialogFragment() {
         this.maqraatec = maqraatec
     }
 
-    lateinit var maqraatec:String
+    private lateinit var maqraatec:String
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState)
         dialog.window!!.requestFeature(Window.FEATURE_NO_TITLE)
@@ -51,9 +49,9 @@ class DependentManagersDialogFragment() : DialogFragment() {
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+        savedInstanceState: Bundle?): View {
         binding = FragmentDependentManagersDialogBinding.inflate(inflater,container,false)
-        return  binding.root;
+        return  binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -80,7 +78,9 @@ class DependentManagersDialogFragment() : DialogFragment() {
         }
         dependentManagersAdapter = DependentManagersAdapter(
             students,
-            { position -> id = students[position as Int].id },
+          planClickListener = {
+
+          },
             -1
         )
 
@@ -97,8 +97,5 @@ class DependentManagersDialogFragment() : DialogFragment() {
         map["page"] = pagenum
         map["pageSize"] = 10
         //call api
-    }
-    override fun onDestroy() {
-        super.onDestroy()
     }
 }

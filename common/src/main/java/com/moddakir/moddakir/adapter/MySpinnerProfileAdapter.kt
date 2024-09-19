@@ -13,7 +13,6 @@ import com.moddakir.moddakir.model.FilterModel
 class MySpinnerProfileAdapter(context: Context, resource: Int,items: ArrayList<FilterModel>?) :
     ArrayAdapter<FilterModel>(context, resource, items!!) {
     var font: Typeface = Typeface.createFromAsset(getContext().assets, "font/Calibri_Regular.ttf")
-    var context: Context? = null
     var items: ArrayList<FilterModel>? = null
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {

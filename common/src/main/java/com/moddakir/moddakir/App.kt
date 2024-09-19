@@ -12,7 +12,7 @@ import dagger.hilt.android.HiltAndroidApp
 
 
 @HiltAndroidApp
-class App : Application(), DefaultLifecycleObserver{
+public class App : Application(), DefaultLifecycleObserver{
 
     override fun onCreate() {
         super<Application>.onCreate()
