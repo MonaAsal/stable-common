@@ -19,6 +19,7 @@ import com.moddakir.moddakir.model.response.ErrorResponse
 import com.moddakir.moddakir.utils.Event
 import com.moddakir.moddakir.view.bases.Intro.IntroActivity
 import com.moddakir.moddakir.view.bases.authentication.ForgetPasswordActivity
+import com.moddakir.moddakir.view.bases.authentication.JoinUsActivity
 import com.moddakir.moddakir.view.bases.authentication.LoginActivity
 import com.moddakir.moddakir.view.bases.authentication.LoginWithMobileActivity
 import com.moddakir.moddakir.view.bases.authentication.RegisterMobileActivity
@@ -148,5 +149,11 @@ abstract class BaseActivity: AppCompatActivity() {
             element.setTextColor( Color.parseColor(colorPrimary))
         }
     }
+
+    fun navigateToJoinUs() {
+        val intent = Intent(context, JoinUsActivity::class.java)
+        startActivity(intent)
+    }
+
 
 }

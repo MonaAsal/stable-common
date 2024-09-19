@@ -76,8 +76,6 @@ class LoginActivity : BaseActivity(),OnTouchListener {
                     username=bindingStudent.etEmail.text.toString()
                     password=bindingStudent.etPassword.text.toString()
                 }
-
-
                 // observe(authViewModel.loginLiveData, ::handleLoginResponse)
             }
             App.AppVersion.Version2.toString() -> {
@@ -97,6 +95,14 @@ class LoginActivity : BaseActivity(),OnTouchListener {
                     loginWl()
                     username=bindingWhiteLabel.etEmail.text.toString()
                     password=bindingWhiteLabel.etPassword.text.toString()
+                }
+                bindingWhiteLabel.btnJoinUs.setOnClickListener { v ->
+                    val dependentManagersDialogFragment =
+                        DependentManagersDialogFragment(ProgramType.Maqraatec.value)
+                    dependentManagersDialogFragment.show(
+                        supportFragmentManager,
+                        dependentManagersDialogFragment.getTag()
+                    )
                 }
                 bindingWhiteLabel.languageTv.setOnClickListener { changeLangWL() }
                 bindingWhiteLabel.tvForgetPassword.setOnClickListener { navigateToForgetPasswordScreen() }
@@ -335,4 +341,11 @@ class LoginActivity : BaseActivity(),OnTouchListener {
             }
         )*/
     }*/
+   enum class ProgramType(val value: String) {
+       Maqraatec("Maqraatec"),
+
+       Ministry("Ministry"),
+
+       General("General");
+   }
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:gravity="bottom">
+        <shape>
+            <size android:height="1dp" />
+            <solid android:color="@color/gray_btn_bg_pressed_color" />
+        </shape>
+    </item>
+    <item>
+        <bitmap
+            android:gravity="end"
+            android:src="@drawable/dropdown"
+            android:tint="@color/colorBlack" />
+    </item>
+</layer-list>

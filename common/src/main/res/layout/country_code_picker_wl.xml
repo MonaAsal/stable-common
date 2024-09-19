@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_margin="2dp"
+        android:layout_height="55dp">
+
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/countryCodePicker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/view"
+            app:ccpDialog_allowSearch="true"
+            app:ccpDialog_backgroundColor="@android:color/white"
+            app:ccpDialog_initialScrollToSelection="true"
+            app:ccpDialog_keyboardAutoPopup="false"
+            app:ccpDialog_showCloseIcon="true"
+            app:ccpDialog_showFastScroller="true"
+            app:ccpDialog_showFlag="true"
+            app:ccpDialog_showPhoneCode="true"
+            app:ccpDialog_showTitle="false"
+            app:ccpDialog_textColor="@color/colorBlack"
+            app:ccp_arrowColor="@color/colorGray"
+            app:ccp_arrowSize="20dp"
+            app:ccp_autoDetectCountry="true"
+            app:ccp_autoDetectLanguage="true"
+            app:ccp_autoFormatNumber="false"
+            app:ccp_clickable="true"
+            app:ccp_countryAutoDetectionPref="NETWORK_SIM_LOCALE"
+            app:ccp_countryPreference="EG,SA"
+            app:ccp_defaultLanguage="ENGLISH"
+            app:ccp_excludedCountries="IL"
+            app:ccp_flagBorderColor="@color/greyish"
+            app:ccp_hintExampleNumber="true"
+            app:ccp_hintExampleNumberType="FIXED_LINE"
+            app:ccp_rememberLastSelection="false"
+            app:ccp_selectionMemoryTag="signupCCP"
+            app:ccp_showArrow="true"
+            app:ccp_showFlag="true"
+            app:ccp_showFullName="false"
+            app:ccp_showNameCode="false"
+            app:ccp_showPhoneCode="true"
+            app:ccp_textGravity="CENTER"
+            app:ccp_textSize="16sp"
+            app:layout_constraintWidth_percent=".4"
+            app:layout_constraintEnd_toStartOf="@+id/phone_tile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorGray"
+            app:layout_constraintEnd_toEndOf="@+id/countryCodePicker"
+            app:layout_constraintStart_toStartOf="@+id/countryCodePicker"
+            app:layout_constraintTop_toBottomOf="@id/countryCodePicker" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phone_tile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="0dp"
+            android:gravity="bottom"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColorHint="@android:color/darker_gray"
+            android:layout_marginTop="5dp"
+            android:theme="@style/CustomEditTextTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/countryCodePicker"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.moddakir.moddakir.view.widget.EditTextUniqueLight
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:inputType="phone"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/custom_white_gray_border"
+        android:backgroundTint="@color/white">
+
+        <TextView
+            android:id="@+id/textViewCalibriBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/the_program"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+        <ImageButton
+
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewCalibriBold"
+            app:layout_constraintEnd_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toTopOf="@+id/textViewCalibriBold"
+            app:srcCompat="@drawable/ic_close_gray"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="@string/please_select_one_of_the_managers_to_complete_the_progression_of_the_reading"
+            android:textSize="10dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/guideline1"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/close" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.027359782" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDependentManagers"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_200sdp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/saveSessionPreferences"
+            app:layout_constraintEnd_toEndOf="@id/guideline1"
+            app:layout_constraintStart_toStartOf="@id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            tools:itemCount="3"
+            tools:listitem="@layout/dependent_managers_row" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/saveSessionPreferences"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:background="@drawable/custom_white_gray_border"
+            android:backgroundTint="@color/colorPrimaryRattel"
+            android:gravity="center"
+            android:padding="@dimen/_4sdp"
+
+            android:text="@string/completion_of_progress"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline1"
+            app:layout_constraintStart_toEndOf="@+id/cancel" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:background="@drawable/custom_white_gray_border"
+            android:backgroundTint="@color/colorDarkGray"
+            android:gravity="center"
+            android:padding="@dimen/_4sdp"
+            android:text="@string/close"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="@+id/saveSessionPreferences"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/rvDependentManagers" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

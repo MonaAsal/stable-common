@@ -33,11 +33,7 @@ class AccountsAdapter( private val listener: RecyclerItemListener<SavedFingerAcc
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val tvName: TextViewCalibriBold
-
-        init {
-            tvName = view.findViewById(R.id.accountname)
-        }
+        val tvName: TextViewCalibriBold = view.findViewById(R.id.accountname)
     }
 
 }
