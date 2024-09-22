@@ -17,14 +17,14 @@ import com.moddakir.moddakir.App.Companion.context
 import com.moddakir.moddakir.helper.LocaleHelper
 import com.moddakir.moddakir.model.response.ErrorResponse
 import com.moddakir.moddakir.utils.Event
-import com.moddakir.moddakir.view.bases.Intro.IntroActivity
-import com.moddakir.moddakir.view.bases.authentication.ForgetPasswordActivity
-import com.moddakir.moddakir.view.bases.authentication.JoinUsActivity
-import com.moddakir.moddakir.view.bases.authentication.LoginActivity
-import com.moddakir.moddakir.view.bases.authentication.LoginWithMobileActivity
-import com.moddakir.moddakir.view.bases.authentication.RegisterMobileActivity
-import com.moddakir.moddakir.view.widget.ButtonCalibriBold
-import com.moddakir.moddakir.view.widget.TextViewLateefRegOT
+import com.moddakir.moddakir.ui.bases.Intro.IntroActivity
+import com.moddakir.moddakir.ui.bases.authentication.ForgetPasswordActivity
+import com.moddakir.moddakir.ui.bases.authentication.JoinUsActivity
+import com.moddakir.moddakir.ui.bases.authentication.LoginActivity
+import com.moddakir.moddakir.ui.bases.authentication.LoginWithMobileActivity
+import com.moddakir.moddakir.ui.bases.authentication.RegisterMobileActivity
+import com.moddakir.moddakir.ui.widget.ButtonCalibriBold
+import com.moddakir.moddakir.ui.widget.TextViewLateefRegOT
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -101,6 +101,9 @@ abstract class BaseActivity: AppCompatActivity() {
         intent.putExtra(LoginScreenEntities.appLogo.toString(), showAppLogo)
 
         startActivity(intent)
+    }
+    fun navigateToLoginScreen() {
+        startActivity(Intent(context,LoginActivity::class.java))
     }
     fun navigateToRegisterScreen() {
         startActivity(Intent(context,RegisterMobileActivity::class.java))

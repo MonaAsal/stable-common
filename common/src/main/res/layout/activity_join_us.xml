@@ -64,7 +64,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/full_name_til1"
                 app:layout_constraintWidth_percent=".9">
 
-                <com.moddakir.moddakir.view.widget.EditTextUniqueLight
+                <com.moddakir.moddakir.ui.widget.EditTextUniqueLight
                     android:id="@+id/first_name_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -94,7 +94,7 @@
                 app:passwordToggleEnabled="true">
 
 
-                <com.moddakir.moddakir.view.widget.EditTextUniqueLight
+                <com.moddakir.moddakir.ui.widget.EditTextUniqueLight
                     android:id="@+id/et_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -122,7 +122,7 @@
                 app:layout_constraintStart_toStartOf="@id/password_til"
                 app:layout_constraintTop_toBottomOf="@+id/password_til">
 
-                <com.moddakir.moddakir.view.widget.EditTextUniqueLight
+                <com.moddakir.moddakir.ui.widget.EditTextUniqueLight
                     android:id="@+id/email_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -146,7 +146,7 @@
                 app:layout_constraintStart_toStartOf="@id/password_til"
                 app:layout_constraintTop_toBottomOf="@id/email_til" />
 
-            <com.moddakir.moddakir.view.widget.TextViewUniqueLight
+            <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
                 android:id="@+id/nationality"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -254,7 +254,7 @@
 
 
 
-            <com.moddakir.moddakir.view.widget.ButtonCalibriBold
+            <com.moddakir.moddakir.ui.widget.ButtonCalibriBold
                 android:id="@+id/btn_submit"
                 android:layout_width="0dp"
                 android:layout_height="50dp"

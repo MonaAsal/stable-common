@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moddakirapps.R
 import com.moddakir.moddakir.utils.Language
-import com.moddakir.moddakir.view.bases.listeners.OptionLanguageClickListener
-import com.moddakir.moddakir.view.widget.ButtonCalibriBold
+import com.moddakir.moddakir.ui.bases.listeners.OptionLanguageClickListener
+import com.moddakir.moddakir.ui.widget.ButtonCalibriBold
 
 class LangOptionsAdapter(
     listOfLanguages: List<Language>,

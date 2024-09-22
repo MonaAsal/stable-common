@@ -44,35 +44,35 @@
         android:theme="@style/Theme.ModdakirApps"
         tools:targetApi="31">
         <activity
-            android:name="com.moddakir.moddakir.view.bases.authentication.JoinUsActivity"
+            android:name="com.moddakir.moddakir.ui.bases.authentication.JoinUsActivity"
             android:exported="false" />
         <activity
-            android:name="com.moddakir.moddakir.view.bases.authentication.ResetPasswordActivity"
+            android:name="com.moddakir.moddakir.ui.bases.authentication.ResetPasswordActivity"
             android:exported="false" />
         <activity
-            android:name="com.moddakir.moddakir.view.bases.authentication.VerificationMobileActivity"
+            android:name="com.moddakir.moddakir.ui.bases.authentication.VerificationMobileActivity"
             android:exported="false" />
         <activity
-            android:name="com.moddakir.moddakir.view.bases.authentication.ForgetPasswordActivity"
+            android:name="com.moddakir.moddakir.ui.bases.authentication.ForgetPasswordActivity"
             android:exported="false" />
         <activity
-            android:name="com.moddakir.moddakir.view.bases.Intro.IntroActivity"
+            android:name="com.moddakir.moddakir.ui.bases.Intro.IntroActivity"
             android:exported="false"
             android:theme="@style/Theme.ModdakirApps" />
         <activity
-            android:name="com.moddakir.moddakir.view.bases.authentication.LoginWithMobileActivity"
+            android:name="com.moddakir.moddakir.ui.bases.authentication.LoginWithMobileActivity"
             android:exported="true"
             android:theme="@style/Theme.ModdakirApps" />
         <activity
-            android:name="com.moddakir.moddakir.view.bases.authentication.RegisterMobileActivity"
+            android:name="com.moddakir.moddakir.ui.bases.authentication.RegisterMobileActivity"
             android:exported="true"
             android:theme="@style/Theme.ModdakirApps" />
         <activity
-            android:name="com.moddakir.moddakir.view.bases.authentication.LoginActivity"
+            android:name="com.moddakir.moddakir.ui.bases.authentication.LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.ModdakirApps" />
         <activity
-            android:name="com.moddakir.moddakir.view.bases.MainActivity"
+            android:name="com.moddakir.moddakir.ui.bases.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -19,7 +19,7 @@ class NoneAuthInterceptor @Inject constructor() : Interceptor {
             .header(CONTENT_TYPE, CONTENT_TYPE_VALUE)
             .addHeader(APP_VERSION, "")
             .addHeader(Language, Session.xLang)
-            .method(originalRequest.method, originalRequest.body)
+           // .method(originalRequest.method, originalRequest.body)
 
         val response = chain.proceed(authorisedRequestBuilder.build())
         return response

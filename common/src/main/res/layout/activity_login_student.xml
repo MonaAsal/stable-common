@@ -26,7 +26,7 @@
 
 
 
-            <com.moddakir.moddakir.view.widget.TextViewCalibriBold
+            <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
                 android:id="@+id/textView2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <com.moddakir.moddakir.view.widget.TextViewCalibriBold
+            <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
                 android:id="@+id/registerTxt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
                 android:src="@drawable/back_arrow"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-            <com.moddakir.moddakir.view.widget.TextViewCalibriBold
+            <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
                 android:layout_width="match_parent"
                 android:id="@+id/userNameTxt"
                 android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2"
                 />
-            <com.moddakir.moddakir.view.widget.EditTextUniqueLight
+            <com.moddakir.moddakir.ui.widget.EditTextUniqueLight
                 android:id="@+id/et_email"
                 android:layout_width="match_parent"
                 android:layout_marginHorizontal="20dp"
@@ -97,7 +97,7 @@
                 android:textSize="18sp" />
 
 
-            <com.moddakir.moddakir.view.widget.TextViewCalibriBold
+            <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
                 android:layout_width="match_parent"
                 android:id="@+id/passTxt"
                 android:layout_height="wrap_content"
@@ -107,7 +107,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
-            <com.moddakir.moddakir.view.widget.EditTextUniqueLight
+            <com.moddakir.moddakir.ui.widget.EditTextUniqueLight
                 android:id="@+id/et_password"
                 android:layout_marginHorizontal="20dp"
                 android:layout_width="match_parent"
@@ -133,7 +133,7 @@
                 android:src="@drawable/ic_password_hide"
                 android:layout_height="wrap_content"/>
 
-            <com.moddakir.moddakir.view.widget.TextViewLateefRegOT
+            <com.moddakir.moddakir.ui.widget.TextViewLateefRegOT
                 android:id="@+id/tv_forget_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -146,7 +146,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/et_password" />
 
-            <com.moddakir.moddakir.view.widget.TextViewCalibriBold
+            <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
                 android:id="@+id/mobileLogin"
                 android:layout_width="match_parent"
                 android:layout_marginTop="20dp"
@@ -162,7 +162,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_forget_password"
                 app:layout_constraintWidth_percent=".9" />
-            <com.moddakir.moddakir.view.widget.ButtonCalibriBold
+            <com.moddakir.moddakir.ui.widget.ButtonCalibriBold
                 android:id="@+id/btn_login"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
@@ -217,7 +217,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/mobileLogin">
-                <com.moddakir.moddakir.view.widget.TextViewLateefRegOT
+                <com.moddakir.moddakir.ui.widget.TextViewLateefRegOT
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -276,7 +276,7 @@
                     fb:login_text=""
                     fb:logout_text="" />
             </LinearLayout>
-            <com.moddakir.moddakir.view.widget.TextViewUniqueLight
+            <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
                 android:id="@+id/whatsapp_cotact_tv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

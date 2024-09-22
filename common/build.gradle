@@ -1,16 +1,15 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
-    id 'kotlin-android'
-    id 'kotlin-parcelize'
-//    id("com.google.dagger.hilt.android")
-
+    id 'com.google.dagger.hilt.android'
+    id "kotlin-kapt"
+    id "kotlin-parcelize"
+    id "androidx.navigation.safeargs.kotlin"
 }
 
 android {
     namespace 'com.example.moddakirapps'
-    compileSdk 35
+    compileSdk 34
     buildFeatures {
         viewBinding true
         dataBinding true
@@ -18,7 +17,7 @@ android {
     defaultConfig {
         applicationId "com.example.moddakirapps"
         minSdk 24
-        targetSdk 35
+        targetSdk 34
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -26,18 +25,11 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    configurations.all {
-        resolutionStrategy {
-            force("androidx.core:core-ktx:1.9.0")
-        }
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
-            kotlinOptions.jvmTarget = "1.8"
-        }
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
 
     signingConfigs {
@@ -112,48 +104,52 @@ android {
 }
 
 dependencies {
+    implementation("androidx.core:core-ktx:1.13.1")
+    implementation("androidx.fragment:fragment-ktx:1.8.3")
 
-    implementation 'androidx.core:core-ktx:1.13.1'
-    implementation 'androidx.appcompat:appcompat:1.3.0-rc01'
-    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.core:core-ktx:+'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.7'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.7.7'
-    implementation 'androidx.activity:activity:1.9.1'
+    //Lifecycle
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    //Navigation
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    //Dagger-Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+
+
+
+    //Test
+    testImplementation "com.squareup.okhttp3:mockwebserver:4.10.0"
+    testImplementation "com.google.truth:truth:1.1.3"
+    testImplementation "org.mockito.kotlin:mockito-kotlin:4.0.0"
+    testImplementation "org.mockito:mockito-inline:3.0.0"
+    testImplementation 'app.cash.turbine:turbine:0.12.1'
+    implementation "androidx.arch.core:core-testing:2.2.0"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
+
+
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
-
-    //coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core-common:1.3.7'
-
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.8.4"
-
-    //Logging
-    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.8'
-
-    // retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.7'
-
-    //dagger
-    implementation 'com.google.dagger:hilt-android:2.52'
-    annotationProcessor 'com.google.dagger:hilt-compiler:2.52'
-    implementation "androidx.hilt:hilt-navigation-compose:1.2.0"
-
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
 
     // encrypt shared pref data
     implementation "androidx.security:security-crypto:1.1.0-alpha06"
+    //Logging
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.8'
 
-    api 'com.android.support:multidex:1.0.3'
 
     //clevertap
     implementation 'com.clevertap.android:clevertap-android-sdk:5.2.2'
@@ -206,7 +202,7 @@ dependencies {
     //countryCodePicker
     api 'com.hbb20:ccp:2.6.1'
 
-//recaptcha
+     //recaptcha
     implementation 'com.google.android.recaptcha:recaptcha:18.5.0-beta02'
 
 

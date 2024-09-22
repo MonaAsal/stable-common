@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.moddakir.moddakir.view.widget.TextViewLateefRegOT
+    <com.moddakir.moddakir.ui.widget.TextViewLateefRegOT
         android:id="@+id/gendertext"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
 
     </RadioGroup>
 
-    <com.moddakir.moddakir.view.widget.TextViewUniqueLight
+    <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
         android:id="@+id/type_error_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

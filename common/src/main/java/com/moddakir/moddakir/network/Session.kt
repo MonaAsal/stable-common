@@ -2,7 +2,7 @@ package com.moddakir.moddakir.network
 
 import android.util.Log
 import com.moddakir.moddakir.App.Companion.context
-import com.moddakir.moddakir.data.SharedPrefHelper
+import com.moddakir.moddakir.helper.SharedPrefHelper
 import com.moddakir.moddakir.model.User
 import com.google.gson.Gson
 import java.util.*

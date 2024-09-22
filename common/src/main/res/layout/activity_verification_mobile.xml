@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.moddakir.moddakir.view.widget.TextViewCalibriBold
+        <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.moddakir.moddakir.view.widget.TextViewCalibriBold
+        <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
             android:id="@+id/verification_message"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
             tools:text="@string/verification_message" />
-        <com.moddakir.moddakir.view.widget.OtpEditText
+        <com.moddakir.moddakir.ui.widget.OtpEditText
             android:id="@+id/et_otp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
             android:textSize="20sp"
             tools:ignore="MissingConstraints" />
 
-        <com.moddakir.moddakir.view.widget.TextViewCalibriBold
+        <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
             android:id="@+id/tv_resend"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_resend"
             android:text= "@string/didnt_recive_otp" />
 
-        <com.moddakir.moddakir.view.widget.ButtonCalibriBold
+        <com.moddakir.moddakir.ui.widget.ButtonCalibriBold
             android:id="@+id/btn_submit"
             android:layout_width="match_parent"
             android:layout_height="50dp"

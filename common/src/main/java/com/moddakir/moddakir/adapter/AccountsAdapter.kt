@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moddakirapps.R
 import com.moddakir.moddakir.model.SavedFingerAccount
-import com.moddakir.moddakir.view.bases.listeners.RecyclerItemListener
-import com.moddakir.moddakir.view.widget.TextViewCalibriBold
+import com.moddakir.moddakir.ui.bases.listeners.RecyclerItemListener
+import com.moddakir.moddakir.ui.widget.TextViewCalibriBold
 class AccountsAdapter( private val listener: RecyclerItemListener<SavedFingerAccount>) :
     RecyclerView.Adapter<AccountsAdapter.ViewHolder>() {
     private var accounts: ArrayList<SavedFingerAccount?>? = null

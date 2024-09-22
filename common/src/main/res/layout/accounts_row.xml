@@ -5,7 +5,7 @@
     android:orientation="horizontal"
     android:padding="16dp">
 
-    <com.moddakir.moddakir.view.widget.TextViewCalibriBold
+    <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
         android:id="@+id/accountname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

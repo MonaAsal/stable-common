@@ -13,17 +13,18 @@ import co.infinum.goldfinger.Goldfinger.PromptParams
 import com.example.moddakirapps.BuildConfig
 import com.example.moddakirapps.R
 import com.moddakir.moddakir.adapter.AccountsAdapter
-import com.moddakir.moddakir.data.SavedFingerAccountsPreferences
+import com.moddakir.moddakir.helper.SavedFingerAccountsPreferences
 import com.moddakir.moddakir.model.SavedFingerAccount
-import com.moddakir.moddakir.view.bases.listeners.RecyclerItemListener
-import com.moddakir.moddakir.view.widget.ButtonCalibriBold
+import com.moddakir.moddakir.ui.bases.listeners.RecyclerItemListener
+import com.moddakir.moddakir.ui.widget.ButtonCalibriBold
 import timber.log.Timber
 
 abstract class FingerBiometricAuthenticator : RecyclerItemListener<SavedFingerAccount> {
     private var goldfinger: Goldfinger? = null
     val dialogBuilder = AlertDialog.Builder(getContext())
     val alertDialog1 = dialogBuilder.create()
-private var  savedFingerAccountsPreferences: SavedFingerAccountsPreferences=SavedFingerAccountsPreferences()
+private var  savedFingerAccountsPreferences: SavedFingerAccountsPreferences =
+    SavedFingerAccountsPreferences()
     fun initFingerAuth() {
         goldfinger = Goldfinger.Builder(getContext()).logEnabled(BuildConfig.DEBUG).build()
     }

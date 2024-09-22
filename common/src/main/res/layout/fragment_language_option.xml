@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <com.moddakir.moddakir.view.widget.TextViewCalibriBold
+    <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -29,7 +29,7 @@
 
         tools:listitem="@layout/option_item_lang" />
 
-    <com.moddakir.moddakir.view.widget.ButtonCalibriBold
+    <com.moddakir.moddakir.ui.widget.ButtonCalibriBold
         android:id="@+id/back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -1,11 +1,11 @@
 package com.moddakir.moddakir.useCase
 
 import com.moddakir.moddakir.utils.ValidationUtils
-import com.moddakir.moddakir.view.bases.authentication.ForgetPasswordActivity
-import com.moddakir.moddakir.view.bases.authentication.LoginActivity
-import com.moddakir.moddakir.view.bases.authentication.LoginWithMobileActivity
-import com.moddakir.moddakir.view.bases.authentication.ResetPasswordActivity
-import com.moddakir.moddakir.view.bases.authentication.VerificationMobileActivity
+import com.moddakir.moddakir.ui.bases.authentication.ForgetPasswordActivity
+import com.moddakir.moddakir.ui.bases.authentication.LoginActivity
+import com.moddakir.moddakir.ui.bases.authentication.LoginWithMobileActivity
+import com.moddakir.moddakir.ui.bases.authentication.ResetPasswordActivity
+import com.moddakir.moddakir.ui.bases.authentication.VerificationMobileActivity
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertTrue
 import org.junit.Before

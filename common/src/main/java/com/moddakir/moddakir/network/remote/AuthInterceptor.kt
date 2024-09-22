@@ -3,7 +3,7 @@ package com.moddakir.moddakir.network.remote
 import android.content.Intent
 import com.moddakir.moddakir.App
 import com.moddakir.moddakir.network.Session
-import com.moddakir.moddakir.view.bases.MainActivity
+import com.moddakir.moddakir.ui.bases.MainActivity
 import okhttp3.Interceptor
 import okhttp3.Response
 import javax.inject.Inject
@@ -23,7 +23,7 @@ class AuthInterceptor @Inject constructor() : Interceptor {
                 Authorization,
                 Session.xAccessToken
             )
-            .method(originalRequest.method, originalRequest.body)
+           // .method(originalRequest.method, originalRequest.body)
 
         if (Session.xAccessToken.isEmpty()
         ) {

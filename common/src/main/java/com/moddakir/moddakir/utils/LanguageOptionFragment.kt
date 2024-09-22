@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.moddakirapps.R
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.moddakir.moddakir.adapter.LangOptionsAdapter
-import com.moddakir.moddakir.view.bases.listeners.OptionLanguageClickListener
+import com.moddakir.moddakir.ui.bases.listeners.OptionLanguageClickListener
 
 class LanguageOptionFragment(private var lang: (Language) -> Unit, private var isNeedDefault: Boolean = false)
     : BottomSheetDialogFragment() {

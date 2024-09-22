@@ -7,7 +7,6 @@ import com.moddakir.moddakir.model.response.OTPResponseModel
 import com.moddakir.moddakir.model.response.ResponseModel
 import com.moddakir.moddakir.network.Resource
  interface RemoteSource {
-
     suspend fun requestLogin(
         email: String?,
         userName: String?,

@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
-    <com.moddakir.moddakir.view.widget.TextViewCalibriBold
+    <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,13 +51,13 @@
             android:orientation="vertical"
             android:layout_marginStart="@dimen/_8sdp"
             android:layout_marginEnd="@dimen/_8sdp">
-            <com.moddakir.moddakir.view.widget.TextViewCalibriBold
+            <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/i_m_not_a_robot"
                 android:textColor="@color/darkGray"
                 android:textSize="@dimen/_8sdp" />
-            <com.moddakir.moddakir.view.widget.TextViewCalibriBold
+            <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
                 android:id="@+id/confirm_not_robot_tx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
