@@ -10,6 +10,7 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <string name="serverclientid" translatable="false">973281079104-4m5ll1ndsuqioai766nmkbbuj3v0ki1a.apps.googleusercontent.com</string>
 
     <string name="teacher_notification">Teacher notification</string>
     <string name="teachers_list_female">All teacher</string>

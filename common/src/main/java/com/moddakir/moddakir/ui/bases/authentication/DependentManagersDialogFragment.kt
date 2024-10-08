@@ -16,11 +16,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.moddakirapps.R
 import com.example.moddakirapps.databinding.FragmentDependentManagersDialogBinding
 import com.moddakir.moddakir.adapter.DependentManagersAdapter
-import com.moddakir.moddakir.model.Student
+import com.moddakir.moddakir.network.model.Student
 
 class DependentManagersDialogFragment() : DialogFragment() {
     private var pagenum = 1
-    private val students: List<Student> = ArrayList<Student>()
+    private val students: List<com.moddakir.moddakir.network.model.Student> = ArrayList<com.moddakir.moddakir.network.model.Student>()
     private var dependentManagersAdapter: DependentManagersAdapter? = null
     var studentId: String = ""
     private var id = ""

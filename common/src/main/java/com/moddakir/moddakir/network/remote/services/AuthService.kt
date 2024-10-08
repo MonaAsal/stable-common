@@ -1,12 +1,13 @@
 package com.moddakir.moddakir.network.remote.services
 
-import com.moddakir.moddakir.model.response.BaseResponse
-import com.moddakir.moddakir.model.response.ModdakirResponse
-import com.moddakir.moddakir.model.response.OTPResponseModel
-import com.moddakir.moddakir.model.response.ResponseModel
+import com.moddakir.moddakir.network.model.response.BaseResponse
+import com.moddakir.moddakir.network.model.response.ModdakirResponse
+import com.moddakir.moddakir.network.model.response.ResponseModel
+import com.moddakir.moddakir.network.model.response.TicketsResponse
 import retrofit2.Response
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 
@@ -37,7 +38,39 @@ interface AuthService {
     @POST("reset-password")
     suspend fun resetPassword(
         @Field("password") password: String
-        ): Response<ModdakirResponse<ResponseModel>>
+    ): Response<ModdakirResponse<ResponseModel>>
+
+
+    @FormUrlEncoded
+    @POST("student-logout")
+    fun logout(): Response<ModdakirResponse<ResponseModel>>
+
+
+    @FormUrlEncoded
+    @GET("about-us")
+    fun aboutUs(): Response<ModdakirResponse<com.moddakir.moddakir.network.model.AboutModel>>
+
+    @FormUrlEncoded
+    @POST("contact-us")
+    fun contactUsForm(
+        @Field("message") message: String,
+        @Field("title") title: String
+    ): Response<ModdakirResponse<ResponseModel>>
+
+    @FormUrlEncoded
+    @POST("student-set-call-setting")
+    fun changeSettings(
+        @Field("enableVoiceRecording") message: String,
+        @Field("enableVideoRecording") title: String
+    ): Response<ModdakirResponse<ResponseModel>>
+
+
+    @FormUrlEncoded
+    @POST("get-list-contactUs")
+    fun getListContactUs(
+        @Field("pageIndex") pageIndex: Int,
+        @Field("pageSize") pageSize: Int
+    ): Response<ModdakirResponse<TicketsResponse>>
 
 
 }

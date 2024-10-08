@@ -126,6 +126,7 @@ dependencies {
     //Dagger-Hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.activity:activity:1.9.2'
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
 
@@ -205,10 +206,13 @@ dependencies {
      //recaptcha
     implementation 'com.google.android.recaptcha:recaptcha:18.5.0-beta02'
 
-
     api "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.1.1"
 
+    implementation("com.google.firebase:firebase-auth:17.3.3")
 
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 }
 kapt {
     correctErrorTypes = true

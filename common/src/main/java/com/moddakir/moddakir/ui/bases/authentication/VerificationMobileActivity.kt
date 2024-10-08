@@ -9,8 +9,9 @@ import com.example.moddakirapps.R
 import com.example.moddakirapps.databinding.ActivityVerificationMobileBinding
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.recaptcha.RecaptchaAction
-import com.moddakir.moddakir.model.RecaptchaImpl.Companion.recaptchaTasksClient
-import com.moddakir.moddakir.model.base.BaseActivity
+import com.moddakir.moddakir.network.model.RecaptchaImpl.Companion.recaptchaTasksClient
+import com.moddakir.moddakir.network.model.base.BaseActivity
+
 import com.moddakir.moddakir.viewModel.AutViewModel
 import dagger.hilt.android.AndroidEntryPoint
 

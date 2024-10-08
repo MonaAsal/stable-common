@@ -1,12 +1,13 @@
 package com.moddakir.moddakir.network.remote
 
 
-import com.moddakir.moddakir.model.response.BaseResponse
-import com.moddakir.moddakir.model.response.ModdakirResponse
-import com.moddakir.moddakir.model.response.OTPResponseModel
-import com.moddakir.moddakir.model.response.ResponseModel
 import com.moddakir.moddakir.network.Resource
- interface RemoteSource {
+import com.moddakir.moddakir.network.model.response.BaseResponse
+import com.moddakir.moddakir.network.model.response.ModdakirResponse
+import com.moddakir.moddakir.network.model.response.OTPResponseModel
+import com.moddakir.moddakir.network.model.response.ResponseModel
+
+interface RemoteSource {
     suspend fun requestLogin(
         email: String?,
         userName: String?,

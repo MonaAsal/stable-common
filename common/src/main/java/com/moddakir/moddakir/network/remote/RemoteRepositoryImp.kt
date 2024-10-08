@@ -1,17 +1,20 @@
 package com.moddakir.moddakir.network.remote
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.provider.Settings
 import android.util.Log
 import com.google.gson.Gson
+import com.moddakir.moddakir.App
 import com.moddakir.moddakir.App.Companion.context
-import com.moddakir.moddakir.model.ErrorModel
-import com.moddakir.moddakir.model.response.BaseResponse
-import com.moddakir.moddakir.model.response.ErrorResponse
-import com.moddakir.moddakir.model.response.ModdakirResponse
-import com.moddakir.moddakir.model.response.OTPResponseModel
-import com.moddakir.moddakir.model.response.ResponseModel
 import com.moddakir.moddakir.network.Resource
+import com.moddakir.moddakir.network.model.response.BaseResponse
+import com.moddakir.moddakir.network.model.response.ErrorResponse
+import com.moddakir.moddakir.network.model.response.ModdakirResponse
+import com.moddakir.moddakir.network.model.response.OTPResponseModel
+import com.moddakir.moddakir.network.model.response.ResponseModel
+import com.moddakir.moddakir.network.model.response.SocialResponse
+import com.moddakir.moddakir.network.model.response.TicketsResponse
 import com.moddakir.moddakir.network.remote.services.AuthService
 import com.moddakir.moddakir.network.remote.services.NonAuthService
 import retrofit2.Response
@@ -34,8 +37,13 @@ class RemoteRepositoryImp @Inject constructor() : RemoteRepository {
                     try {
                         val baseResponse = (response.body() as BaseResponse)
 
-                        val list = ArrayList<ErrorModel>()
-                        list.add(ErrorModel("400", baseResponse.message!!))
+                        val list = ArrayList<com.moddakir.moddakir.network.model.ErrorModel>()
+                        list.add(
+                            com.moddakir.moddakir.network.model.ErrorModel(
+                                "400",
+                                baseResponse.message!!
+                            )
+                        )
                         var errorResponse = ErrorResponse(list.toList())
                         errorResponse.status = false
                         errorResponse
@@ -210,6 +218,130 @@ class RemoteRepositoryImp @Inject constructor() : RemoteRepository {
         }
         return try {
             var res = response as ModdakirResponse<ResponseModel>
+            Resource.Success(data = res)
+        } catch (e: Exception) {
+            Resource.DataError(errorResponse = response as ErrorResponse)
+        }
+    }
+
+    @SuppressLint("HardwareIds")
+    override suspend fun signInWithSocial(
+        email: String,
+        name: String,
+        id: String,
+        gender: String,
+        avatarUrl: String,
+        provider: String,
+        token: String,
+        lang: String,
+        context: Context
+    ): Resource<ModdakirResponse<SocialResponse>> {
+        val nonAuthService = ServiceGenerator.createService(NonAuthService::class.java, false)
+        val deviceUUID=Settings.Secure.getString(App.context.contentResolver, Settings.Secure.ANDROID_ID)
+        val response = processCall {
+            nonAuthService.signInWithSocial(
+                email,name,id,gender,avatarUrl,provider,token,lang,deviceUUID
+            )
+        }
+        return try {
+            var res = response as ModdakirResponse<SocialResponse>
+            Resource.Success(data = res)
+        } catch (e: Exception) {
+            Resource.DataError(errorResponse = response as ErrorResponse)
+        }
+    }
+
+    override suspend fun logout(): Resource<ModdakirResponse<ResponseModel>> {
+        val authService = ServiceGenerator.createService(AuthService::class.java, false)
+        val response = processCall {
+            authService.logout()
+        }
+        return try {
+            var res = response as ModdakirResponse<ResponseModel>
+            Resource.Success(data = res)
+        } catch (e: Exception) {
+            Resource.DataError(errorResponse = response as ErrorResponse)
+        }
+    }
+
+    override suspend fun getAboutUs(): Resource<ModdakirResponse<com.moddakir.moddakir.network.model.AboutModel>> {
+        val authService = ServiceGenerator.createService(AuthService::class.java, false)
+        val response = processCall {
+            authService.aboutUs()
+        }
+        return try {
+            var res = response as ModdakirResponse<com.moddakir.moddakir.network.model.AboutModel>
+            Resource.Success(data = res)
+        } catch (e: Exception) {
+            Resource.DataError(errorResponse = response as ErrorResponse)
+        }
+    }
+
+    override suspend fun contactUsForm(
+        message: String,
+        title: String
+    ): Resource<ModdakirResponse<ResponseModel>> {
+        val authService = ServiceGenerator.createService(AuthService::class.java, false)
+        val response = processCall {
+            authService.contactUsForm(message,title)
+        }
+        return try {
+            var res = response as ModdakirResponse<ResponseModel>
+            Resource.Success(data = res)
+        } catch (e: Exception) {
+            Resource.DataError(errorResponse = response as ErrorResponse)
+        }
+    }
+
+    override suspend fun submitJoinUs(
+        firstName: String,
+        managerId: String,
+        programType: String,
+        username: String,
+        email: String,
+        phone: String,
+        nationality: String,
+        educationLevel: String,
+        deviceUUID: String,
+        gender: String,
+        education: com.moddakir.moddakir.network.model.Education,
+        password: String
+    ): Resource<ModdakirResponse<ResponseModel>> {
+        val nonAuthService = ServiceGenerator.createService(NonAuthService::class.java, false)
+        val response = processCall {
+            nonAuthService.submitJoinUs(firstName,managerId,programType,username,email,phone,nationality,educationLevel,deviceUUID,gender,education,password)
+        }
+        return try {
+            var res = response as ModdakirResponse<ResponseModel>
+            Resource.Success(data = res)
+        } catch (e: Exception) {
+            Resource.DataError(errorResponse = response as ErrorResponse)
+        }
+    }
+
+    override suspend fun changeSettings(
+        enableVoiceRecording: String,
+        enableVideoRecording: String
+    ): Resource<ModdakirResponse<ResponseModel>> {
+        val authService = ServiceGenerator.createService(AuthService::class.java, false)
+        val response = processCall {
+            authService.changeSettings(enableVoiceRecording,enableVideoRecording)
+        }
+        return try {
+            var res = response as ModdakirResponse<ResponseModel>
+            Resource.Success(data = res)
+        } catch (e: Exception) {
+            Resource.DataError(errorResponse = response as ErrorResponse)
+        }
+    }
+
+    override suspend fun getListContactUs(page: Int): Resource<ModdakirResponse<TicketsResponse>> {
+        val authService = ServiceGenerator.createService(AuthService::class.java, false)
+        val response = processCall {
+            authService.getListContactUs(page,20)
+        }
+        return try {
+            var res = response as ModdakirResponse<TicketsResponse>
             Resource.Success(data = res)
         } catch (e: Exception) {
             Resource.DataError(errorResponse = response as ErrorResponse)

@@ -14,12 +14,12 @@ import com.example.moddakirapps.BuildConfig
 import com.example.moddakirapps.R
 import com.moddakir.moddakir.adapter.AccountsAdapter
 import com.moddakir.moddakir.helper.SavedFingerAccountsPreferences
-import com.moddakir.moddakir.model.SavedFingerAccount
+import com.moddakir.moddakir.network.model.SavedFingerAccount
 import com.moddakir.moddakir.ui.bases.listeners.RecyclerItemListener
 import com.moddakir.moddakir.ui.widget.ButtonCalibriBold
 import timber.log.Timber
 
-abstract class FingerBiometricAuthenticator : RecyclerItemListener<SavedFingerAccount> {
+abstract class FingerBiometricAuthenticator : RecyclerItemListener<com.moddakir.moddakir.network.model.SavedFingerAccount> {
     private var goldfinger: Goldfinger? = null
     val dialogBuilder = AlertDialog.Builder(getContext())
     val alertDialog1 = dialogBuilder.create()
@@ -102,7 +102,12 @@ private var  savedFingerAccountsPreferences: SavedFingerAccountsPreferences =
         pDialog.setConfirmClickListener { sweetAlertDialog ->
             try {
 
-                savedFingerAccountsPreferences.saveAccount(SavedFingerAccount(email!!, password!!))
+                savedFingerAccountsPreferences.saveAccount(
+                    com.moddakir.moddakir.network.model.SavedFingerAccount(
+                        email!!,
+                        password!!
+                    )
+                )
             } catch (ex: Exception) {
                 Timber.e("ExceptionInRegister %s", ex.toString())
             } finally {
@@ -120,7 +125,7 @@ private var  savedFingerAccountsPreferences: SavedFingerAccountsPreferences =
     abstract fun getHostActivity(): FragmentActivity
 
     abstract fun setAccountData(email: String?, password: String?)
-    override fun onItemSelected(account: SavedFingerAccount) {
+    override fun onItemSelected(account: com.moddakir.moddakir.network.model.SavedFingerAccount) {
         setAccountData(account.userName, account.password)
         alertDialog1.dismiss()
 

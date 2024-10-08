@@ -1,16 +1,17 @@
 package com.moddakir.moddakir.viewModel
 
+import android.content.Context
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.moddakir.moddakir.model.base.BaseViewModel
-import com.moddakir.moddakir.model.base.error.ErrorManager
-import com.moddakir.moddakir.model.base.error.ErrorMapper
-import com.moddakir.moddakir.model.response.BaseResponse
-import com.moddakir.moddakir.model.response.ModdakirResponse
-import com.moddakir.moddakir.model.response.OTPResponseModel
-import com.moddakir.moddakir.model.response.ResponseModel
+import com.example.moddakirapps.R
 import com.moddakir.moddakir.network.Resource
+import com.moddakir.moddakir.network.model.base.BaseViewModel
+import com.moddakir.moddakir.network.model.base.error.ErrorManager
+import com.moddakir.moddakir.network.model.base.error.ErrorMapper
+import com.moddakir.moddakir.network.model.response.BaseResponse
+import com.moddakir.moddakir.network.model.response.ModdakirResponse
+import com.moddakir.moddakir.network.model.response.OTPResponseModel
+import com.moddakir.moddakir.network.model.response.ResponseModel
 import com.moddakir.moddakir.useCase.AuthenticationUseCase
 import com.moddakir.moddakir.utils.ValidationUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -23,7 +24,6 @@ class AutViewModel @Inject constructor(
 
     override val errorManager: ErrorManager get() = ErrorManager(ErrorMapper())
     private var validationUtils: ValidationUtils = ValidationUtils()
-    private val loginMutableLiveData = MutableLiveData<Resource<ModdakirResponse<ResponseModel>>>()
     private val loginTeacherMutableLiveData = MutableLiveData<Resource<ModdakirResponse<ResponseModel>>>()
     private val forgetPasswordMutableLiveData = MutableLiveData<Resource<ModdakirResponse<ResponseModel>>>()
     private val sendPhoneVerifyNumMutableLiveData = MutableLiveData<Resource<ModdakirResponse<OTPResponseModel>>>()
@@ -31,6 +31,7 @@ class AutViewModel @Inject constructor(
     private val validatePhoneNumberMutableLiveData = MutableLiveData<Resource<ModdakirResponse<BaseResponse>>>()
     private val resetPasswordMutableLiveData = MutableLiveData<Resource<ModdakirResponse<ResponseModel>>>()
 
+    private val loginMutableLiveData = MutableLiveData<Resource<ModdakirResponse<ResponseModel>>>()
     val loginLiveData: MutableLiveData<Resource<ModdakirResponse<ResponseModel>>> = loginMutableLiveData
     val loginTeacherLiveData: MutableLiveData<Resource<ModdakirResponse<ResponseModel>>> = loginTeacherMutableLiveData
     val sendForgetPasswordLiveData: MutableLiveData<Resource<ModdakirResponse<ResponseModel>>> = forgetPasswordMutableLiveData
@@ -100,5 +101,63 @@ class AutViewModel @Inject constructor(
             authUseCase.resetPassword(password)
         }
 
+    }
+
+    fun signInWithSocial( email:String,  name:String,  id:String,  gender:String,
+                          avatarUrl:String,  provider:String,
+                          token:String,  lang:String,  context:Context) {
+        viewModelScope.launch {
+            authUseCase.signInWithSocial(email,name,id,gender,avatarUrl,provider,token,lang,context)
+        }
+
+    }
+
+    fun submitJoinUs(
+        firstName: String,
+        managerId: String,
+        programType: String,
+        username: String,
+        email: String,
+        phone: String,
+        nationality: String,
+        educationLevel: String,
+        deviceUUID: String,
+        gender: String,
+        education: com.moddakir.moddakir.network.model.Education,
+        password: String
+    ) {
+        viewModelScope.launch {
+            authUseCase.submitJoinUs(firstName,managerId,programType,username,email,phone,nationality,educationLevel,deviceUUID,gender,education,password)
+        }
+
+    }
+
+
+    fun requestLogout() {
+        viewModelScope.launch {
+            authUseCase.logout()
+        }
+    }
+
+    fun getGenderType(typeCheckedId: Int): String? {
+        return when (typeCheckedId) {
+            R.id.male_rb -> {
+                "male"
+            }
+
+            R.id.female_rb -> {
+                "female"
+            }
+
+            R.id.boy_rb -> {
+                "boy"
+            }
+
+            R.id.girl_rb -> {
+                "girl"
+            }
+
+            else -> null
+        }
     }
 }

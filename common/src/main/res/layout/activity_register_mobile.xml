@@ -2,9 +2,213 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    xmlns:fb="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.moddakir.moddakir.ui.bases.authentication.RegisterMobileActivity">
+    android:layout_height="match_parent">
+
+    <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="80dp"
+        android:gravity="start"
+        android:text="@string/create_new_account"
+        android:textColor="@color/colorBlack"
+        android:textSize="17dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/login_ln"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <com.moddakir.moddakir.ui.widget.TextViewLateefRegOT
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/already_have_account1"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="11dp" />
+
+        <com.moddakir.moddakir.ui.widget.TextViewLateefRegOT
+            android:id="@+id/tv_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginLeft="15dp"
+            android:contentDescription="@string/openLoginAction"
+            android:text="@string/log_in"
+            android:textColor="@color/colorPrimaryStudentTeacher"
+            android:textSize="11dp" />
+
+    </LinearLayout>
+
+    <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+        android:id="@+id/phone_title_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginTop="70dp"
+        android:text="@string/mobile_number"
+        android:textColorHint="@android:color/darker_gray"
+        android:theme="@style/CustomEditTextTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <include
+        android:id="@+id/linear"
+        layout="@layout/country_code_picker"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:gravity="bottom"
+        app:layout_constraintEnd_toEndOf="@+id/phone_title_tv"
+        app:layout_constraintStart_toStartOf="@+id/phone_title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/phone_title_tv"
+        app:layout_constraintWidth_percent=".9" />
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1"
+        android:background="@color/colorGray"
+        app:layout_constraintTop_toTopOf="@id/textView5"
+        app:layout_constraintStart_toStartOf="@id/linearLayout"
+        app:layout_constraintBottom_toBottomOf="@id/textView5"
+        app:layout_constraintEnd_toStartOf="@id/textView5"
+        android:layout_marginEnd="12dp"/>
+
+    <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/or"
+        app:layout_constraintTop_toBottomOf="@id/linear"
+        app:layout_constraintStart_toStartOf="@id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@id/linearLayout"
+        android:layout_marginTop="24dp"
+        android:textSize="10dp"/>
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1"
+        android:background="@color/colorGray"
+        app:layout_constraintTop_toTopOf="@id/textView5"
+        app:layout_constraintEnd_toEndOf="@id/linearLayout"
+        app:layout_constraintBottom_toBottomOf="@id/textView5"
+        app:layout_constraintStart_toEndOf="@id/textView5"
+        android:layout_marginStart="12dp"/>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/custom_border_lightgray"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_30sdp"
+        android:paddingVertical="@dimen/_5sdp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+        <com.moddakir.moddakir.ui.widget.TextViewLateefRegOT
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingEnd="@dimen/_20sdp"
+            android:text="@string/by_using"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/btn_google"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/google_2"
+            android:contentDescription="@string/googleLoginAction" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+
+        <ImageView
+            android:id="@+id/twitter"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/ic_twitter" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+
+        <ImageView
+            android:id="@+id/btn_facebook"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/ic_facebook_logo"
+            android:contentDescription="@string/facebookLoginAction"
+            android:visibility="visible" />
+
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/login_button"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/ic_facebook_logo"
+            android:visibility="gone"
+            fb:login_text=""
+            fb:logout_text="" />
+    </LinearLayout>
+    <include
+        android:id="@+id/recaptcha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        layout="@layout/recaptcha_layout"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_25sdp"/>
+
+    <com.moddakir.moddakir.ui.widget.ButtonCalibriBold
+        android:id="@+id/btn_next"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/custom_turquoise_solid"
+        android:contentDescription="@string/nextAction"
+        android:gravity="center"
+        android:text="@string/send"
+        android:enabled="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/linear"
+        app:layout_constraintStart_toStartOf="@id/linear"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

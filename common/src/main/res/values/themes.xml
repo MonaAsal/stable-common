@@ -13,6 +13,9 @@
         <item name="android:statusBarColor">@color/colorBlack</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="SwitchCompatTheme">
+        <item name="colorControlActivated">@color/colorPrimaryStudentTeacher</item>
+    </style>
 
     <style name="Theme.ModdakirApps.Fullscreen" parent="Theme.ModdakirApps">
         <item name="android:actionBarStyle">@style/Widget.Theme.ModdakirApps.ActionBar.Fullscreen

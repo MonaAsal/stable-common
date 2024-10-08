@@ -1,10 +1,13 @@
 package com.moddakir.moddakir.network.remote
 
-import com.moddakir.moddakir.model.response.BaseResponse
-import com.moddakir.moddakir.model.response.ModdakirResponse
-import com.moddakir.moddakir.model.response.OTPResponseModel
-import com.moddakir.moddakir.model.response.ResponseModel
+import android.content.Context
 import com.moddakir.moddakir.network.Resource
+import com.moddakir.moddakir.network.model.response.BaseResponse
+import com.moddakir.moddakir.network.model.response.ModdakirResponse
+import com.moddakir.moddakir.network.model.response.OTPResponseModel
+import com.moddakir.moddakir.network.model.response.ResponseModel
+import com.moddakir.moddakir.network.model.response.SocialResponse
+import com.moddakir.moddakir.network.model.response.TicketsResponse
 
 
 interface RemoteRepository {
@@ -55,5 +58,33 @@ interface RemoteRepository {
     suspend fun resetPassword(
         password: String
     ): Resource<ModdakirResponse<ResponseModel>>
+
+    suspend fun  signInWithSocial( email:String,  name:String,  id:String,  gender:String,
+                                   avatarUrl:String,  provider:String,
+                                   token:String,  lang:String,  context: Context
+    ) : Resource<ModdakirResponse<SocialResponse>>
+
+    suspend fun logout(): Resource<ModdakirResponse<ResponseModel>>
+    suspend fun getAboutUs(): Resource<ModdakirResponse<com.moddakir.moddakir.network.model.AboutModel>>
+
+    suspend fun contactUsForm(message: String,
+                              title: String): Resource<ModdakirResponse<ResponseModel>>
+
+    suspend fun submitJoinUs(firstName: String,
+                             managerId: String,
+                             programType: String,
+                             username: String,
+                             email: String,
+                             phone: String,
+                             nationality: String,
+                             educationLevel: String,
+                             deviceUUID: String,
+                             gender: String,
+                             education: com.moddakir.moddakir.network.model.Education,
+                             password: String): Resource<ModdakirResponse<ResponseModel>>
+
+    suspend fun changeSettings(enableVoiceRecording:String,enableVideoRecording:String): Resource<ModdakirResponse<ResponseModel>>
+
+    suspend fun getListContactUs(page: Int): Resource<ModdakirResponse<TicketsResponse>>
 
 }

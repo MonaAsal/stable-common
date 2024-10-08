@@ -5,7 +5,7 @@ import androidx.activity.viewModels
 import com.example.moddakirapps.R
 import com.example.moddakirapps.databinding.ActivityResetPasswordBinding
 import com.jakewharton.rxbinding2.widget.RxTextView
-import com.moddakir.moddakir.model.base.BaseActivity
+import com.moddakir.moddakir.network.model.base.BaseActivity
 import com.moddakir.moddakir.utils.ValidationUtils
 import com.moddakir.moddakir.viewModel.AutViewModel
 import io.reactivex.Observable

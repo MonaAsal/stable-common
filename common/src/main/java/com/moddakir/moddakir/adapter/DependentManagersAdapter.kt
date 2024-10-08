@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import android.widget.RadioButton
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moddakirapps.R
-import com.moddakir.moddakir.model.Student
+import com.moddakir.moddakir.network.model.Student
 
 class DependentManagersAdapter(
-    private val normalPathModels: List<Student>,
+    private val normalPathModels: List<com.moddakir.moddakir.network.model.Student>,
     val planClickListener: () -> Unit,
     private var selectedPosition: Int
 ) :

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimaryStudentTeacher"
+        android:theme="@style/toolbar_theme" />
+    <android.webkit.WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="@string/app_version"
+        android:textColor="@color/colorPrimaryStudentTeacher"
+        android:textSize="16sp" />
+
+    <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+        android:id="@+id/tv_version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="13sp" />
+
+</LinearLayout>

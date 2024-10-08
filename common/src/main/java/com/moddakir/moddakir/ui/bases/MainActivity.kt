@@ -8,16 +8,13 @@ import com.moddakir.moddakir.App
 import com.moddakir.moddakir.App.Companion.AppName
 import com.moddakir.moddakir.App.Companion.ApplicationVersion
 import com.moddakir.moddakir.App.Companion.ColorPrimary
-import com.moddakir.moddakir.App.Companion.SecondColor
-import com.moddakir.moddakir.App.Companion.WhatsAppNum
-import com.moddakir.moddakir.model.RecaptchaImpl
-import com.moddakir.moddakir.model.base.BaseActivity
+import com.moddakir.moddakir.network.model.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity() {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var recaptchaImpl:RecaptchaImpl
+    private lateinit var recaptchaImpl: com.moddakir.moddakir.network.model.RecaptchaImpl
     override val layoutId: Int
         get() = R.layout.activity_main
 
@@ -29,7 +26,7 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        recaptchaImpl= RecaptchaImpl()
+        recaptchaImpl= com.moddakir.moddakir.network.model.RecaptchaImpl()
         recaptchaImpl.getRecaptchaTasksClient(application, this, RecaptchaAction.SIGNUP)
 
         binding.StartApp.setOnClickListener{

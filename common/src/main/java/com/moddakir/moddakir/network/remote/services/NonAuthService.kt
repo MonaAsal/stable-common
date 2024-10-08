@@ -1,8 +1,9 @@
 package com.moddakir.moddakir.network.remote.services
 
-import com.moddakir.moddakir.model.response.ModdakirResponse
-import com.moddakir.moddakir.model.response.OTPResponseModel
-import com.moddakir.moddakir.model.response.ResponseModel
+import com.moddakir.moddakir.network.model.response.ModdakirResponse
+import com.moddakir.moddakir.network.model.response.OTPResponseModel
+import com.moddakir.moddakir.network.model.response.ResponseModel
+import com.moddakir.moddakir.network.model.response.SocialResponse
 import retrofit2.Response
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -56,6 +57,36 @@ interface NonAuthService {
 
     ): Response<ModdakirResponse<OTPResponseModel>>
 
+    @FormUrlEncoded
+    @POST("sign-in-social")
+    suspend fun signInWithSocial(
+        @Field("email") email: String?,
+        @Field("fullName") name: String,
+        @Field("providerUserId") providerUserId: String,
+        @Field("gender") gender: String?,
+        @Field("avatarUrl") avatarUrl: String?,
+        @Field("providerType") providerType: String,
+        @Field("providerToken") providerToken: String,
+        @Field("lang") lang: String,
+        @Field("deviceUUID") deviceUUID: String,
+        ): Response<ModdakirResponse<SocialResponse>>
+
+    @FormUrlEncoded
+    @POST("student-join-us")
+    suspend fun submitJoinUs(
+        @Field("firstName") firstName: String,
+        @Field("managerId") managerId: String,
+        @Field("programType") programType: String,
+        @Field("username") username: String?,
+        @Field("email") email: String,
+        @Field("phone") phone: String,
+        @Field("nationality") nationality: String,
+        @Field("educationLevel") educationLevel: String,
+        @Field("deviceUUID") deviceUUID: String,
+        @Field("gender") gender: String,
+        @Field("education") education: com.moddakir.moddakir.network.model.Education,
+        @Field("password") password: String,
+    ): Response<ModdakirResponse<ResponseModel>>
 
 
 }

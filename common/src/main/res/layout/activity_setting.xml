@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryStudentTeacher"
+        android:theme="@style/toolbar_theme"
+        app:title="@string/settings" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+                android:id="@+id/lang_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/appLang"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/langNameTv"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:background="@drawable/bg_rounded_rectangle"
+                android:gravity="center|start"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:text=""
+                android:textAlignment="viewStart"
+                android:textColor="@color/darkGray"
+                android:textStyle="bold"
+                app:drawableEndCompat="@drawable/dropdown"
+                app:layout_constraintEnd_toEndOf="@+id/lang_title"
+                app:layout_constraintStart_toStartOf="@+id/lang_title"
+                app:layout_constraintTop_toBottomOf="@+id/lang_title" />
+
+
+            <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+                android:id="@+id/voice_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/enableVoiceRecording"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/langNameTv" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/enableVoiceRecording"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="20dp"
+                android:checked="false"
+
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingEnd="10dp"
+                android:paddingRight="10dp"
+                android:theme="@style/SwitchCompatTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/voice_title" />
+
+            <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+                android:id="@+id/video_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/enableVideoRecording"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enableVoiceRecording" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/enableVideoRecording"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:checked="true"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingEnd="10dp"
+                android:paddingRight="10dp"
+                android:theme="@style/SwitchCompatTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/video_title" />
+
+
+
+            <com.moddakir.moddakir.ui.widget.ButtonCalibriBold
+                android:id="@+id/save_changes_but"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/custom_turquoise_solid"
+                android:text="@string/save"
+                android:textAlignment="center"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enableVideoRecording" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

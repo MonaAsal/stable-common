@@ -25,11 +25,9 @@ import com.moddakir.moddakir.App.Companion.SecondColor
 import com.moddakir.moddakir.App.Companion.WhatsAppNum
 import com.moddakir.moddakir.helper.SavedFingerAccountsPreferences
 import com.moddakir.moddakir.helper.LocaleHelper
-import com.moddakir.moddakir.model.SavedFingerAccount
-import com.moddakir.moddakir.model.base.BaseActivity
-import com.moddakir.moddakir.model.response.ModdakirResponse
-import com.moddakir.moddakir.model.response.ResponseModel
 import com.moddakir.moddakir.network.Resource
+import com.moddakir.moddakir.network.model.response.ModdakirResponse
+import com.moddakir.moddakir.network.model.response.ResponseModel
 import com.moddakir.moddakir.utils.FingerBiometricAuthenticator
 import com.moddakir.moddakir.utils.Language
 import com.moddakir.moddakir.utils.LanguageOptionFragment
@@ -41,7 +39,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
 @AndroidEntryPoint
-class LoginActivity : BaseActivity(),OnTouchListener {
+class LoginActivity : SocialMedialActivity(), OnTouchListener {
     override var layoutId: Int = R.layout.activity_login_student
     private lateinit var bindingStudent: ActivityLoginStudentBinding
     private lateinit var bindingTeacher: ActivityLoginTeacherBinding
@@ -49,19 +47,20 @@ class LoginActivity : BaseActivity(),OnTouchListener {
     private var fingerBiometricAuthenticator: FingerBiometricAuthenticator? = null
     private var passwordHideShow = false
     private val authViewModel: AutViewModel by viewModels()
-
-
-    lateinit var username :String
-        lateinit var password :String
-        lateinit var lang :String
+    lateinit var username: String
+    lateinit var password: String
+    lateinit var lang: String
     override fun initializeViewModel() {}
-    override fun observeViewModel() {}
+    override fun observeViewModel() {
+        observe(authViewModel.loginLiveData, ::handleLoginResponse)
+        observe(authViewModel.loginTeacherLiveData, ::handleLoginTeacherResponse)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-         enableEdgeToEdge()
+        enableEdgeToEdge()
         bindingScreenDesign()
-       lang= LocaleHelper.getLocale(this).toString()
+        lang = LocaleHelper.getLocale(this).toString()
         when (ApplicationVersion) {
             App.AppVersion.Version1.toString() -> {
                 initFingerBiometricAuthenticator()
@@ -74,28 +73,29 @@ class LoginActivity : BaseActivity(),OnTouchListener {
                 bindingStudent.tvForgetPassword.setOnClickListener { navigateToForgetPasswordScreen() }
                 bindingStudent.btnLogin.setOnClickListener {
                     loginStudent()
-                    username=bindingStudent.etEmail.text.toString()
-                    password=bindingStudent.etPassword.text.toString()
+                    username = bindingStudent.etEmail.text.toString()
+                    password = bindingStudent.etPassword.text.toString()
                 }
-                 observe(authViewModel.loginLiveData, ::handleLoginResponse)
+
             }
+
             App.AppVersion.Version2.toString() -> {
                 showStudentAppDialog()
                 bindingTeacher.btnLogin.setOnClickListener {
                     loginTeacher()
-                    username=bindingTeacher.etEmail.text.toString()
-                    password=bindingTeacher.etPassword.text.toString()
+                    username = bindingTeacher.etEmail.text.toString()
+                    password = bindingTeacher.etPassword.text.toString()
                 }
                 bindingTeacher.tvForgetPassword.setOnClickListener { navigateToForgetPasswordScreen() }
 
-                observe(authViewModel.loginTeacherLiveData, ::handleLoginTeacherResponse)
             }
+
             App.AppVersion.Version3.toString() -> {
 
                 bindingWhiteLabel.btnLogin.setOnClickListener {
                     loginWl()
-                    username=bindingWhiteLabel.etEmail.text.toString()
-                    password=bindingWhiteLabel.etPassword.text.toString()
+                    username = bindingWhiteLabel.etEmail.text.toString()
+                    password = bindingWhiteLabel.etPassword.text.toString()
                 }
                 bindingWhiteLabel.btnJoinUs.setOnClickListener { v ->
                     val dependentManagersDialogFragment =
@@ -108,8 +108,6 @@ class LoginActivity : BaseActivity(),OnTouchListener {
                 bindingWhiteLabel.languageTv.setOnClickListener { changeLangWL() }
                 bindingWhiteLabel.tvForgetPassword.setOnClickListener { navigateToForgetPasswordScreen() }
                 bindingWhiteLabel.whatsappCotactTv.setOnClickListener { openWhatsApp(WhatsAppNum) }
-
-                observe(authViewModel.loginLiveData, ::handleLoginResponse)
             }
         }
     }
@@ -123,18 +121,24 @@ class LoginActivity : BaseActivity(),OnTouchListener {
     }
 
     private fun setAppColor() {
-        val listTextViewPrimaryColors = listOf(bindingWhiteLabel.tvForgetPassword,bindingWhiteLabel.loginTV)
-        val listButtonPrimaryColors: List<ButtonCalibriBold> = listOf(bindingWhiteLabel.btnLogin,bindingWhiteLabel.btnJoinUs,bindingWhiteLabel.finger)
-        val listButtonSecondColor: List<ButtonCalibriBold> = listOf(bindingWhiteLabel.btnJoinTheGeneralProgram)
-        setButtonsColor(listButtonPrimaryColors,ColorPrimary)
+        val listTextViewPrimaryColors =
+            listOf(bindingWhiteLabel.tvForgetPassword, bindingWhiteLabel.loginTV)
+        val listButtonPrimaryColors: List<ButtonCalibriBold> = listOf(
+            bindingWhiteLabel.btnLogin,
+            bindingWhiteLabel.btnJoinUs,
+            bindingWhiteLabel.finger
+        )
+        val listButtonSecondColor: List<ButtonCalibriBold> =
+            listOf(bindingWhiteLabel.btnJoinTheGeneralProgram)
+        setButtonsColor(listButtonPrimaryColors, ColorPrimary)
         setButtonsColor(listButtonSecondColor, SecondColor)
-        setPrimaryColor(listTextViewPrimaryColors,ColorPrimary)
+        setPrimaryColor(listTextViewPrimaryColors, ColorPrimary)
     }
 
-    private fun changeLangWL(){
-        var language= Language.english
+    private fun changeLangWL() {
+        var language = Language.english
         if (LocaleHelper.getLocale(this)?.equals("en") == true)
-            language=Language.arabic
+            language = Language.arabic
         setChangeLang(language)
     }
 
@@ -154,7 +158,7 @@ class LoginActivity : BaseActivity(),OnTouchListener {
         )
     }
 
-    private fun openWhatsApp(uri:String) {
+    private fun openWhatsApp(uri: String) {
         val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
         startActivity(browserIntent)
     }
@@ -163,7 +167,7 @@ class LoginActivity : BaseActivity(),OnTouchListener {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             try {
                 val savedFingerAccount = SavedFingerAccountsPreferences()
-                val accounts: ArrayList<SavedFingerAccount?>? =
+                val accounts: ArrayList<com.moddakir.moddakir.network.model.SavedFingerAccount?>? =
                     savedFingerAccount.getSavedAccounts()
                 if (accounts.isNullOrEmpty() || !fingerBiometricAuthenticator!!.canAuthenticate()) {
                     bindingStudent.finger.visibility = View.GONE
@@ -183,6 +187,7 @@ class LoginActivity : BaseActivity(),OnTouchListener {
             App.AppVersion.Version1.toString() -> {
                 layoutId = R.layout.activity_login_student
                 bindingStudent = ActivityLoginStudentBinding.inflate(layoutInflater)
+                App.bindingStudent=bindingStudent
                 setContentView(bindingStudent.root)
             }
 
@@ -203,17 +208,21 @@ class LoginActivity : BaseActivity(),OnTouchListener {
     }
 
     private fun showAppButtons() {
-        if(intent.getBooleanExtra(LoginScreenEntities.joinUsPrograms.toString(),false)){
-            bindingWhiteLabel.btnJoinUs.visibility=View.VISIBLE
+        if (intent.getBooleanExtra(LoginScreenEntities.joinUsPrograms.toString(), false)) {
+            bindingWhiteLabel.btnJoinUs.visibility = View.VISIBLE
         }
-        if(intent.getBooleanExtra(LoginScreenEntities.joinGeneralProgram.toString(),false)){
-            bindingWhiteLabel.btnJoinTheGeneralProgram.visibility=View.VISIBLE
+        if (intent.getBooleanExtra(LoginScreenEntities.joinGeneralProgram.toString(), false)) {
+            bindingWhiteLabel.btnJoinTheGeneralProgram.visibility = View.VISIBLE
         }
-        if(intent.getBooleanExtra(LoginScreenEntities.educationMinistryProgram.toString(),false)){
-            bindingWhiteLabel.btnEducationMinistryProgram.visibility=View.VISIBLE
+        if (intent.getBooleanExtra(
+                LoginScreenEntities.educationMinistryProgram.toString(),
+                false
+            )
+        ) {
+            bindingWhiteLabel.btnEducationMinistryProgram.visibility = View.VISIBLE
         }
-        if(intent.getBooleanExtra(LoginScreenEntities.appLogo.toString(),false)){
-            bindingWhiteLabel.topLogoIV.visibility=View.VISIBLE
+        if (intent.getBooleanExtra(LoginScreenEntities.appLogo.toString(), false)) {
+            bindingWhiteLabel.topLogoIV.visibility = View.VISIBLE
         }
     }
 
@@ -224,15 +233,19 @@ class LoginActivity : BaseActivity(),OnTouchListener {
                     Language.english -> {
                         setChangeLang(Language.english)
                     }
+
                     Language.french -> {
                         setChangeLang(Language.french)
                     }
+
                     Language.urdu -> {
                         setChangeLang(Language.urdu)
                     }
+
                     Language.indonesia -> {
                         setChangeLang(Language.indonesia)
                     }
+
                     Language.arabic -> setChangeLang(Language.arabic)
                     else -> {
                         setChangeLang(Language.empty)
@@ -246,7 +259,7 @@ class LoginActivity : BaseActivity(),OnTouchListener {
 
     private fun setChangeLang(language: Language) {
         LocaleHelper.setLocale(this, getLanguageCode(language))
-        navigateToLoginIntroScreen()
+       // navigateToLoginIntroScreen()
     }
 
     private fun initFingerBiometricAuthenticator() {
@@ -254,12 +267,15 @@ class LoginActivity : BaseActivity(),OnTouchListener {
             override fun moveToNext() {
                 //  this@LoginActivity.moveToNext()
             }
+
             override fun getContext(): Context {
                 return this@LoginActivity
             }
+
             override fun getHostActivity(): FragmentActivity {
                 return this@LoginActivity
             }
+
             override fun setAccountData(email: String?, password: String?) {
                 bindingStudent.etEmail.setText(email)
                 bindingStudent.etPassword.setText(password)
@@ -268,16 +284,21 @@ class LoginActivity : BaseActivity(),OnTouchListener {
         }
         (fingerBiometricAuthenticator as FingerBiometricAuthenticator).initFingerAuth()
     }
+
     @SuppressLint("ClickableViewAccessibility")
     override fun onTouch(view: View?, event: MotionEvent): Boolean {
         passwordHideShow = !passwordHideShow
         when (event.action) {
-            MotionEvent.ACTION_UP -> bindingStudent.etPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-            MotionEvent.ACTION_DOWN ->bindingStudent.etPassword.inputType =(InputType.TYPE_CLASS_TEXT)
+            MotionEvent.ACTION_UP -> bindingStudent.etPassword.inputType =
+                InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+
+            MotionEvent.ACTION_DOWN -> bindingStudent.etPassword.inputType =
+                (InputType.TYPE_CLASS_TEXT)
         }
         passwordChange()
         return false
     }
+
     private fun passwordChange() {
         if (passwordHideShow) {
             bindingStudent.showPassIcon.setImageResource(R.drawable.ic_password_show)
@@ -285,6 +306,7 @@ class LoginActivity : BaseActivity(),OnTouchListener {
             bindingStudent.showPassIcon.setImageResource(R.drawable.ic_password_hide)
         }
     }
+
     private fun showStudentAppDialog() {
         val messageDialog = SweetAlertDialog(this, SweetAlertDialog.NORMAL_TYPE)
         messageDialog.setTitleText(resources.getString(R.string.teacher_app_login_message))
@@ -303,40 +325,50 @@ class LoginActivity : BaseActivity(),OnTouchListener {
         messageDialog.setCancelText(resources.getString(R.string.continue_))
         messageDialog.show()
     }
+
     private fun handleLoginResponse(loginResponse: Resource<ModdakirResponse<ResponseModel>>) {
         when (loginResponse) {
             is Resource.Loading -> {
                 bindingStudent.btnLogin.isEnabled = false
             }
+
             is Resource.Success -> loginResponse.data?.let {
             }
+
             is Resource.NetworkError -> {
                 loginResponse.errorCode?.let {
                 }
             }
+
             is Resource.DataError -> {
-                loginResponse.errorResponse?.let { showServerErrorMessage(it) }
+                loginResponse.errorResponse?.let { showServerErrorMessage(loginResponse.errorResponse) }
             }
-        }}
+        }
+    }
+
     private fun handleLoginTeacherResponse(loginResponse: Resource<ModdakirResponse<ResponseModel>>) {
         when (loginResponse) {
             is Resource.Loading -> {
                 bindingStudent.btnLogin.isEnabled = false
             }
+
             is Resource.Success -> loginResponse.data?.let {
             }
+
             is Resource.NetworkError -> {
                 loginResponse.errorCode?.let {
                 }
             }
-            is Resource.DataError -> {
-                loginResponse.errorResponse?.let { showServerErrorMessage(it) }
-            }
-        }}
 
-   enum class ProgramType(val value: String) {
-       Maqraatec("Maqraatec"),
-       Ministry("Ministry"),
-       General("General");
-   }
+            is Resource.DataError -> {
+                loginResponse.errorResponse?.let { showServerErrorMessage(loginResponse.errorResponse) }
+            }
+        }
+    }
+
+    enum class ProgramType(val value: String) {
+        Maqraatec("Maqraatec"),
+        Ministry("Ministry"),
+        General("General");
+    }
 }

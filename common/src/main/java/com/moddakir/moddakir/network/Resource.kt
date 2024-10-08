@@ -1,6 +1,6 @@
 package com.moddakir.moddakir.network
 
-import com.moddakir.moddakir.model.response.ErrorResponse
+import com.moddakir.moddakir.network.model.response.ErrorResponse
 
 // A generic class that contains data and status about loading this data.
 sealed class Resource<T>(

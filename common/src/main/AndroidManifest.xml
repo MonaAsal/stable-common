@@ -44,6 +44,27 @@
         android:theme="@style/Theme.ModdakirApps"
         tools:targetApi="31">
         <activity
+            android:name="com.moddakir.moddakir.ui.bases.staticPages.HistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.moddakir.moddakir.ui.bases.setting.SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.moddakir.moddakir.ui.bases.staticPages.ContactUsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.moddakir.moddakir.ui.bases.staticPages.WebViewActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.moddakir.moddakir.ui.bases.staticPages.WebViewActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.moddakir.moddakir.ui.bases.staticPages.AboutUsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.moddakir.moddakir.ui.bases.authentication.SocialMedialActivity"
+            android:exported="false" />
+        <activity
             android:name="com.moddakir.moddakir.ui.bases.authentication.JoinUsActivity"
             android:exported="false" />
         <activity

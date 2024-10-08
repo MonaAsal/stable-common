@@ -7,7 +7,10 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ProcessLifecycleOwner
+import com.example.moddakirapps.databinding.ActivityLoginStudentBinding
+import com.example.moddakirapps.databinding.ActivityRegisterMobileBinding
 import com.moddakir.moddakir.helper.LocaleHelper
+import com.moddakir.moddakir.utils.Utils
 import dagger.hilt.android.HiltAndroidApp
 
 
@@ -18,7 +21,9 @@ public class App : Application(), DefaultLifecycleObserver{
         super<Application>.onCreate()
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         context = applicationContext
+        utils=Utils()
         AppName="Student"
+        helper=LocaleHelper()
         ProcessLifecycleOwner.get().lifecycle.addObserver(this)
 
     }
@@ -29,6 +34,10 @@ public class App : Application(), DefaultLifecycleObserver{
         lateinit var WhatsAppNum:String
         lateinit var ColorPrimary:String
         lateinit var SecondColor:String
+        lateinit var utils: Utils
+        lateinit var helper:LocaleHelper
+        lateinit var bindingStudent: ActivityLoginStudentBinding
+        lateinit var binding: ActivityRegisterMobileBinding
 
     }
 

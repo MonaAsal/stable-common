@@ -11,8 +11,8 @@ import com.example.moddakirapps.databinding.CountryCodePickerBinding
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.recaptcha.RecaptchaAction
 import com.moddakir.moddakir.helper.LocaleHelper
-import com.moddakir.moddakir.model.RecaptchaImpl.Companion.recaptchaTasksClient
-import com.moddakir.moddakir.model.base.BaseActivity
+import com.moddakir.moddakir.network.model.RecaptchaImpl.Companion.recaptchaTasksClient
+import com.moddakir.moddakir.network.model.base.BaseActivity
 import com.moddakir.moddakir.utils.ValidationUtils
 import com.moddakir.moddakir.viewModel.AutViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -39,6 +39,7 @@ class ForgetPasswordActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingForgetPassword = ActivityForgetPasswordBinding.inflate(layoutInflater)
+        bindingCountryCodePickerBinding = CountryCodePickerBinding.inflate(layoutInflater)
         setContentView(bindingForgetPassword.root)
         bindingForgetPassword.mobileLogin.setOnClickListener{
             bindingForgetPassword.mailLinear.visibility = View.GONE

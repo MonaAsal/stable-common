@@ -7,7 +7,7 @@ import androidx.security.crypto.MasterKey
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.moddakir.moddakir.App.Companion.context
-import com.moddakir.moddakir.model.SavedFingerAccount
+import com.moddakir.moddakir.network.model.SavedFingerAccount
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -18,16 +18,16 @@ import java.security.GeneralSecurityException
  class SavedFingerAccountsPreferences {
     private val ACCOUNTS_KEY: String = "savedAccounts"
 
-    fun getSavedAccounts(): ArrayList<SavedFingerAccount?>? {
+    fun getSavedAccounts(): ArrayList<com.moddakir.moddakir.network.model.SavedFingerAccount?>? {
         try {
-            var users: ArrayList<SavedFingerAccount?> = ArrayList<SavedFingerAccount?>()
+            var users: ArrayList<com.moddakir.moddakir.network.model.SavedFingerAccount?> = ArrayList<com.moddakir.moddakir.network.model.SavedFingerAccount?>()
             val serializedObject: String? =  createSecurityPreference().getString(ACCOUNTS_KEY, null);
 
             if (serializedObject != null && !serializedObject.isEmpty()) {
                 val gson = Gson()
-                val type = object : TypeToken<List<SavedFingerAccount?>?>() {
+                val type = object : TypeToken<List<com.moddakir.moddakir.network.model.SavedFingerAccount?>?>() {
                 }.type
-                users = gson.fromJson<ArrayList<SavedFingerAccount?>>(serializedObject, type)
+                users = gson.fromJson<ArrayList<com.moddakir.moddakir.network.model.SavedFingerAccount?>>(serializedObject, type)
             }
             return users
         } catch (e: Exception) {
@@ -38,11 +38,11 @@ import java.security.GeneralSecurityException
     }
 
     @SuppressLint("CheckResult")
-    fun saveAccount(newAccount: SavedFingerAccount) {
+    fun saveAccount(newAccount: com.moddakir.moddakir.network.model.SavedFingerAccount) {
         Single.fromCallable {
             val pref: SharedPreferences =createSecurityPreference()
-            var users: ArrayList<SavedFingerAccount?>? = getSavedAccounts()
-            if (users == null) users = ArrayList<SavedFingerAccount?>()
+            var users: ArrayList<com.moddakir.moddakir.network.model.SavedFingerAccount?>? = getSavedAccounts()
+            if (users == null) users = ArrayList<com.moddakir.moddakir.network.model.SavedFingerAccount?>()
             val position: Int = getEmailPositionIfExist(newAccount.userName)
             if (position != -1) users!!.add(position, newAccount)
             else users!!.add(newAccount) //first one is that already used account
@@ -55,7 +55,7 @@ import java.security.GeneralSecurityException
     }
 
     private fun saveUsersList(
-        accounts: ArrayList<SavedFingerAccount?>?,
+        accounts: ArrayList<com.moddakir.moddakir.network.model.SavedFingerAccount?>?,
         preferences: SharedPreferences
     ) {
         val usersJson = Gson().toJson(accounts)
@@ -66,7 +66,7 @@ import java.security.GeneralSecurityException
 
     @Synchronized
     fun getEmailPositionIfExist(email: String?): Int {
-        val users: ArrayList<SavedFingerAccount?> = getSavedAccounts() ?: return -1
+        val users: ArrayList<com.moddakir.moddakir.network.model.SavedFingerAccount?> = getSavedAccounts() ?: return -1
         for (i in users.indices) { //remove any duplicates accounts
             if (users[i]?.userName != null && users[i]?.userName.equals(email)) return i
         }
@@ -75,7 +75,7 @@ import java.security.GeneralSecurityException
 
     @Synchronized
     fun getEmailAndPasswordPositionIfExist(email: String?, password: String?): Int {
-        val users: ArrayList<SavedFingerAccount?> = getSavedAccounts() ?: return -1
+        val users: ArrayList<com.moddakir.moddakir.network.model.SavedFingerAccount?> = getSavedAccounts() ?: return -1
         for (i in users.indices) { //remove any duplicates accounts
             if (users[i]?.userName == email && users[i]?.password == password
             ) return i
