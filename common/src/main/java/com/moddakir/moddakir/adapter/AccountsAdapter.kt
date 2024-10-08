@@ -9,9 +9,9 @@ import com.example.moddakirapps.R
 import com.moddakir.moddakir.network.model.SavedFingerAccount
 import com.moddakir.moddakir.ui.bases.listeners.RecyclerItemListener
 import com.moddakir.moddakir.ui.widget.TextViewCalibriBold
-class AccountsAdapter( private val listener: RecyclerItemListener<com.moddakir.moddakir.network.model.SavedFingerAccount>) :
+class AccountsAdapter( private val listener: RecyclerItemListener<SavedFingerAccount>) :
     RecyclerView.Adapter<AccountsAdapter.ViewHolder>() {
-    private var accounts: ArrayList<com.moddakir.moddakir.network.model.SavedFingerAccount?>? = null
+    private var accounts: ArrayList<SavedFingerAccount?>? = null
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

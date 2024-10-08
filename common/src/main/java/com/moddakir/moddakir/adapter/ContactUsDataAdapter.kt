@@ -11,7 +11,7 @@ import com.example.moddakirapps.R
 import com.moddakir.moddakir.App
 import com.moddakir.moddakir.network.model.SocialMedia
 
-class ContactUsDataAdapter( private val items: ArrayList<com.moddakir.moddakir.network.model.SocialMedia>?) :
+class ContactUsDataAdapter( private val items: ArrayList<SocialMedia>?) :
     RecyclerView.Adapter<ContactUsDataAdapter.ViewHolder>()  {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

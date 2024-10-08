@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryStudentTeacher"
+        android:theme="@style/toolbar_theme" />
+
+    <LinearLayout
+        android:id="@+id/ticket_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_margin="8dp"
+        android:background="@drawable/custom_border_lightgray_r40"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+                android:id="@+id/ticket_no_lb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@string/ticket_lb"
+                android:textColor="@color/colorPrimaryStudentTeacher"
+
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/ticket_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textColor="@color/colorGray"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+                android:id="@+id/title_lb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@string/title_lb"
+                android:textColor="@color/colorPrimaryStudentTeacher"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/ticket_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textColor="@color/colorGray"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/content_lb"
+            android:textColor="@color/colorPrimaryStudentTeacher"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textColor="@color/colorGray"
+            android:textStyle="bold"
+            tools:text="xkaslkjdlwajndcwjaen;jcd" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:padding="8dp"
+            android:textColor="@color/colorGray" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/details_reply_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/message_area"
+        android:layout_below="@+id/ticket_details"
+        android:layout_margin="8dp"
+        android:layout_marginTop="12dp" />
+
+
+    <RelativeLayout
+        android:id="@+id/message_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+
+        <com.moddakir.moddakir.ui.widget.EditTextUniqueLight
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/send"
+            android:background="@drawable/colorPrimaryStudentTeacher"
+            android:gravity="start|center_vertical"
+            android:hint="@string/reply"
+            android:inputType="text|textMultiLine"
+            android:padding="8dp"
+            android:scrollbars="vertical"
+            android:singleLine="true"
+            android:textColor="@color/colorGray"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/send"
+            android:textColor="@color/colorPrimaryStudentTeacher"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -8,12 +8,15 @@ import com.google.gson.Gson
 import com.moddakir.moddakir.App
 import com.moddakir.moddakir.App.Companion.context
 import com.moddakir.moddakir.network.Resource
+import com.moddakir.moddakir.network.model.TicketReplyResponse
 import com.moddakir.moddakir.network.model.response.BaseResponse
 import com.moddakir.moddakir.network.model.response.ErrorResponse
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.OTPResponseModel
 import com.moddakir.moddakir.network.model.response.ResponseModel
 import com.moddakir.moddakir.network.model.response.SocialResponse
+import com.moddakir.moddakir.network.model.response.TicketRepliesResponse
+import com.moddakir.moddakir.network.model.response.TicketResponse
 import com.moddakir.moddakir.network.model.response.TicketsResponse
 import com.moddakir.moddakir.network.remote.services.AuthService
 import com.moddakir.moddakir.network.remote.services.NonAuthService
@@ -342,6 +345,48 @@ class RemoteRepositoryImp @Inject constructor() : RemoteRepository {
         }
         return try {
             var res = response as ModdakirResponse<TicketsResponse>
+            Resource.Success(data = res)
+        } catch (e: Exception) {
+            Resource.DataError(errorResponse = response as ErrorResponse)
+        }
+    }
+
+    override suspend fun sendReplay(message: String, ticketId: String): Resource<ModdakirResponse<TicketReplyResponse>> {
+        val authService = ServiceGenerator.createService(AuthService::class.java, false)
+        val response = processCall {
+            authService.sendReplay(message,ticketId)
+        }
+        return try {
+            var res = response as ModdakirResponse<TicketReplyResponse>
+            Resource.Success(data = res)
+        } catch (e: Exception) {
+            Resource.DataError(errorResponse = response as ErrorResponse)
+        }
+    }
+
+    override suspend fun getTicketReplies(
+        page: Int,
+        messageId: String
+    ): Resource<ModdakirResponse<TicketRepliesResponse>> {
+        val authService = ServiceGenerator.createService(AuthService::class.java, false)
+        val response = processCall {
+            authService.getTicketReplies(page,20,messageId)
+        }
+        return try {
+            var res = response as ModdakirResponse<TicketRepliesResponse>
+            Resource.Success(data = res)
+        } catch (e: Exception) {
+            Resource.DataError(errorResponse = response as ErrorResponse)
+        }
+    }
+
+    override suspend fun getTicketById(ticketId: String): Resource<ModdakirResponse<TicketResponse>> {
+        val authService = ServiceGenerator.createService(AuthService::class.java, false)
+        val response = processCall {
+            authService.getTicketById(ticketId)
+        }
+        return try {
+            var res = response as ModdakirResponse<TicketResponse>
             Resource.Success(data = res)
         } catch (e: Exception) {
             Resource.DataError(errorResponse = response as ErrorResponse)

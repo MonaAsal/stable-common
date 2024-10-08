@@ -24,6 +24,7 @@ public class App : Application(), DefaultLifecycleObserver{
         utils=Utils()
         AppName="Student"
         helper=LocaleHelper()
+       // timeZoneOffset = data.getTimeZoneOffset() / 60
         ProcessLifecycleOwner.get().lifecycle.addObserver(this)
 
     }
@@ -38,6 +39,7 @@ public class App : Application(), DefaultLifecycleObserver{
         lateinit var helper:LocaleHelper
         lateinit var bindingStudent: ActivityLoginStudentBinding
         lateinit var binding: ActivityRegisterMobileBinding
+        var timeZoneOffset: Int = 0
 
     }
 

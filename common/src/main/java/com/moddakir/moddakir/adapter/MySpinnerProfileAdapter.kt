@@ -10,10 +10,10 @@ import android.widget.TextView
 import com.example.moddakirapps.R
 import com.moddakir.moddakir.network.model.FilterModel
 
-class MySpinnerProfileAdapter(context: Context, resource: Int,items: ArrayList<com.moddakir.moddakir.network.model.FilterModel>?) :
-    ArrayAdapter<com.moddakir.moddakir.network.model.FilterModel>(context, resource, items!!) {
+class MySpinnerProfileAdapter(context: Context, resource: Int,items: ArrayList<FilterModel>?) :
+    ArrayAdapter<FilterModel>(context, resource, items!!) {
     var font: Typeface = Typeface.createFromAsset(getContext().assets, "font/Calibri_Regular.ttf")
-    var items: ArrayList<com.moddakir.moddakir.network.model.FilterModel>? = null
+    var items: ArrayList<FilterModel>? = null
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val view = super.getView(position, convertView, parent!!) as TextView

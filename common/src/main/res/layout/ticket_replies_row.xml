@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@drawable/custom_border_lightgray_r40"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/avatar"
+        android:layout_width="@dimen/circular_img_size"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/avatar"
+         />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/avatar"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/_4sdp"
+        android:padding="2dp">
+
+        <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/user_name"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:text="@string/title_lb"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/username"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_Imageview_videoview"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="1dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reply"
+            app:layout_constraintEnd_toStartOf="@+id/ticket_date"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+            <ImageView
+                android:id="@+id/replyImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="4dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_moddakir_logo_md"
+                />
+
+            <ImageView
+                android:id="@+id/video_image"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerInParent="true"
+                android:adjustViewBounds="true"
+                android:elevation="4dp"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_play" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_audioview"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="1dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reply"
+            app:layout_constraintEnd_toStartOf="@+id/ticket_date"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+            android:id="@+id/ticket_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:layout_margin="8dp"
+            android:text="date time"
+            app:layout_constraintTop_toBottomOf="@+id/reply"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

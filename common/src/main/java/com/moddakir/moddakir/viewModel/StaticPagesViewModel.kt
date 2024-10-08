@@ -7,6 +7,7 @@ import com.moddakir.moddakir.network.model.AboutModel
 import com.moddakir.moddakir.network.model.base.BaseViewModel
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.ResponseModel
+import com.moddakir.moddakir.network.model.response.TicketsResponse
 import com.moddakir.moddakir.useCase.StaticPagesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -21,6 +22,9 @@ class StaticPagesViewModel @Inject constructor(
 
     private val contactUsMutableLiveData = MutableLiveData<Resource<ModdakirResponse<ResponseModel>>>()
     val contactUsLiveData: MutableLiveData<Resource<ModdakirResponse<ResponseModel>>> = contactUsMutableLiveData
+
+    private val historyMutableLiveData = MutableLiveData<Resource<ModdakirResponse<TicketsResponse>>>()
+    val historyLiveData: MutableLiveData<Resource<ModdakirResponse<TicketsResponse>>> = historyMutableLiveData
     fun getAboutUs() {
         viewModelScope.launch {
             staticPagesUseCase.getAboutUs()
@@ -35,6 +39,25 @@ class StaticPagesViewModel @Inject constructor(
     fun getListContactUs(page:Int) {
         viewModelScope.launch {
             staticPagesUseCase.getListContactUs(page)
+        }
+    }
+
+    fun sendReplay(message:String,ticketId:String) {
+        viewModelScope.launch {
+            staticPagesUseCase.sendReplay(message,ticketId)
+        }
+    }
+
+
+    fun getTicketReplies(page:Int,messageId:String) {
+        viewModelScope.launch {
+            staticPagesUseCase.getTicketReplies(page,messageId)
+        }
+    }
+
+    fun getTicketById(ticketId:String) {
+        viewModelScope.launch {
+            staticPagesUseCase.getTicketById(ticketId)
         }
     }
 
