@@ -43,8 +43,8 @@ class HistoryActivity : BaseActivity() {
         binding.historyRv.visibility = View.VISIBLE
         val layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         binding.historyRv.setLayoutManager(layoutManager)
-        historyPackageAdapter = TicketsHistoryAdapter(this, this, tickets)
-            binding.historyRv.setAdapter(historyPackageAdapter)
+       // historyPackageAdapter = TicketsHistoryAdapter(this, this, tickets)
+          //  binding.historyRv.setAdapter(historyPackageAdapter)
         binding.historyRv.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
