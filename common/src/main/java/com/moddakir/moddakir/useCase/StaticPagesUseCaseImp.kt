@@ -5,8 +5,8 @@ import com.moddakir.moddakir.network.Resource
 import com.moddakir.moddakir.network.model.TicketReplyResponse
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.ResponseModel
-import com.moddakir.moddakir.network.model.response.TicketRepliesResponse
 import com.moddakir.moddakir.network.model.response.TicketResponse
+import com.moddakir.moddakir.network.model.response.TicketsRepliesResponse
 import com.moddakir.moddakir.network.model.response.TicketsResponse
 import com.moddakir.moddakir.network.remote.RemoteRepository
 import javax.inject.Inject
@@ -34,7 +34,7 @@ class StaticPagesUseCaseImp @Inject constructor(
     override suspend fun getTicketReplies(
         page: Int,
         messageId: String
-    ): Resource<ModdakirResponse<TicketRepliesResponse>> {
+    ): Resource<ModdakirResponse<TicketsRepliesResponse>> {
         return repository.getTicketReplies(page,messageId)
     }
     override suspend fun getTicketById(ticketId:String): Resource<ModdakirResponse<TicketResponse>> {

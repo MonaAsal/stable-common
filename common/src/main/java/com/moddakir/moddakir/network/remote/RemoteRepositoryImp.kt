@@ -9,14 +9,15 @@ import com.moddakir.moddakir.App
 import com.moddakir.moddakir.App.Companion.context
 import com.moddakir.moddakir.network.Resource
 import com.moddakir.moddakir.network.model.TicketReplyResponse
+import com.moddakir.moddakir.network.model.response.BannerResponseModel
 import com.moddakir.moddakir.network.model.response.BaseResponse
 import com.moddakir.moddakir.network.model.response.ErrorResponse
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.OTPResponseModel
 import com.moddakir.moddakir.network.model.response.ResponseModel
 import com.moddakir.moddakir.network.model.response.SocialResponse
-import com.moddakir.moddakir.network.model.response.TicketRepliesResponse
 import com.moddakir.moddakir.network.model.response.TicketResponse
+import com.moddakir.moddakir.network.model.response.TicketsRepliesResponse
 import com.moddakir.moddakir.network.model.response.TicketsResponse
 import com.moddakir.moddakir.network.remote.services.AuthService
 import com.moddakir.moddakir.network.remote.services.NonAuthService
@@ -167,7 +168,7 @@ class RemoteRepositoryImp @Inject constructor() : RemoteRepository {
         deviceUUID: String,
         isSocialMediaAccountPending: Boolean?
     ): Resource<ModdakirResponse<ResponseModel>> {
-        val authService = ServiceGenerator.createService(AuthService::class.java, false)
+        val authService = ServiceGenerator.createService(AuthService::class.java, true)
         val response = processCall {
             authService.validateOTP(
                 code,
@@ -192,7 +193,7 @@ class RemoteRepositoryImp @Inject constructor() : RemoteRepository {
         deviceUUID: String,
         isSocialMediaAccountPending: Boolean?
     ): Resource<ModdakirResponse<BaseResponse>> {
-        val authService = ServiceGenerator.createService(AuthService::class.java, false)
+        val authService = ServiceGenerator.createService(AuthService::class.java, true)
         val response = processCall {
             authService.validatePhoneNumber(
                 code,
@@ -213,7 +214,7 @@ class RemoteRepositoryImp @Inject constructor() : RemoteRepository {
     override suspend fun resetPassword(
         password: String
     ): Resource<ModdakirResponse<ResponseModel>> {
-        val authService = ServiceGenerator.createService(AuthService::class.java, false)
+        val authService = ServiceGenerator.createService(AuthService::class.java, true)
         val response = processCall {
             authService.resetPassword(
                 password
@@ -255,7 +256,7 @@ class RemoteRepositoryImp @Inject constructor() : RemoteRepository {
     }
 
     override suspend fun logout(): Resource<ModdakirResponse<ResponseModel>> {
-        val authService = ServiceGenerator.createService(AuthService::class.java, false)
+        val authService = ServiceGenerator.createService(AuthService::class.java, true)
         val response = processCall {
             authService.logout()
         }
@@ -268,7 +269,7 @@ class RemoteRepositoryImp @Inject constructor() : RemoteRepository {
     }
 
     override suspend fun getAboutUs(): Resource<ModdakirResponse<com.moddakir.moddakir.network.model.AboutModel>> {
-        val authService = ServiceGenerator.createService(AuthService::class.java, false)
+        val authService = ServiceGenerator.createService(AuthService::class.java, true)
         val response = processCall {
             authService.aboutUs()
         }
@@ -284,7 +285,7 @@ class RemoteRepositoryImp @Inject constructor() : RemoteRepository {
         message: String,
         title: String
     ): Resource<ModdakirResponse<ResponseModel>> {
-        val authService = ServiceGenerator.createService(AuthService::class.java, false)
+        val authService = ServiceGenerator.createService(AuthService::class.java, true)
         val response = processCall {
             authService.contactUsForm(message,title)
         }
@@ -326,7 +327,7 @@ class RemoteRepositoryImp @Inject constructor() : RemoteRepository {
         enableVoiceRecording: String,
         enableVideoRecording: String
     ): Resource<ModdakirResponse<ResponseModel>> {
-        val authService = ServiceGenerator.createService(AuthService::class.java, false)
+        val authService = ServiceGenerator.createService(AuthService::class.java, true)
         val response = processCall {
             authService.changeSettings(enableVoiceRecording,enableVideoRecording)
         }
@@ -339,7 +340,7 @@ class RemoteRepositoryImp @Inject constructor() : RemoteRepository {
     }
 
     override suspend fun getListContactUs(page: Int): Resource<ModdakirResponse<TicketsResponse>> {
-        val authService = ServiceGenerator.createService(AuthService::class.java, false)
+        val authService = ServiceGenerator.createService(AuthService::class.java, true)
         val response = processCall {
             authService.getListContactUs(page,20)
         }
@@ -352,7 +353,7 @@ class RemoteRepositoryImp @Inject constructor() : RemoteRepository {
     }
 
     override suspend fun sendReplay(message: String, ticketId: String): Resource<ModdakirResponse<TicketReplyResponse>> {
-        val authService = ServiceGenerator.createService(AuthService::class.java, false)
+        val authService = ServiceGenerator.createService(AuthService::class.java, true)
         val response = processCall {
             authService.sendReplay(message,ticketId)
         }
@@ -367,13 +368,13 @@ class RemoteRepositoryImp @Inject constructor() : RemoteRepository {
     override suspend fun getTicketReplies(
         page: Int,
         messageId: String
-    ): Resource<ModdakirResponse<TicketRepliesResponse>> {
-        val authService = ServiceGenerator.createService(AuthService::class.java, false)
+    ): Resource<ModdakirResponse<TicketsRepliesResponse>> {
+        val authService = ServiceGenerator.createService(AuthService::class.java, true)
         val response = processCall {
             authService.getTicketReplies(page,20,messageId)
         }
         return try {
-            var res = response as ModdakirResponse<TicketRepliesResponse>
+            var res = response as ModdakirResponse<TicketsRepliesResponse>
             Resource.Success(data = res)
         } catch (e: Exception) {
             Resource.DataError(errorResponse = response as ErrorResponse)
@@ -381,12 +382,25 @@ class RemoteRepositoryImp @Inject constructor() : RemoteRepository {
     }
 
     override suspend fun getTicketById(ticketId: String): Resource<ModdakirResponse<TicketResponse>> {
-        val authService = ServiceGenerator.createService(AuthService::class.java, false)
+        val authService = ServiceGenerator.createService(AuthService::class.java, true)
         val response = processCall {
             authService.getTicketById(ticketId)
         }
         return try {
             var res = response as ModdakirResponse<TicketResponse>
+            Resource.Success(data = res)
+        } catch (e: Exception) {
+            Resource.DataError(errorResponse = response as ErrorResponse)
+        }
+    }
+
+    override suspend fun getBanners(): Resource<ModdakirResponse<BannerResponseModel>> {
+        val authService = ServiceGenerator.createService(AuthService::class.java, true)
+        val response = processCall {
+            authService.getBanners()
+        }
+        return try {
+            var res = response as ModdakirResponse<BannerResponseModel>
             Resource.Success(data = res)
         } catch (e: Exception) {
             Resource.DataError(errorResponse = response as ErrorResponse)

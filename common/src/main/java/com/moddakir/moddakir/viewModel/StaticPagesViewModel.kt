@@ -4,9 +4,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.moddakir.moddakir.network.Resource
 import com.moddakir.moddakir.network.model.AboutModel
+import com.moddakir.moddakir.network.model.TicketReplyResponse
 import com.moddakir.moddakir.network.model.base.BaseViewModel
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.ResponseModel
+import com.moddakir.moddakir.network.model.response.TicketResponse
+import com.moddakir.moddakir.network.model.response.TicketsRepliesResponse
 import com.moddakir.moddakir.network.model.response.TicketsResponse
 import com.moddakir.moddakir.useCase.StaticPagesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -25,6 +28,17 @@ class StaticPagesViewModel @Inject constructor(
 
     private val historyMutableLiveData = MutableLiveData<Resource<ModdakirResponse<TicketsResponse>>>()
     val historyLiveData: MutableLiveData<Resource<ModdakirResponse<TicketsResponse>>> = historyMutableLiveData
+
+    private val sendReplayMutableLiveData = MutableLiveData<Resource<ModdakirResponse<TicketReplyResponse>>>()
+    val sendReplayLiveData: MutableLiveData<Resource<ModdakirResponse<TicketReplyResponse>>> = sendReplayMutableLiveData
+
+    private val ticketsReplaysMutableLiveData = MutableLiveData<Resource<ModdakirResponse<TicketsRepliesResponse>>>()
+    val ticketsReplaysLiveData: MutableLiveData<Resource<ModdakirResponse<TicketsRepliesResponse>>> = ticketsReplaysMutableLiveData
+
+    private val ticketByIdMutableLiveData = MutableLiveData<Resource<ModdakirResponse<TicketResponse>>>()
+    val ticketByIdLiveData: MutableLiveData<Resource<ModdakirResponse<TicketResponse>>> = ticketByIdMutableLiveData
+
+
     fun getAboutUs() {
         viewModelScope.launch {
             staticPagesUseCase.getAboutUs()

@@ -1,11 +1,12 @@
 package com.moddakir.moddakir.network.remote.services
 
 import com.moddakir.moddakir.network.model.TicketReplyResponse
+import com.moddakir.moddakir.network.model.response.BannerResponseModel
 import com.moddakir.moddakir.network.model.response.BaseResponse
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.ResponseModel
-import com.moddakir.moddakir.network.model.response.TicketRepliesResponse
 import com.moddakir.moddakir.network.model.response.TicketResponse
+import com.moddakir.moddakir.network.model.response.TicketsRepliesResponse
 import com.moddakir.moddakir.network.model.response.TicketsResponse
 import retrofit2.Response
 import retrofit2.http.Field
@@ -81,7 +82,7 @@ interface AuthService {
         @Field("pageIndex") pageIndex: Int,
         @Field("pageSize") pageSize: Int,
         @Field("messageId") messageId: String
-    ): Response<ModdakirResponse<TicketRepliesResponse>>
+    ): Response<ModdakirResponse<TicketsRepliesResponse>>
 
     @FormUrlEncoded
     @POST("reply-message")
@@ -96,6 +97,11 @@ interface AuthService {
     fun getTicketById(
         @Field("id") id: String,
     ): Response<ModdakirResponse<TicketResponse>>
+
+    @FormUrlEncoded
+    @GET("get-banners")
+    fun getBanners(): Response<ModdakirResponse<BannerResponseModel>>
+
 
 
 }

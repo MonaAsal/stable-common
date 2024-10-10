@@ -43,14 +43,35 @@ class AboutUsActivity : BaseActivity() {
 
 
     private fun handleAboutUsResponse(resource: Resource<ModdakirResponse<AboutModel>>?) {
-        if (resource!!.errorCode == 200) {
-            if (resource.data!!.data!!.html != null) {
-                setupWebView(resource.data.data!!.html!!)
+        when (resource) {
+            is Resource.Loading -> {
             }
-        } else {
-            Toast.makeText(this@AboutUsActivity, resource.data!!.message, Toast.LENGTH_LONG)
-                .show()
+
+            is Resource.Success -> resource.data?.let {
+                if (resource.errorCode == 200) {
+                    if (resource.data.data!!.html != null) {
+                        setupWebView(resource.data.data.html!!)
+                    }
+                } else {
+                    Toast.makeText(this@AboutUsActivity, resource.data.message, Toast.LENGTH_LONG)
+                        .show()
+                }
+            }
+
+            is Resource.NetworkError -> {
+                resource.errorCode?.let {
+                }
+            }
+
+            is Resource.DataError -> {
+                resource.errorResponse?.let { showServerErrorMessage(resource.errorResponse) }
+            }
+
+            else -> {}
         }
+
+
+
     }
 
     @SuppressLint("SetJavaScriptEnabled")

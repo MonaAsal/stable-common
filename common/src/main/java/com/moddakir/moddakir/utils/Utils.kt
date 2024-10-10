@@ -3,6 +3,8 @@ package com.moddakir.moddakir.utils
 import android.content.Context
 import android.os.Build
 import android.util.Log
+import android.util.Patterns
+import android.webkit.URLUtil
 import android.widget.ImageView
 import androidx.annotation.RequiresApi
 import com.bumptech.glide.Glide
@@ -87,6 +89,10 @@ class Utils {
             Log.e("exception", e.toString())
             return ""
         }
+    }
+
+    fun isValidate(urlString: String?): Boolean {
+        return URLUtil.isValidUrl(urlString) && Patterns.WEB_URL.matcher(urlString).matches()
     }
 
 }

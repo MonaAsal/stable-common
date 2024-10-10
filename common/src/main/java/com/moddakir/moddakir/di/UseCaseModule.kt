@@ -2,6 +2,8 @@ package com.moddakir.moddakir.di
 
 import com.moddakir.moddakir.useCase.AuthenticationUseCase
 import com.moddakir.moddakir.useCase.AuthenticationUseCaseImp
+import com.moddakir.moddakir.useCase.BannerUseCase
+import com.moddakir.moddakir.useCase.BannerUseCaseImp
 import com.moddakir.moddakir.useCase.SettingsUseCase
 import com.moddakir.moddakir.useCase.SettingsUseCaseImp
 import com.moddakir.moddakir.useCase.StaticPagesUseCase
@@ -27,5 +29,9 @@ abstract class UseCaseModule {
     @Binds
     @ViewModelScoped
     abstract fun bindSettingsUseCase(settingsUseCaseImp: SettingsUseCaseImp): SettingsUseCase
+
+    @Binds
+    @ViewModelScoped
+    abstract fun bindBannerUseCase(bannerUseCaseImp: BannerUseCaseImp): BannerUseCase
 
 }
