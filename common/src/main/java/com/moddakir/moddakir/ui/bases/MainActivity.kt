@@ -9,6 +9,9 @@ import com.moddakir.moddakir.App.Companion.AppName
 import com.moddakir.moddakir.App.Companion.ApplicationVersion
 import com.moddakir.moddakir.App.Companion.ColorPrimary
 import com.moddakir.moddakir.network.model.base.BaseActivity
+import com.moddakir.moddakir.ui.bases.holyQuran.QuranInstance
+import com.moddakir.moddakir.ui.bases.holyQuran.QuranInstance.init
+import com.moddakir.moddakir.ui.bases.holyQuran.QuranInstance.openQuranScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -29,13 +32,15 @@ class MainActivity : BaseActivity() {
         recaptchaImpl= com.moddakir.moddakir.network.model.RecaptchaImpl()
         recaptchaImpl.getRecaptchaTasksClient(application, this, RecaptchaAction.SIGNUP)
 
+        //initiate quran flutter
+        init(this)
+
         binding.StartApp.setOnClickListener{
             AppName="Student"
             ApplicationVersion= App.AppVersion.Version1.toString()
             ColorPrimary="#40BFB4"
             navigateToLoginScreen()
          }
-
 
        /* AppName="Maqratac"
         ApplicationVersion= App.AppVersion.Version3.toString()

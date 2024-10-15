@@ -44,6 +44,9 @@
         android:theme="@style/Theme.ModdakirApps"
         tools:targetApi="31">
         <activity
+            android:name="com.moddakir.moddakir.ui.bases.holyQuran.HolyQuranActivity"
+            android:exported="false" />
+        <activity
             android:name="com.moddakir.moddakir.ui.bases.banners.VideoActivity"
             android:exported="false" />
         <activity
@@ -68,9 +71,6 @@
             android:name="com.moddakir.moddakir.ui.bases.staticPages.WebViewActivity"
             android:exported="false" />
         <activity
-            android:name="com.moddakir.moddakir.ui.bases.staticPages.WebViewActivity"
-            android:exported="false" />
-        <activity
             android:name="com.moddakir.moddakir.ui.bases.staticPages.AboutUsActivity"
             android:exported="false" />
         <activity
@@ -88,10 +88,6 @@
         <activity
             android:name="com.moddakir.moddakir.ui.bases.authentication.ForgetPasswordActivity"
             android:exported="false" />
-        <activity
-            android:name="com.moddakir.moddakir.ui.bases.Intro.IntroActivity"
-            android:exported="false"
-            android:theme="@style/Theme.ModdakirApps" />
         <activity
             android:name="com.moddakir.moddakir.ui.bases.authentication.LoginWithMobileActivity"
             android:exported="true"
@@ -113,6 +109,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="io.flutter.embedding.android.FlutterActivity"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:theme="@style/appCompactNoActionBar"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

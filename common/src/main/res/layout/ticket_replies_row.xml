@@ -12,7 +12,7 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/avatar"
-        android:layout_width="@dimen/circular_img_size"
+        android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_alignParentStart="true"
         android:src="@drawable/avatar"
@@ -73,7 +73,7 @@
                 android:layout_height="match_parent"
                 android:elevation="4dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/ic_moddakir_logo_md"
+                android:src="@drawable/tallam_logo_white"
                 />
 
             <ImageView

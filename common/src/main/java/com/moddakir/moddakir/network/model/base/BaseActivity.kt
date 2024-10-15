@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.ViewCompat
 import androidx.lifecycle.LiveData
+import com.moddakir.moddakir.App
 import com.moddakir.moddakir.App.Companion.context
 import com.moddakir.moddakir.helper.LocaleHelper
 import com.moddakir.moddakir.network.model.response.ErrorResponse
@@ -28,13 +29,15 @@ import com.moddakir.moddakir.ui.widget.ProgressDialog
 import com.moddakir.moddakir.ui.widget.TextViewLateefRegOT
 import com.moddakir.moddakir.utils.Event
 import dagger.hilt.android.AndroidEntryPoint
+import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.engine.FlutterEngineCache
 
 @AndroidEntryPoint
 
 abstract class BaseActivity: AppCompatActivity() {
     protected lateinit var baseViewModel: BaseViewModel
     abstract val layoutId: Int
-    var progressDialog:ProgressDialog= ProgressDialog()
+    private var progressDialog:ProgressDialog= ProgressDialog()
     protected abstract fun initializeViewModel()
     abstract fun observeViewModel()
     var forceUpdate = false
@@ -43,7 +46,6 @@ abstract class BaseActivity: AppCompatActivity() {
         super.attachBaseContext(LocaleHelper.onAttach(base!!))
         val config = resources.configuration
        context.resources.updateConfiguration(config, resources.displayMetrics)
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -114,10 +116,8 @@ abstract class BaseActivity: AppCompatActivity() {
     fun navigateToLoginMobileScreen(action:String) {
         val intent = Intent(context,LoginWithMobileActivity::class.java)
         intent.putExtra("action",action)
-        startActivity(intent);
-
+        startActivity(intent)
     }
-
 
     fun navigateToForgetPasswordScreen() {
         startActivity(Intent(context, ForgetPasswordActivity::class.java))
@@ -159,7 +159,6 @@ abstract class BaseActivity: AppCompatActivity() {
         progressDialog.getInstance()!!.show(this)
     }
 
-
     fun hideAlertDialog() {
         progressDialog.getInstance()!!.dismiss()
     }
@@ -169,5 +168,11 @@ abstract class BaseActivity: AppCompatActivity() {
     fun navigateToHistoryActivity() {
         startActivity(Intent(context, HistoryActivity::class.java))
     }
-
+    fun navigateToQuran(){
+        val intent = Intent(  FlutterActivity
+            .withCachedEngine("my_engine_id")
+            .build(context))
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent)
+    }
 }

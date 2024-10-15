@@ -120,7 +120,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toStartOf="@+id/send"
-            android:background="@drawable/colorPrimaryStudentTeacher"
+            android:background="@drawable/custom_white_gray_border"
             android:gravity="start|center_vertical"
             android:hint="@string/reply"
             android:inputType="text|textMultiLine"
