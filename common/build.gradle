@@ -227,6 +227,9 @@ dependencies {
 
     //quran
     implementation 'com.quran.module:flutter_debug:1.0'
+
+    //socket
+    api 'io.socket:socket.io-client:2.0.1'
 }
 kapt {
     correctErrorTypes = true

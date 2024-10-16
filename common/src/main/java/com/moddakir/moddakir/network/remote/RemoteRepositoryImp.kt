@@ -11,6 +11,7 @@ import com.moddakir.moddakir.network.Resource
 import com.moddakir.moddakir.network.model.TicketReplyResponse
 import com.moddakir.moddakir.network.model.response.BannerResponseModel
 import com.moddakir.moddakir.network.model.response.BaseResponse
+import com.moddakir.moddakir.network.model.response.DependentMangersModel
 import com.moddakir.moddakir.network.model.response.ErrorResponse
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.OTPResponseModel
@@ -291,6 +292,22 @@ class RemoteRepositoryImp @Inject constructor() : RemoteRepository {
         }
         return try {
             var res = response as ModdakirResponse<ResponseModel>
+            Resource.Success(data = res)
+        } catch (e: Exception) {
+            Resource.DataError(errorResponse = response as ErrorResponse)
+        }
+    }
+    override suspend fun getDependentManagers(
+        studentId: String,
+        forSwitchingProgramsPage: Boolean,
+        page: Int,
+        pageSize: Int
+    ): Resource<ModdakirResponse<DependentMangersModel>> {
+        val nonAuthService = ServiceGenerator.createService(NonAuthService::class.java, false)
+        val response =
+            processCall { nonAuthService.getDependentManagers(studentId, forSwitchingProgramsPage, page,pageSize) }
+        return try {
+            var res = response as ModdakirResponse<DependentMangersModel>
             Resource.Success(data = res)
         } catch (e: Exception) {
             Resource.DataError(errorResponse = response as ErrorResponse)

@@ -1,6 +1,7 @@
 package com.moddakir.moddakir.ui.bases.authentication
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
 import android.view.View
@@ -12,7 +13,13 @@ import com.example.moddakirapps.databinding.ActivityJoinUsBinding
 import com.google.android.material.textfield.TextInputLayout
 import com.moddakir.moddakir.App
 import com.moddakir.moddakir.adapter.MySpinnerProfileAdapter
+import com.moddakir.moddakir.network.Resource
+import com.moddakir.moddakir.network.model.User
 import com.moddakir.moddakir.network.model.base.BaseActivity
+import com.moddakir.moddakir.network.model.response.ModdakirResponse
+import com.moddakir.moddakir.network.model.response.ResponseModel
+import com.moddakir.moddakir.ui.bases.HomeActivity
+import com.moddakir.moddakir.utils.observe
 import com.moddakir.moddakir.viewModel.AutViewModel
 import timber.log.Timber
 
@@ -30,6 +37,41 @@ class JoinUsActivity : BaseActivity() {
     }
 
     override fun observeViewModel() {
+        observe(viewModel.submitJoinUsLiveData, ::handleSubmitJoinUsResponse)
+
+    }
+
+    private fun handleSubmitJoinUsResponse(resource: Resource<ModdakirResponse<ResponseModel>>?) {
+        when (resource) {
+            is Resource.Loading -> {
+                binding.btnSubmit.isEnabled = false
+            }
+
+            is Resource.Success -> resource.data?.let {
+                val user: User = resource.data.data!!.student
+                if (user != null) {
+                    viewModel.handleLoggedUser(resource.data.data)
+                    val intent = Intent(this, HomeActivity::class.java)
+                    intent.putExtra("isNew", resource.data.data.isNewUser)
+                    intent.putExtra("freeMin", resource.data.data.freeMinutes)
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                    startActivity(intent)
+                } else {
+                    navigateToLoginScreen()
+                }
+            }
+
+            is Resource.NetworkError -> {
+                resource.errorCode?.let {
+                }
+            }
+
+            is Resource.DataError -> {
+                resource.errorResponse?.let { showServerErrorMessage(resource.errorResponse) }
+            }
+
+            else -> {}
+        }
     }
 
     @SuppressLint("HardwareIds")

@@ -1,5 +1,6 @@
 package com.moddakir.moddakir.network.remote.services
 
+import com.moddakir.moddakir.network.model.response.DependentMangersModel
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.OTPResponseModel
 import com.moddakir.moddakir.network.model.response.ResponseModel
@@ -55,7 +56,7 @@ interface NonAuthService {
         @Field("captcha-token") token: String,
         @Field("isRegister") isRegister: Boolean,
 
-    ): Response<ModdakirResponse<OTPResponseModel>>
+        ): Response<ModdakirResponse<OTPResponseModel>>
 
     @FormUrlEncoded
     @POST("sign-in-social")
@@ -69,7 +70,7 @@ interface NonAuthService {
         @Field("providerToken") providerToken: String,
         @Field("lang") lang: String,
         @Field("deviceUUID") deviceUUID: String,
-        ): Response<ModdakirResponse<SocialResponse>>
+    ): Response<ModdakirResponse<SocialResponse>>
 
     @FormUrlEncoded
     @POST("student-join-us")
@@ -88,5 +89,15 @@ interface NonAuthService {
         @Field("password") password: String,
     ): Response<ModdakirResponse<ResponseModel>>
 
+
+    @FormUrlEncoded
+    @POST("dependent-managers")
+    suspend fun getDependentManagers(
+        @Field("studentId") studentId: String,
+        @Field("forSwitchingProgramsPage") forSwitchingProgramsPage: Boolean,
+        @Field("page") page: Int,
+        @Field("pageSize") pageSize: Int,
+
+        ): Response<ModdakirResponse<DependentMangersModel>>
 
 }

@@ -41,21 +41,22 @@ data class User(
     val search_type: String,
     val rate: Float = 0f,
     val totalRate: Float = 0f,
-    val isDependentManager: Boolean = false,
-    val enableVoiceRecording: Boolean = false,
-    val enableVideoRecording: Boolean = false,
+    var isDependentManager: Boolean = false,
+    var enableVoiceRecording: Boolean = false,
+    var enableVideoRecording: Boolean = false,
     val assignmentValue: Float = 0f,
     val studentComments: List<com.moddakir.moddakir.network.model.TeacherCategoryModel>,
     val videoUrl: String?,
     val nearestSlotTime: String?,
     val currency: String?,
-    val isMailActivated: Boolean = false,
-    val isMobileActivated: Boolean = false,
+    var isMailActivated: Boolean = false,
+    var isMobileActivated: Boolean = false,
     val education: com.moddakir.moddakir.network.model.Education?,
     val childAgePreferanceForEdit: String = "",
     val childPathId: String = "",
     val childEducationPlanId: String = "",
     val childLinesPerSession: Int = 0,
 
+    var briefTrans: BriefTrans? = null
 
     ) : Parcelable

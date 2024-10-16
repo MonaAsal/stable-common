@@ -14,6 +14,7 @@ import com.moddakir.moddakir.network.model.User
 import com.moddakir.moddakir.network.model.base.BaseActivity
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.ResponseModel
+import com.moddakir.moddakir.utils.AccountPreference
 import com.moddakir.moddakir.utils.Language
 import com.moddakir.moddakir.utils.LanguageOptionFragment
 import com.moddakir.moddakir.utils.getLanguage
@@ -44,8 +45,10 @@ class SettingActivity : BaseActivity() {
             }
 
             is Resource.Success -> resource.data?.let {
+                user!!.enableVideoRecording=(binding.enableVideoRecording.isChecked)
+                user!!.enableVoiceRecording=(binding.enableVoiceRecording.isChecked)
                 if (user != null) {
-                   // AccountPreference.registerData(user)
+                    AccountPreference.registerData(user)
                 }
                 changeLanguageAction(language)
             }

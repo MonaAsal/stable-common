@@ -88,7 +88,7 @@ class AccountPreference {
             return  getFromSharedPref(App.context,ACCESS_TOKEN_KEY!!)
         }
 
-        private fun setAccessToken(accessToken: String?) {
+         fun setAccessToken(accessToken: String?) {
             setIntoSharedPref(App.context,ACCESS_TOKEN_KEY, accessToken!!)
         }
 

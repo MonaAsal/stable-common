@@ -11,9 +11,14 @@ import com.example.moddakirapps.databinding.CountryCodePickerBinding
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.recaptcha.RecaptchaAction
 import com.moddakir.moddakir.helper.LocaleHelper
+import com.moddakir.moddakir.network.Resource
 import com.moddakir.moddakir.network.model.RecaptchaImpl.Companion.recaptchaTasksClient
 import com.moddakir.moddakir.network.model.base.BaseActivity
+import com.moddakir.moddakir.network.model.response.ModdakirResponse
+import com.moddakir.moddakir.network.model.response.ResponseModel
+import com.moddakir.moddakir.utils.AccountPreference
 import com.moddakir.moddakir.utils.ValidationUtils
+import com.moddakir.moddakir.utils.observe
 import com.moddakir.moddakir.viewModel.AutViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,7 +38,46 @@ class ForgetPasswordActivity : BaseActivity() {
     }
     override fun initializeViewModel() {}
 
-    override fun observeViewModel() {}
+    override fun observeViewModel() {
+        observe(authViewModel.sendForgetPasswordLiveData, ::handleForgetPassResponse)
+    }
+
+    private fun handleForgetPassResponse(resource: Resource<ModdakirResponse<ResponseModel>>?) {
+
+        when (resource) {
+            is Resource.Loading -> {
+                bindingForgetPassword.btnNext.isEnabled = false
+            }
+
+            is Resource.Success -> resource.data?.let {
+                AccountPreference.setAccessToken(resource.data.data!!.accessToken)
+                if (isEmail) {
+                    VerificationMobileActivity.verificationType=VerificationMobileActivity.VerificationType.EMAIL.toString()
+                    VerificationMobileActivity.verificationSource=VerificationMobileActivity.VerificationSource.FORGET_PASSWORD.toString()
+                    VerificationMobileActivity.verificationData= bindingForgetPassword.etEmail.getText().toString()
+                    navigateToVerificationActivity()
+                }
+                else{
+                    VerificationMobileActivity.verificationType=VerificationMobileActivity.VerificationType.PHONE.toString()
+                    VerificationMobileActivity.verificationSource=VerificationMobileActivity.VerificationSource.FORGET_PASSWORD.toString()
+                    VerificationMobileActivity.verificationData= bindingCountryCodePickerBinding.countryCodePicker.fullNumberWithPlus
+                    navigateToVerificationActivity()
+                }
+
+            }
+
+            is Resource.NetworkError -> {
+                resource.errorCode?.let {
+                }
+            }
+
+            is Resource.DataError -> {
+                resource.errorResponse?.let { showServerErrorMessage(resource.errorResponse) }
+            }
+
+            else -> {}
+        }
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

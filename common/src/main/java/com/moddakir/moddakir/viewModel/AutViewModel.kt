@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.moddakirapps.R
 import com.moddakir.moddakir.network.Resource
+import com.moddakir.moddakir.network.model.User
 import com.moddakir.moddakir.network.model.base.BaseViewModel
 import com.moddakir.moddakir.network.model.base.error.ErrorManager
 import com.moddakir.moddakir.network.model.base.error.ErrorMapper
@@ -12,7 +13,9 @@ import com.moddakir.moddakir.network.model.response.BaseResponse
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.OTPResponseModel
 import com.moddakir.moddakir.network.model.response.ResponseModel
+import com.moddakir.moddakir.network.model.response.SocialResponse
 import com.moddakir.moddakir.useCase.AuthenticationUseCase
+import com.moddakir.moddakir.utils.AccountPreference
 import com.moddakir.moddakir.utils.ValidationUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -30,6 +33,9 @@ class AutViewModel @Inject constructor(
     private val validateOTPMutableLiveData = MutableLiveData<Resource<ModdakirResponse<ResponseModel>>>()
     private val validatePhoneNumberMutableLiveData = MutableLiveData<Resource<ModdakirResponse<BaseResponse>>>()
     private val resetPasswordMutableLiveData = MutableLiveData<Resource<ModdakirResponse<ResponseModel>>>()
+    private val socialMutableLiveData = MutableLiveData<Resource<ModdakirResponse<SocialResponse>>>()
+    private val submitJoinUsMutableLiveData = MutableLiveData<Resource<ModdakirResponse<ResponseModel>>>()
+
 
     private val loginMutableLiveData = MutableLiveData<Resource<ModdakirResponse<ResponseModel>>>()
     val loginLiveData: MutableLiveData<Resource<ModdakirResponse<ResponseModel>>> = loginMutableLiveData
@@ -39,6 +45,8 @@ class AutViewModel @Inject constructor(
     val validateOTPLiveData: MutableLiveData<Resource<ModdakirResponse<ResponseModel>>> = validateOTPMutableLiveData
     val validatePhoneNumberLiveData: MutableLiveData<Resource<ModdakirResponse<BaseResponse>>> = validatePhoneNumberMutableLiveData
     val resetPasswordLiveData: MutableLiveData<Resource<ModdakirResponse<ResponseModel>>> = resetPasswordMutableLiveData
+    val socialLiveData: MutableLiveData<Resource<ModdakirResponse<SocialResponse>>> = socialMutableLiveData
+    val submitJoinUsLiveData: MutableLiveData<Resource<ModdakirResponse<ResponseModel>>> = submitJoinUsMutableLiveData
 
     fun login(email: String, password: String, lang: String) {
         viewModelScope.launch {
@@ -111,6 +119,11 @@ class AutViewModel @Inject constructor(
         }
 
     }
+    fun getDependentManagers(studentId: String, forSwitchingProgramsPage: Boolean, page: Int,pageSize: Int) {
+        viewModelScope.launch {
+                authUseCase.getDependentManagers(studentId, forSwitchingProgramsPage, page, pageSize)
+        }
+    }
 
     fun submitJoinUs(
         firstName: String,
@@ -141,23 +154,19 @@ class AutViewModel @Inject constructor(
 
     fun getGenderType(typeCheckedId: Int): String? {
         return when (typeCheckedId) {
-            R.id.male_rb -> {
-                "male"
-            }
-
-            R.id.female_rb -> {
-                "female"
-            }
-
-            R.id.boy_rb -> {
-                "boy"
-            }
-
-            R.id.girl_rb -> {
-                "girl"
-            }
-
+            R.id.male_rb -> { "male" }
+            R.id.female_rb -> { "female" }
+            R.id.boy_rb -> { "boy" }
+            R.id.girl_rb -> { "girl" }
             else -> null
         }
+    }
+    fun handleLoggedUser(data: ResponseModel) {
+        val user: User = data.student
+        user.accessToken=(data.accessToken)
+        user.isDependentManager=(data.isDependentManager)
+        user.isMailActivated=(data.isEmailValidate)
+        user.isMobileActivated=(data.isPhoneValidate)
+        AccountPreference.registerData(user)
     }
 }

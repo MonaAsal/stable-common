@@ -10,6 +10,7 @@ import android.text.InputType
 import android.view.MotionEvent
 import android.view.View
 import android.view.View.OnTouchListener
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.fragment.app.FragmentActivity
@@ -18,22 +19,28 @@ import com.example.moddakirapps.R
 import com.example.moddakirapps.databinding.ActivityLoginMaqratackBinding
 import com.example.moddakirapps.databinding.ActivityLoginStudentBinding
 import com.example.moddakirapps.databinding.ActivityLoginTeacherBinding
+import com.google.gson.Gson
 import com.moddakir.moddakir.App
 import com.moddakir.moddakir.App.Companion.ApplicationVersion
 import com.moddakir.moddakir.App.Companion.ColorPrimary
 import com.moddakir.moddakir.App.Companion.SecondColor
 import com.moddakir.moddakir.App.Companion.WhatsAppNum
-import com.moddakir.moddakir.helper.SavedFingerAccountsPreferences
 import com.moddakir.moddakir.helper.LocaleHelper
+import com.moddakir.moddakir.helper.SavedFingerAccountsPreferences
+import com.moddakir.moddakir.helper.SharedPrefHelper.Companion.setIntoSharedPref
 import com.moddakir.moddakir.network.Resource
+import com.moddakir.moddakir.network.model.User
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.ResponseModel
+import com.moddakir.moddakir.ui.bases.HomeActivity
+import com.moddakir.moddakir.ui.bases.holyQuran.QuranInstance.loginQuran
+import com.moddakir.moddakir.ui.widget.ButtonCalibriBold
+import com.moddakir.moddakir.utils.AccountPreference
 import com.moddakir.moddakir.utils.FingerBiometricAuthenticator
 import com.moddakir.moddakir.utils.Language
 import com.moddakir.moddakir.utils.LanguageOptionFragment
 import com.moddakir.moddakir.utils.getLanguageCode
 import com.moddakir.moddakir.utils.observe
-import com.moddakir.moddakir.ui.widget.ButtonCalibriBold
 import com.moddakir.moddakir.viewModel.AutViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
@@ -46,10 +53,14 @@ class LoginActivity : SocialMedialActivity(), OnTouchListener {
     private lateinit var bindingWhiteLabel: ActivityLoginMaqratackBinding
     private var fingerBiometricAuthenticator: FingerBiometricAuthenticator? = null
     private var passwordHideShow = false
+    private var deviceLanguageOrSaved: String = ""
     private val authViewModel: AutViewModel by viewModels()
-    lateinit var username: String
-    lateinit var password: String
-    lateinit var lang: String
+
+    companion object{
+        lateinit var username: String
+        lateinit var password: String
+        lateinit var lang: String
+    }
     override fun initializeViewModel() {}
     override fun observeViewModel() {
         observe(authViewModel.loginLiveData, ::handleLoginResponse)
@@ -333,6 +344,15 @@ class LoginActivity : SocialMedialActivity(), OnTouchListener {
             }
 
             is Resource.Success -> loginResponse.data?.let {
+                val user: User = loginResponse.data.data!!.student
+                deviceLanguageOrSaved =  LocaleHelper.getLocale(this).toString()
+                authViewModel.handleLoggedUser(loginResponse.data.data)
+                val intent = Intent(this, HomeActivity::class.java)
+                intent.putExtra("isNew", loginResponse.data.data.isNewUser)
+                intent.putExtra("freeMin", loginResponse.data.data.freeMinutes)
+                intent.putExtra("isChild", user.isChildDependent)
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                loginQuran()
             }
 
             is Resource.NetworkError -> {
@@ -351,8 +371,29 @@ class LoginActivity : SocialMedialActivity(), OnTouchListener {
             is Resource.Loading -> {
                 bindingStudent.btnLogin.isEnabled = false
             }
-
             is Resource.Success -> loginResponse.data?.let {
+                Toast.makeText(
+                    this@LoginActivity,
+                    loginResponse.data.message,
+                    Toast.LENGTH_LONG
+                ).show()
+
+                if (loginResponse.data.data!!.teacher != null) {
+                    val userstr = Gson().toJson(loginResponse.data.data.teacher)
+                    setIntoSharedPref(this,"user",userstr)
+
+                    if (loginResponse.data.data.teacher.briefTrans != null && loginResponse.data.data.teacher.briefTrans!!.ar!= null && loginResponse.data.data.teacher.briefTrans!!.ar!!.isNotEmpty())
+                        setIntoSharedPref(this,"getBriefTransAr",loginResponse.data.data.teacher.briefTrans!!.ar!!)
+
+                    if (loginResponse.data.data.teacher.briefTrans != null && loginResponse.data.data.teacher.briefTrans!!.en!= null && loginResponse.data.data.teacher.briefTrans!!.en!!.isNotEmpty())
+                        setIntoSharedPref(this,"getBriefTransEn",loginResponse.data.data.teacher.briefTrans!!.en!!)
+
+                    AccountPreference.setAccessToken(loginResponse.data.data.accessToken)
+
+                    startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
+                    finish()
+                }
+
             }
 
             is Resource.NetworkError -> {

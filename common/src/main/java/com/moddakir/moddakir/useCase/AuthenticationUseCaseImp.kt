@@ -3,6 +3,7 @@ package com.moddakir.moddakir.useCase
 import android.content.Context
 import com.moddakir.moddakir.network.Resource
 import com.moddakir.moddakir.network.model.response.BaseResponse
+import com.moddakir.moddakir.network.model.response.DependentMangersModel
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.OTPResponseModel
 import com.moddakir.moddakir.network.model.response.ResponseModel
@@ -92,6 +93,15 @@ class AuthenticationUseCaseImp @Inject constructor(
         context: Context
     ): Resource<ModdakirResponse<SocialResponse>> {
         return repository.signInWithSocial(email,name,id,gender,avatarUrl,provider,token,lang,context)
+    }
+
+    override suspend fun getDependentManagers(
+        studentId: String,
+        forSwitchingProgramsPage: Boolean,
+        page: Int,
+        pageSize: Int
+    ): Resource<ModdakirResponse<DependentMangersModel>> {
+        return repository.getDependentManagers(studentId,forSwitchingProgramsPage,page,pageSize)
     }
 
     override suspend fun submitJoinUs(

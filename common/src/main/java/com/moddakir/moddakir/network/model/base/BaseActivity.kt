@@ -23,6 +23,8 @@ import com.moddakir.moddakir.ui.bases.authentication.JoinUsActivity
 import com.moddakir.moddakir.ui.bases.authentication.LoginActivity
 import com.moddakir.moddakir.ui.bases.authentication.LoginWithMobileActivity
 import com.moddakir.moddakir.ui.bases.authentication.RegisterMobileActivity
+import com.moddakir.moddakir.ui.bases.authentication.VerificationMobileActivity
+import com.moddakir.moddakir.ui.bases.holyQuran.QuranInstance.updateLanguage
 import com.moddakir.moddakir.ui.bases.staticPages.HistoryActivity
 import com.moddakir.moddakir.ui.widget.ButtonCalibriBold
 import com.moddakir.moddakir.ui.widget.ProgressDialog
@@ -168,11 +170,16 @@ abstract class BaseActivity: AppCompatActivity() {
     fun navigateToHistoryActivity() {
         startActivity(Intent(context, HistoryActivity::class.java))
     }
+    fun navigateToVerificationActivity() {
+        startActivity(Intent(context, VerificationMobileActivity::class.java))
+    }
+
     fun navigateToQuran(){
         val intent = Intent(  FlutterActivity
             .withCachedEngine("my_engine_id")
             .build(context))
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent)
+        updateLanguage()
     }
 }

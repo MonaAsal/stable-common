@@ -8,14 +8,15 @@ import com.moddakir.moddakir.App
 import com.moddakir.moddakir.App.Companion.AppName
 import com.moddakir.moddakir.App.Companion.ApplicationVersion
 import com.moddakir.moddakir.App.Companion.ColorPrimary
+import com.moddakir.moddakir.network.model.User
 import com.moddakir.moddakir.network.model.base.BaseActivity
-import com.moddakir.moddakir.ui.bases.holyQuran.QuranInstance
 import com.moddakir.moddakir.ui.bases.holyQuran.QuranInstance.init
-import com.moddakir.moddakir.ui.bases.holyQuran.QuranInstance.openQuranScreen
+import com.moddakir.moddakir.utils.socket.SocketClientListener
+import com.moddakir.moddakir.utils.socket.SocketTeacherInterface
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity(), SocketTeacherInterface {
     private lateinit var binding: ActivityMainBinding
     private lateinit var recaptchaImpl: com.moddakir.moddakir.network.model.RecaptchaImpl
     override val layoutId: Int
@@ -35,6 +36,10 @@ class MainActivity : BaseActivity() {
         //initiate quran flutter
         init(this)
 
+        SocketClientListener.InitInstance(this)
+        if (!SocketClientListener.InitInstance(this)!!.isConnected) {
+            SocketClientListener.socketClient!!.reConnect()
+        }
         binding.StartApp.setOnClickListener{
             AppName="Student"
             ApplicationVersion= App.AppVersion.Version1.toString()
@@ -83,6 +88,9 @@ class MainActivity : BaseActivity() {
 
     }
 
+    override fun getTeacherModelFromSocket(teacher: User?) {
+
+    }
 
 
 }

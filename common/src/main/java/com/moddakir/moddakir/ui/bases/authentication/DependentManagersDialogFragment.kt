@@ -11,21 +11,25 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moddakirapps.R
 import com.example.moddakirapps.databinding.FragmentDependentManagersDialogBinding
 import com.moddakir.moddakir.adapter.DependentManagersAdapter
 import com.moddakir.moddakir.network.model.Student
+import com.moddakir.moddakir.utils.AccountPreference
+import com.moddakir.moddakir.viewModel.AutViewModel
 
 class DependentManagersDialogFragment() : DialogFragment() {
     private var pagenum = 1
-    private val students: List<com.moddakir.moddakir.network.model.Student> = ArrayList<com.moddakir.moddakir.network.model.Student>()
+    private val students: List<Student> = ArrayList<Student>()
     private var dependentManagersAdapter: DependentManagersAdapter? = null
-    var studentId: String = ""
+    private var studentId: String = ""
     private var id = ""
     private var layoutManager: RecyclerView.LayoutManager? = null
     private lateinit var binding: FragmentDependentManagersDialogBinding
+    private val viewModel: AutViewModel by viewModels()
     constructor(maqraatec: String) : this() {
         this.maqraatec = maqraatec
     }
@@ -83,19 +87,13 @@ class DependentManagersDialogFragment() : DialogFragment() {
           },
             -1
         )
-
         binding.rvDependentManagers.setAdapter(dependentManagersAdapter)
-
-
         getData(pagenum)
     }
-    private fun getData(pagenum: Int) {
-
-        val map = HashMap<String, Any>()
-        map["studentId"] = studentId
-        map["forSwitchingProgramsPage"] = false
-        map["page"] = pagenum
-        map["pageSize"] = 10
-        //call api
+    private fun getData(pageNum: Int) {
+        if (AccountPreference.getUser() != null) {
+            studentId = AccountPreference.getUser()!!.id
+        }
+        viewModel.getDependentManagers(studentId,false,pageNum,20)
     }
 }

@@ -1,12 +1,17 @@
 package com.moddakir.moddakir.ui.bases.authentication
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.example.moddakirapps.R
 import com.example.moddakirapps.databinding.ActivityResetPasswordBinding
 import com.jakewharton.rxbinding2.widget.RxTextView
+import com.moddakir.moddakir.network.Resource
 import com.moddakir.moddakir.network.model.base.BaseActivity
+import com.moddakir.moddakir.network.model.response.ModdakirResponse
+import com.moddakir.moddakir.network.model.response.ResponseModel
 import com.moddakir.moddakir.utils.ValidationUtils
+import com.moddakir.moddakir.utils.observe
 import com.moddakir.moddakir.viewModel.AutViewModel
 import io.reactivex.Observable
 
@@ -20,7 +25,34 @@ class ResetPasswordActivity : BaseActivity() {
         lateinit var password :String
     }
     override fun initializeViewModel() {}
-    override fun observeViewModel() {}
+    override fun observeViewModel() {
+        observe(authViewModel.resetPasswordLiveData, ::handleResetPasswordResponse)
+
+    }
+
+    private fun handleResetPasswordResponse(response: Resource<ModdakirResponse<ResponseModel>>?) {
+        when (response) {
+            is Resource.Loading -> {
+                binding.btnReset.isEnabled = false
+            }
+
+            is Resource.Success -> response.data?.let {
+               showMessage(response.data.message!!)
+            }
+
+            is Resource.NetworkError -> {
+                response.errorCode?.let {
+                }
+            }
+
+            is Resource.DataError -> {
+                response.errorResponse?.let { showServerErrorMessage(response.errorResponse) }
+            }
+
+            else -> {}
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reset_password)

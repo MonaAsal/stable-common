@@ -3,6 +3,7 @@ package com.moddakir.moddakir.useCase
 import android.content.Context
 import com.moddakir.moddakir.network.Resource
 import com.moddakir.moddakir.network.model.response.BaseResponse
+import com.moddakir.moddakir.network.model.response.DependentMangersModel
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.OTPResponseModel
 import com.moddakir.moddakir.network.model.response.ResponseModel
@@ -68,6 +69,13 @@ interface AuthenticationUseCase {
         token: String, lang: String, context: Context
     ): Resource<ModdakirResponse<SocialResponse>>
 
+    suspend fun getDependentManagers(
+        studentId: String,
+        forSwitchingProgramsPage: Boolean,
+        page: Int,
+        pageSize: Int
+    ): Resource<ModdakirResponse<DependentMangersModel>>
+
     suspend fun submitJoinUs(
         firstName: String,
         managerId: String,
@@ -82,6 +90,7 @@ interface AuthenticationUseCase {
         education: com.moddakir.moddakir.network.model.Education,
         password: String
     ): Resource<ModdakirResponse<ResponseModel>>
+
 
 
     suspend fun logout(): Resource<ModdakirResponse<ResponseModel>>

@@ -22,7 +22,7 @@ public class App : Application(), DefaultLifecycleObserver{
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         context = applicationContext
         utils=Utils()
-        AppName="Student"
+        AppName=""
         helper=LocaleHelper()
        // timeZoneOffset = data.getTimeZoneOffset() / 60
         ProcessLifecycleOwner.get().lifecycle.addObserver(this)

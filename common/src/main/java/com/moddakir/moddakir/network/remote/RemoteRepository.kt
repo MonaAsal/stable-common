@@ -5,6 +5,7 @@ import com.moddakir.moddakir.network.Resource
 import com.moddakir.moddakir.network.model.TicketReplyResponse
 import com.moddakir.moddakir.network.model.response.BannerResponseModel
 import com.moddakir.moddakir.network.model.response.BaseResponse
+import com.moddakir.moddakir.network.model.response.DependentMangersModel
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.OTPResponseModel
 import com.moddakir.moddakir.network.model.response.ResponseModel
@@ -67,6 +68,13 @@ interface RemoteRepository {
                                    avatarUrl:String,  provider:String,
                                    token:String,  lang:String,  context: Context
     ) : Resource<ModdakirResponse<SocialResponse>>
+
+    suspend fun  getDependentManagers(studentId: String,
+                                         forSwitchingProgramsPage: Boolean,
+                                         page: Int,
+                                         pageSize: Int
+    ) : Resource<ModdakirResponse<DependentMangersModel>>
+
 
     suspend fun logout(): Resource<ModdakirResponse<ResponseModel>>
     suspend fun getAboutUs(): Resource<ModdakirResponse<com.moddakir.moddakir.network.model.AboutModel>>

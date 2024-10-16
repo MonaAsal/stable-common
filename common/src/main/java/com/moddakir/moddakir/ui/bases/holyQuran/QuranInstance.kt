@@ -44,22 +44,13 @@ object QuranInstance {
         MethodChannel(flutterEngine!!.dartExecutor.binaryMessenger, CHANNEL)
     }
 
-    private fun updateLanguage() {
+    fun updateLanguage() {
         methodChannel?.invokeMethod(
             OutgoingFlutterMethodNames.updateAppLanguage.name,
             LocaleHelper.getLocale(context!!).toString()
         )
     }
 
-    fun openQuranScreen() {
-        App.context.startActivity(
-            FlutterActivity
-                .withCachedEngine("my_engine_id")
-                .build(App.context)
-        )
-        updateLanguage()
-
-    }
 
     private fun startMethodsCallHandler() {
         methodChannel?.setMethodCallHandler { call, result ->
@@ -96,7 +87,7 @@ object QuranInstance {
         methodChannel?.invokeMethod(OutgoingFlutterMethodNames.logout.name, null)
     }
 
-    fun login() {
+    fun loginQuran() {
         methodChannel?.invokeMethod(OutgoingFlutterMethodNames.login.name, null)
     }
 

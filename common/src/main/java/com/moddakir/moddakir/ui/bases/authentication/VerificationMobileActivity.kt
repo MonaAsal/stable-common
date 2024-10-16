@@ -21,9 +21,7 @@ class VerificationMobileActivity : BaseActivity() {
     private val loginViewModel: AutViewModel by viewModels()
     override fun initializeViewModel() {}
     override fun observeViewModel() {}
-    private var verificationData: String = "verificationData"
-    private var verificationType: String = "verificationType"
-    private var verificationSource: String = "verificationSource"
+
     private lateinit var binding: ActivityVerificationMobileBinding
 
     companion object {
@@ -31,6 +29,9 @@ class VerificationMobileActivity : BaseActivity() {
         var providerType: String? = null
         var providerUserId: String? = null
         var isSocialMediaAccountPending: Boolean? = false
+         var verificationData: String = "verificationData"
+         var verificationType: String = "verificationType"
+         var verificationSource: String = "verificationSource"
     }
 
     fun start(

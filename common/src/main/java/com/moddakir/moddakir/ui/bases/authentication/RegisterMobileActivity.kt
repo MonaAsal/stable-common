@@ -1,5 +1,6 @@
 package com.moddakir.moddakir.ui.bases.authentication
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -12,11 +13,12 @@ import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.recaptcha.RecaptchaAction
 import com.moddakir.moddakir.App
 import com.moddakir.moddakir.helper.LocaleHelper
-import com.moddakir.moddakir.network.model.RecaptchaImpl.Companion.recaptchaTasksClient
 import com.moddakir.moddakir.network.Resource
+import com.moddakir.moddakir.network.model.RecaptchaImpl.Companion.recaptchaTasksClient
 import com.moddakir.moddakir.network.model.base.BaseActivity
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.ResponseModel
+import com.moddakir.moddakir.utils.AccountPreference
 import com.moddakir.moddakir.utils.observe
 import com.moddakir.moddakir.viewModel.AutViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -102,6 +104,12 @@ class RegisterMobileActivity() : BaseActivity() {
             }
 
             is Resource.Success -> response.data?.let {
+                val intent = Intent(this, VerificationMobileActivity::class.java)
+                intent.putExtra("verificationData", userphone)
+                intent.putExtra("type", type)
+                intent.putExtra("token", response.data.data!!.accessToken)
+                AccountPreference.setAccessToken(response.data.data.accessToken)
+                startActivity(intent)
             }
 
             is Resource.NetworkError -> {
