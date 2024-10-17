@@ -142,6 +142,16 @@ abstract class BaseActivity: AppCompatActivity() {
         }
     }
 
+    @SuppressLint("ResourceType")
+    fun setToolbarColor(
+        toolbar: androidx.appcompat.widget.Toolbar,
+        color: String
+    ) {
+        ViewCompat.setBackgroundTintList( toolbar, ColorStateList.valueOf(Color.parseColor(color)))
+
+    }
+
+
     fun setPrimaryColor(
         listTextViewPrimaryColors: List<TextViewLateefRegOT>,
         colorPrimary: String
@@ -182,4 +192,5 @@ abstract class BaseActivity: AppCompatActivity() {
         startActivity(intent)
         updateLanguage()
     }
+
 }

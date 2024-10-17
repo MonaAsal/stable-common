@@ -18,11 +18,12 @@
         android:layout_height="wrap_content" />
 
 
-    <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+    <com.moddakir.moddakir.ui.widget.TextViewLateefRegOT
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
         android:text="@string/app_version"
+        android:id="@+id/versionTxt"
         android:textColor="@color/colorPrimaryStudentTeacher"
         android:textSize="16sp" />
 

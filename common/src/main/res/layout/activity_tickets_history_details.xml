@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+            <com.moddakir.moddakir.ui.widget.TextViewLateefRegOT
                 android:id="@+id/ticket_no_lb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+            <com.moddakir.moddakir.ui.widget.TextViewLateefRegOT
                 android:id="@+id/title_lb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -69,10 +69,11 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+        <com.moddakir.moddakir.ui.widget.TextViewLateefRegOT
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
+            android:id="@+id/content_lb"
             android:text="@string/content_lb"
             android:textColor="@color/colorPrimaryStudentTeacher"
             android:textStyle="bold" />
@@ -130,7 +131,7 @@
             android:textColor="@color/colorGray"
             android:textSize="14dp" />
 
-        <TextView
+        <com.moddakir.moddakir.ui.widget.TextViewLateefRegOT
             android:id="@+id/send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

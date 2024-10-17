@@ -10,12 +10,15 @@ import com.example.moddakirapps.databinding.ActivityForgetPasswordBinding
 import com.example.moddakirapps.databinding.CountryCodePickerBinding
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.recaptcha.RecaptchaAction
+import com.moddakir.moddakir.App.Companion.ColorPrimary
+import com.moddakir.moddakir.App.Companion.SecondColor
 import com.moddakir.moddakir.helper.LocaleHelper
 import com.moddakir.moddakir.network.Resource
 import com.moddakir.moddakir.network.model.RecaptchaImpl.Companion.recaptchaTasksClient
 import com.moddakir.moddakir.network.model.base.BaseActivity
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.ResponseModel
+import com.moddakir.moddakir.ui.widget.ButtonCalibriBold
 import com.moddakir.moddakir.utils.AccountPreference
 import com.moddakir.moddakir.utils.ValidationUtils
 import com.moddakir.moddakir.utils.observe
@@ -85,6 +88,7 @@ class ForgetPasswordActivity : BaseActivity() {
         bindingForgetPassword = ActivityForgetPasswordBinding.inflate(layoutInflater)
         bindingCountryCodePickerBinding = CountryCodePickerBinding.inflate(layoutInflater)
         setContentView(bindingForgetPassword.root)
+        setAppColor()
         bindingForgetPassword.mobileLogin.setOnClickListener{
             bindingForgetPassword.mailLinear.visibility = View.GONE
             bindingForgetPassword.mobileLinear.visibility = View.VISIBLE
@@ -157,5 +161,9 @@ class ForgetPasswordActivity : BaseActivity() {
         }
     }
 
+    private fun setAppColor() {
+        val listButtonPrimaryColors: List<ButtonCalibriBold> = listOf(bindingForgetPassword.btnNext)
+        setButtonsColor(listButtonPrimaryColors, ColorPrimary)
+    }
 
 }

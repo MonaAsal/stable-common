@@ -9,6 +9,7 @@ import android.webkit.WebView
 import androidx.activity.enableEdgeToEdge
 import com.example.moddakirapps.R
 import com.example.moddakirapps.databinding.ActivityWebViewBinding
+import com.moddakir.moddakir.App.Companion.ColorPrimary
 import com.moddakir.moddakir.helper.LocaleHelper
 import com.moddakir.moddakir.network.model.base.BaseActivity
 
@@ -25,6 +26,7 @@ class WebViewActivity : BaseActivity() {
         enableEdgeToEdge()
         binding= ActivityWebViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setAppColor()
         setSupportActionBar(binding.toolbar)
         binding.toolbar.setCollapseContentDescription(intent.getStringExtra("TITLE"))
         name = intent.getStringExtra("NAME")!!
@@ -61,5 +63,9 @@ class WebViewActivity : BaseActivity() {
                 }
             }
         }
+    }
+    private fun setAppColor() {
+        val toolbar: androidx.appcompat.widget.Toolbar = binding.toolbar
+        setToolbarColor(toolbar, ColorPrimary)
     }
 }

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moddakirapps.R
 import com.example.moddakirapps.databinding.ActivityTicketsHistoryDetailsBinding
+import com.moddakir.moddakir.App.Companion.ColorPrimary
 import com.moddakir.moddakir.App.Companion.timeZoneOffset
 import com.moddakir.moddakir.adapter.TicketRepliesAdapter
 import com.moddakir.moddakir.network.Resource
@@ -20,6 +21,7 @@ import com.moddakir.moddakir.network.model.base.BaseActivity
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.TicketResponse
 import com.moddakir.moddakir.network.model.response.TicketsRepliesResponse
+import com.moddakir.moddakir.ui.widget.ButtonCalibriBold
 import com.moddakir.moddakir.utils.Utils
 import com.moddakir.moddakir.utils.observe
 import com.moddakir.moddakir.viewModel.StaticPagesViewModel
@@ -119,6 +121,7 @@ class TicketsHistoryDetailsActivity : BaseActivity() {
         enableEdgeToEdge()
         binding = ActivityTicketsHistoryDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setAppColor()
         binding.toolbar.setTitle(resources.getString(R.string.details))
         binding.send.setOnClickListener {
             if (binding.message.getText().toString().trim().isEmpty()) {
@@ -180,5 +183,11 @@ class TicketsHistoryDetailsActivity : BaseActivity() {
         binding.ticketNo.text = ticket.number
         binding.time.text = utils.getDateFromStart(this, ticket.date, timeZoneOffset)
         binding.content.text = ticket.content
+    }
+    private fun setAppColor() {
+        val listTextViewPrimaryColors = listOf(binding.ticketNoLb,binding.titleLb,binding.contentLb)
+        val toolbar: androidx.appcompat.widget.Toolbar = binding.toolbar
+        setToolbarColor(toolbar, ColorPrimary)
+        setPrimaryColor(listTextViewPrimaryColors, ColorPrimary)
     }
 }

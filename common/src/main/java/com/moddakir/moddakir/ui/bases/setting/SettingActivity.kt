@@ -8,12 +8,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import com.example.moddakirapps.R
 import com.example.moddakirapps.databinding.ActivitySettingBinding
+import com.moddakir.moddakir.App.Companion.ColorPrimary
 import com.moddakir.moddakir.helper.LocaleHelper
 import com.moddakir.moddakir.network.Resource
 import com.moddakir.moddakir.network.model.User
 import com.moddakir.moddakir.network.model.base.BaseActivity
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.ResponseModel
+import com.moddakir.moddakir.ui.widget.ButtonCalibriBold
 import com.moddakir.moddakir.utils.AccountPreference
 import com.moddakir.moddakir.utils.Language
 import com.moddakir.moddakir.utils.LanguageOptionFragment
@@ -77,8 +79,9 @@ class SettingActivity : BaseActivity() {
         enableEdgeToEdge()
         binding= ActivitySettingBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setAppColor()
         setLanguageAtFirstTime()
-       // user = AccountPreference.getUser()
+        user = AccountPreference.getUser()
         binding.toolbar.setTitle(resources.getString(R.string.settings))
         if (user != null) {
             binding.enableVoiceRecording.setChecked(user!!.enableVoiceRecording)
@@ -221,6 +224,11 @@ class SettingActivity : BaseActivity() {
             }
         }
     }
-
+    private fun setAppColor() {
+        val listButtonPrimaryColors: List<ButtonCalibriBold> = listOf(binding.saveChangesBut)
+        val toolbar: androidx.appcompat.widget.Toolbar = binding.toolbar
+        setToolbarColor(toolbar, ColorPrimary)
+        setButtonsColor(listButtonPrimaryColors, ColorPrimary)
+    }
 
 }

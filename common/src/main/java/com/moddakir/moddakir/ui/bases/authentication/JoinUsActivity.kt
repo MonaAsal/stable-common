@@ -6,12 +6,15 @@ import android.os.Bundle
 import android.provider.Settings
 import android.view.View
 import android.widget.AdapterView
+import android.widget.Toolbar
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import com.example.moddakirapps.R
 import com.example.moddakirapps.databinding.ActivityJoinUsBinding
 import com.google.android.material.textfield.TextInputLayout
 import com.moddakir.moddakir.App
+import com.moddakir.moddakir.App.Companion.ColorPrimary
+import com.moddakir.moddakir.App.Companion.SecondColor
 import com.moddakir.moddakir.adapter.MySpinnerProfileAdapter
 import com.moddakir.moddakir.network.Resource
 import com.moddakir.moddakir.network.model.User
@@ -19,6 +22,7 @@ import com.moddakir.moddakir.network.model.base.BaseActivity
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.ResponseModel
 import com.moddakir.moddakir.ui.bases.HomeActivity
+import com.moddakir.moddakir.ui.widget.ButtonCalibriBold
 import com.moddakir.moddakir.utils.observe
 import com.moddakir.moddakir.viewModel.AutViewModel
 import timber.log.Timber
@@ -80,6 +84,7 @@ class JoinUsActivity : BaseActivity() {
         enableEdgeToEdge()
         binding = ActivityJoinUsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setAppColor()
         managerId = intent.getStringExtra("managerId")!!
         programType = intent.getStringExtra("programType")!!
         universityDegList = java.util.ArrayList()
@@ -169,5 +174,12 @@ class JoinUsActivity : BaseActivity() {
         } else if (programType == maqraatec) {
             return maqraatec
         } else return ""
+    }
+
+    private fun setAppColor() {
+        val listButtonPrimaryColors: List<ButtonCalibriBold> = listOf(binding.btnSubmit)
+       val toolbar: androidx.appcompat.widget.Toolbar = binding.toolbar
+        setToolbarColor(toolbar, ColorPrimary)
+        setButtonsColor(listButtonPrimaryColors, ColorPrimary)
     }
 }

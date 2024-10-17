@@ -12,10 +12,13 @@ import androidx.activity.viewModels
 import com.example.moddakirapps.BuildConfig
 import com.example.moddakirapps.R
 import com.example.moddakirapps.databinding.ActivityAboutUsBinding
+import com.moddakir.moddakir.App.Companion.ColorPrimary
+import com.moddakir.moddakir.App.Companion.SecondColor
 import com.moddakir.moddakir.network.Resource
 import com.moddakir.moddakir.network.model.AboutModel
 import com.moddakir.moddakir.network.model.base.BaseActivity
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
+import com.moddakir.moddakir.ui.widget.ButtonCalibriBold
 import com.moddakir.moddakir.utils.observe
 import com.moddakir.moddakir.viewModel.StaticPagesViewModel
 
@@ -37,6 +40,7 @@ class AboutUsActivity : BaseActivity() {
         enableEdgeToEdge()
         binding= ActivityAboutUsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setAppColor()
         binding.toolbar.setTitle(resources.getString(R.string.about_moddakir))
         binding.tvVersion.text = BuildConfig.VERSION_NAME
     }
@@ -87,5 +91,13 @@ class AboutUsActivity : BaseActivity() {
         }
         binding.webView.scrollBarStyle = View.SCROLLBARS_INSIDE_OVERLAY
         binding.webView.loadDataWithBaseURL(null, html, "text/html", "utf-8", null)
+    }
+
+    private fun setAppColor() {
+        val listTextViewPrimaryColors =
+            listOf(binding.versionTxt)
+        val toolbar: androidx.appcompat.widget.Toolbar = binding.toolbar
+        setToolbarColor(toolbar, ColorPrimary)
+        setPrimaryColor(listTextViewPrimaryColors, ColorPrimary)
     }
 }

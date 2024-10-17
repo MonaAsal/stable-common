@@ -9,12 +9,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import com.example.moddakirapps.R
 import com.example.moddakirapps.databinding.ActivityContactUsBinding
+import com.moddakir.moddakir.App.Companion.ColorPrimary
 import com.moddakir.moddakir.adapter.ContactUsDataAdapter
 import com.moddakir.moddakir.network.Resource
 import com.moddakir.moddakir.network.model.AboutModel
 import com.moddakir.moddakir.network.model.base.BaseActivity
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.ResponseModel
+import com.moddakir.moddakir.ui.widget.ButtonCalibriBold
 import com.moddakir.moddakir.utils.observe
 import com.moddakir.moddakir.viewModel.StaticPagesViewModel
 
@@ -60,6 +62,8 @@ class ContactUsActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityContactUsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setAppColor()
         binding.toolbar.setTitle(resources.getString(R.string.contact_us))
         binding.teacherJoinBut.setOnClickListener { v ->
             val i = Intent(Intent.ACTION_VIEW)
@@ -93,5 +97,13 @@ class ContactUsActivity : BaseActivity() {
     }
     private fun handleSocialMediaDataResponse(resource: Resource<ModdakirResponse<AboutModel>>?) {
 
+    }
+    private fun setAppColor() {
+        val listTextViewPrimaryColors = listOf(binding.titleTxt,binding.messageTxt,binding.teacherJoinBut)
+        val listButtonPrimaryColors: List<ButtonCalibriBold> = listOf(binding.btnSend)
+        val toolbar: androidx.appcompat.widget.Toolbar = binding.toolbar
+        setToolbarColor(toolbar, ColorPrimary)
+        setPrimaryColor(listTextViewPrimaryColors, ColorPrimary)
+        setButtonsColor(listButtonPrimaryColors, ColorPrimary)
     }
 }

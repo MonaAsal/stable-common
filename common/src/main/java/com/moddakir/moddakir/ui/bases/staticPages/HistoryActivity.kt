@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moddakirapps.R
 import com.example.moddakirapps.databinding.ActivityHistoryBinding
+import com.moddakir.moddakir.App.Companion.ColorPrimary
 import com.moddakir.moddakir.adapter.TicketsHistoryAdapter
 import com.moddakir.moddakir.network.Resource
 import com.moddakir.moddakir.network.model.Item
@@ -16,6 +17,7 @@ import com.moddakir.moddakir.network.model.base.BaseActivity
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.TicketsResponse
 import com.moddakir.moddakir.ui.bases.listeners.OnHistoryClickListener
+import com.moddakir.moddakir.ui.widget.ButtonCalibriBold
 import com.moddakir.moddakir.utils.observe
 import com.moddakir.moddakir.viewModel.StaticPagesViewModel
 
@@ -66,6 +68,7 @@ class HistoryActivity : BaseActivity(), OnHistoryClickListener {
         enableEdgeToEdge()
         binding= ActivityHistoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setAppColor()
         binding.toolbar.setTitle(resources.getString(R.string.history))
         displayTicketsList()
     }
@@ -102,5 +105,9 @@ class HistoryActivity : BaseActivity(), OnHistoryClickListener {
         )
         intent.putExtras(bundle)
         startActivity(intent)
+    }
+    private fun setAppColor() {
+        val toolbar: androidx.appcompat.widget.Toolbar = binding.toolbar
+        setToolbarColor(toolbar, ColorPrimary)
     }
 }
