@@ -13,10 +13,14 @@ import com.moddakir.moddakir.network.model.response.BannerResponseModel
 import com.moddakir.moddakir.network.model.response.BaseResponse
 import com.moddakir.moddakir.network.model.response.DependentMangersModel
 import com.moddakir.moddakir.network.model.response.ErrorResponse
+import com.moddakir.moddakir.network.model.response.EvaluateTeacherResponse
+import com.moddakir.moddakir.network.model.response.LookupsResponseModel
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.OTPResponseModel
 import com.moddakir.moddakir.network.model.response.ResponseModel
+import com.moddakir.moddakir.network.model.response.ResponseSessionModel
 import com.moddakir.moddakir.network.model.response.SocialResponse
+import com.moddakir.moddakir.network.model.response.TeachersResponse
 import com.moddakir.moddakir.network.model.response.TicketResponse
 import com.moddakir.moddakir.network.model.response.TicketsRepliesResponse
 import com.moddakir.moddakir.network.model.response.TicketsResponse
@@ -422,6 +426,99 @@ class RemoteRepositoryImp @Inject constructor() : RemoteRepository {
         } catch (e: Exception) {
             Resource.DataError(errorResponse = response as ErrorResponse)
         }
+    }
+
+    override suspend fun getCallLog(
+        studentId: String, pageIndex: Int, pageSize: Int,teacherId: String?,fromDate: String?,toDate: String?
+    ): Resource<ModdakirResponse<ResponseSessionModel>> {
+        val authService = ServiceGenerator.createService(AuthService::class.java, true)
+        val response = processCall {
+            authService.getCallLog(studentId,pageIndex,pageSize,teacherId,fromDate,toDate)
+        }
+        return try {
+            var res = response as ModdakirResponse<ResponseSessionModel>
+            Resource.Success(data = res)
+        } catch (e: Exception) {
+            Resource.DataError(errorResponse = response as ErrorResponse)
+        }
+    }
+
+    override suspend fun getTeachers(): Resource<ModdakirResponse<TeachersResponse>> {
+        val authService = ServiceGenerator.createService(AuthService::class.java, true)
+        val response = processCall {
+            authService.getTeachers()
+        }
+        return try {
+            var res = response as ModdakirResponse<TeachersResponse>
+            Resource.Success(data = res)
+        } catch (e: Exception) {
+            Resource.DataError(errorResponse = response as ErrorResponse)
+        }
+    }
+
+    override suspend fun deleteSession(sessionId: String): Resource<ModdakirResponse<BaseResponse>> {
+        val authService = ServiceGenerator.createService(AuthService::class.java, true)
+        val response = processCall {
+            authService.deleteSession(sessionId)
+        }
+        return try {
+            var res = response as ModdakirResponse<BaseResponse>
+            Resource.Success(data = res)
+        } catch (e: Exception) {
+            Resource.DataError(errorResponse = response as ErrorResponse)
+        }
+    }
+
+    override suspend fun reportTeacher(
+        teacherId: String,
+        comment: String,
+        reasons: ArrayList<String>,
+        sessionId: String
+    ): Resource<ModdakirResponse<ResponseModel>> {
+        val authService = ServiceGenerator.createService(AuthService::class.java, true)
+        val response = processCall {
+            authService.reportTeacher(teacherId,comment,reasons,sessionId)
+        }
+        return try {
+            var res = response as ModdakirResponse<ResponseModel>
+            Resource.Success(data = res)
+        } catch (e: Exception) {
+            Resource.DataError(errorResponse = response as ErrorResponse)
+        }
+    }
+
+    override suspend fun getLookups(type: String): Resource<ModdakirResponse<LookupsResponseModel>> {
+        val authService = ServiceGenerator.createService(AuthService::class.java, true)
+        val response = processCall {
+            authService.getLookups(type)
+        }
+        return try {
+            var res = response as ModdakirResponse<LookupsResponseModel>
+            Resource.Success(data = res)
+        } catch (e: Exception) {
+            Resource.DataError(errorResponse = response as ErrorResponse)
+        }
+    }
+
+    override suspend fun rateRequest(
+        teacherId: String,
+        rate: String,
+        comment: String,
+        reasons: String,
+        callId: String,
+        childId: String
+    ): Resource<ModdakirResponse<EvaluateTeacherResponse>> {
+        val authService = ServiceGenerator.createService(AuthService::class.java, true)
+        val response = processCall {
+            authService.rateRequest(teacherId,rate,comment,reasons,callId,childId)
+        }
+        return try {
+            var res = response as ModdakirResponse<EvaluateTeacherResponse>
+            Resource.Success(data = res)
+        } catch (e: Exception) {
+            Resource.DataError(errorResponse = response as ErrorResponse)
+        }
+
     }
 
 

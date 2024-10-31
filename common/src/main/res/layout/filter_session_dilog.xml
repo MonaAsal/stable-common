@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_white_gray_border"
+        android:padding="15dp">
+
+        <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+            android:id="@+id/tv_filters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/filters"
+            android:textColor="@color/black75"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+            android:id="@+id/tv_clear_all"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:contentDescription="@string/clearFilterAction"
+            android:gravity="center_vertical"
+            android:text="@string/clear_all"
+            android:textColor="@color/colorPrimaryStudentTeacher"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_close"
+            app:layout_constraintEnd_toStartOf="@id/iv_close"
+            app:layout_constraintTop_toTopOf="@id/iv_close" />
+
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:contentDescription="@string/closeFilterAction"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_close_gray"
+            app:tint="@color/colorPrimaryStudentTeacher" />
+
+        <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+            android:id="@+id/tv_teacher_nationality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center_vertical"
+            android:text="@string/history"
+            android:textColor="@color/darkGray"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_filters" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_teacher_nationality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_teacher_nationality" />
+
+
+        <RelativeLayout
+            android:id="@+id/from_Layout"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:background="@drawable/custom_rounded_gray_stock_rec"
+            android:paddingHorizontal="@dimen/_10sdp"
+            app:layout_constraintEnd_toStartOf="@+id/tolayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_teacher_nationality">
+
+            <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+                android:id="@+id/from"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:hint="@string/from"
+                android:textColor="@color/darkGray"
+                android:textColorHint="@color/gray"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_calendar_from"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_calender" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/tolayout"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:background="@drawable/custom_rounded_gray_stock_rec"
+            android:paddingHorizontal="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/from_Layout"
+            app:layout_constraintTop_toBottomOf="@id/tv_teacher_nationality">
+
+            <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+                android:id="@+id/to"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:hint="@string/to"
+                android:textColor="@color/darkGray"
+                android:textColorHint="@color/gray"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_calendar_to"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/ic_calender" />
+
+
+        </RelativeLayout>
+
+
+        <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+            android:id="@+id/tv_teachers_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center_vertical"
+            android:text="@string/teacher"
+            android:textColor="@color/darkGray"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/from_Layout" />
+
+        <Spinner
+            android:id="@+id/tv_teachers"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:background="@drawable/bg_spinner"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:drawableEnd="@drawable/drop_down"
+            android:hint="@string/please_choose_teacher"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:popupBackground="@color/white"
+            android:spinnerMode="dropdown"
+            android:textColor="@color/darkGray"
+            android:textColorHint="@color/gray"
+            android:textSize="12sp"
+            android:theme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_teachers_title" />
+
+
+        <com.moddakir.moddakir.ui.widget.ButtonCalibriBold
+            android:id="@+id/btn_show_results"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/custom_turquoise_solid"
+            android:gravity="center"
+            android:text="@string/show_results"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_teachers" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

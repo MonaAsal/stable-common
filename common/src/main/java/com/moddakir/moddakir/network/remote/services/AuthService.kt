@@ -3,8 +3,12 @@ package com.moddakir.moddakir.network.remote.services
 import com.moddakir.moddakir.network.model.TicketReplyResponse
 import com.moddakir.moddakir.network.model.response.BannerResponseModel
 import com.moddakir.moddakir.network.model.response.BaseResponse
+import com.moddakir.moddakir.network.model.response.EvaluateTeacherResponse
+import com.moddakir.moddakir.network.model.response.LookupsResponseModel
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
 import com.moddakir.moddakir.network.model.response.ResponseModel
+import com.moddakir.moddakir.network.model.response.ResponseSessionModel
+import com.moddakir.moddakir.network.model.response.TeachersResponse
 import com.moddakir.moddakir.network.model.response.TicketResponse
 import com.moddakir.moddakir.network.model.response.TicketsRepliesResponse
 import com.moddakir.moddakir.network.model.response.TicketsResponse
@@ -101,6 +105,51 @@ interface AuthService {
     @FormUrlEncoded
     @GET("get-banners")
     fun getBanners(): Response<ModdakirResponse<BannerResponseModel>>
+
+    @FormUrlEncoded
+    @POST("get-sessions-log")
+    fun getCallLog(
+        @Field("studentId") id: String,
+        @Field("pageIndex") pageIndex: Int,
+        @Field("pageSize") pageSize: Int,
+        @Field("teacherId") teacherId: String?,
+        @Field("fromDate") fromDate: String?,
+        @Field("toDate") toDate: String?,
+    ): Response<ModdakirResponse<ResponseSessionModel>>
+
+    @FormUrlEncoded
+    @GET("get-student-sessions-teachers")
+    fun getTeachers(): Response<ModdakirResponse<TeachersResponse>>
+
+    @FormUrlEncoded
+    @POST("delete-session")
+    fun deleteSession(
+        @Field("sessionId") sessionId: String,
+    ): Response<ModdakirResponse<BaseResponse>>
+
+    @FormUrlEncoded
+    @POST("reporting-teacher")
+    fun reportTeacher(
+        @Field("teacherId") teacherId: String,
+        @Field("comment") comment: String,
+        @Field("reasons") reasons: ArrayList<String>,
+        @Field("sessionId") sessionId: String,
+    ): Response<ModdakirResponse<ResponseModel>>
+
+    @FormUrlEncoded
+    @GET("lookups")
+    fun getLookups( @Field("type") type: String): Response<ModdakirResponse<LookupsResponseModel>>
+
+    @FormUrlEncoded
+    @POST("add-teacher-review")
+    fun rateRequest(
+        @Field("teacherId") teacherId: String,
+        @Field("rate") rate: String,
+        @Field("comment") comment: String,
+        @Field("reasons") reasons: String,
+        @Field("callId") callId: String,
+        @Field("childId") childId: String,
+    ): Response<ModdakirResponse<EvaluateTeacherResponse>>
 
 
 

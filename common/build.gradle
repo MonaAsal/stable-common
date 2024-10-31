@@ -14,6 +14,9 @@ android {
         viewBinding true
         dataBinding true
     }
+    if (project.android.hasProperty("namespace")) {
+        namespace("com.example.moddakirapps")
+    }
     defaultConfig {
         applicationId "com.example.moddakirapps"
         minSdk 24
@@ -127,6 +130,7 @@ dependencies {
     implementation "com.google.dagger:hilt-android:$hilt_version"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.activity:activity:1.9.2'
+    implementation project(':library')
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
 
@@ -230,6 +234,11 @@ dependencies {
 
     //socket
     api 'io.socket:socket.io-client:2.0.1'
+
+    api 'me.zhanghai.android.materialratingbar:library:1.4.0'
+
+
+
 }
 kapt {
     correctErrorTypes = true

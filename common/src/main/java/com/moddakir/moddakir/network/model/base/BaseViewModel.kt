@@ -21,8 +21,4 @@ open class BaseViewModel @Inject constructor() : ViewModel() {
         showToastPrivate.value = Event(message)
     }
 
-
-
-
-
 }

@@ -1,10 +1,12 @@
 package com.moddakir.moddakir.adapter
 
 import android.content.Context
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moddakirapps.R
 import com.moddakir.moddakir.network.model.Item
@@ -23,6 +25,7 @@ class TicketsHistoryAdapter(val context: Context, private val listener: OnHistor
         return holder
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.title.text = tickets!![position].title
         holder.date.text = utils.getDateTimeFormat(

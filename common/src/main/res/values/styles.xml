@@ -27,4 +27,19 @@
         </item>
 
     </style>
+    <style name="datepicker" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/colorPrimaryStudentTeacher</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryStudentTeacher</item>
+        <item name="colorAccent">@color/purple</item>
+    </style>
+    <style name="AppTheme.Dialog" parent="Base.Theme.AppCompat.Light.Dialog.FixedSize">
+        <!-- removing the dialog's action bar -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/colorGray</item>
+        <item name="colorControlActivated">@color/colorRate</item>
+    </style>
 </resources>

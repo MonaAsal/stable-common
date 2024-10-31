@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/back_btn"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/backAction"
+                android:padding="5dp"
+                android:src="@drawable/back_arrow" />
+
+            <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="55dp"
+                android:layout_marginLeft="55dp"
+                android:text="@string/sessionTitle"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/SessionData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="5dp"
+
+                >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/con"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_8sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/civ_teacher_image"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:src="@color/colorLightGray"
+                        app:civ_border_color="@color/purple"
+                        app:civ_border_width="1dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/ln_duration"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="horizontal"
+                        android:paddingTop="4dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/civ_teacher_image"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+                            android:id="@+id/tv_time"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/colorDarkGray"
+                            android:textSize="13sp"
+                            app:layout_constraintEnd_toStartOf="@+id/iv_share"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text=" 1-2-33" />
+
+                        <ImageView
+                            android:id="@+id/iv_share"
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:layout_marginStart="14dp"
+                            android:layout_marginEnd="14dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/delete"
+                            android:contentDescription="@string/shareAction"
+                            android:src="@drawable/ic_menu_share"
+                            app:tint="@color/colorPrimary"/>
+
+                        <ImageView
+                            android:id="@+id/report"
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:layout_marginStart="14dp"
+                            android:layout_marginEnd="14dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:contentDescription="@string/report_teacher"
+                            android:src="@drawable/ic_flag_primary" />
+
+                        <ImageView
+                            android:id="@+id/delete"
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:layout_marginStart="14dp"
+                            android:layout_marginEnd="14dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/report"
+                            android:contentDescription="@string/deleteSession"
+                            android:src="@drawable/ic_delete_primary" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/ln_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/civ_teacher_image"
+                        app:layout_constraintTop_toBottomOf="@id/ln_duration">
+
+                        <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="2dp"
+                            android:layout_marginRight="2dp"
+                            android:text="@string/teacher_is"
+                            android:visibility="gone"
+                            android:textColor="@color/colorDarkGray"
+                            android:textSize="14sp" />
+
+                        <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+                            android:id="@+id/tv_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:drawableStart="@drawable/ic_person"
+                            android:drawablePadding="@dimen/_2sdp"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:textColor="@color/colorDarkGray2"
+                            tools:text="Name" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+
+                        <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+                            android:id="@+id/durrationdefine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="2dp"
+                            android:layout_marginRight="2dp"
+                            android:text="@string/duration_is"
+                            android:textColor="@color/colorDarkGray"
+                            android:textSize="14sp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toStartOf="@+id/tv_duration"
+                            app:layout_constraintTop_toTopOf="@+id/tv_duration" />
+
+                        <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+                            android:id="@+id/tv_duration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginRight="16dp"
+                            android:textColor="@color/colorDarkGray2"
+                            android:textSize="12sp"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:drawableStart="@drawable/ic_duration"
+                            android:drawablePadding="@dimen/_5sdp"
+                            app:layout_constraintBottom_toBottomOf="@id/civ_teacher_image"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            tools:text="Minutes" />
+
+
+                    </LinearLayout>
+
+                    <include
+                        android:id="@+id/audio"
+                        layout="@layout/audio_traker_custom"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ln_name" />
+
+
+                    <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                        android:id="@+id/ratingBar"
+                        android:layout_width="105dp"
+                        android:layout_height="18dp"
+                        android:contentDescription="@string/teacherRating"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:stepSize=".1"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="@id/civ_teacher_image"
+                        app:layout_constraintTop_toBottomOf="@+id/audio"
+                        app:mrb_progressBackgroundTint="@color/colorLightGray"
+                        app:mrb_progressTint="@color/darkYellow"
+                        android:layout_marginStart="8dp"
+                        tools:rating="2" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/parentEvaluateTeacherCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_4sdp"
+                app:cardElevation="5dp"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/parentevaluateTeacher"
+                        android:textSize="14sp">
+
+                    </TextView>
+
+                    <androidx.appcompat.widget.AppCompatRatingBar
+                        android:id="@+id/ratingBarForTeacher"
+                        style="?android:attr/ratingBarStyleIndicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:numStars="5"
+                        android:stepSize="1"
+                        android:isIndicator="false"
+                        android:theme="@style/RatingBar"
+                        ></androidx.appcompat.widget.AppCompatRatingBar>
+
+                    <com.moddakir.moddakir.ui.widget.EditTextUniqueLight
+                        android:id="@+id/comment_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:background="@drawable/custom_rounded_gray_stock_rec"
+                        android:gravity="top"
+                        android:hint="@string/write_comment"
+                        android:inputType="text|textMultiLine"
+                        android:minLines="4"
+                        android:overScrollMode="always"
+                        android:padding="8dp"
+                        android:scrollbarStyle="insideInset"
+                        android:scrollbars="vertical"
+                        android:textColor="@color/colorDarkGray"
+                        android:textColorHint="@color/colorDarkGray"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/comment_rv" />
+
+
+                    <TextView
+                        android:id="@+id/ratingBtnForTeacher"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="45dp"
+                        android:text="@string/evaluate"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:textSize="14sp"
+                        android:layout_gravity="end"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:background="@drawable/bg_rounded_purple"
+                        >
+
+                    </TextView>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/record_session"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/parentEvaluateTeacherCard"
+                tools:itemCount="5"
+                tools:listitem="@layout/session_details_item" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

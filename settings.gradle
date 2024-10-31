@@ -38,3 +38,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ModdakirCommon"
 include ':common'
+include ':library'

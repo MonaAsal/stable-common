@@ -1,6 +1,7 @@
 package com.moddakir.moddakir.utils
 
 import android.content.Context
+import android.content.Intent
 import android.os.Build
 import android.util.Log
 import android.util.Patterns
@@ -10,9 +11,11 @@ import androidx.annotation.RequiresApi
 import com.bumptech.glide.Glide
 import com.example.moddakirapps.R
 import java.text.DateFormat
+import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.time.ZoneOffset
 import java.util.Calendar
+import java.util.Date
 import java.util.Locale
 import java.util.TimeZone
 
@@ -93,6 +96,54 @@ class Utils {
 
     fun isValidate(urlString: String?): Boolean {
         return URLUtil.isValidUrl(urlString) && Patterns.WEB_URL.matcher(urlString).matches()
+    }
+    fun getDateFromUTC(inputDate: String?): Date {
+        val format1 = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.000'Z'")
+        try {
+            return format1.parse(inputDate)
+        } catch (e: ParseException) {
+            e.printStackTrace()
+        }
+        return Date()
+    }
+
+    fun getFormattedDateUTC(time: String, dayOfMonth: Int, year: Int, month: Int): String? {
+        try {
+            val currentTimeSDF = SimpleDateFormat("HH:mm", Locale.ENGLISH)
+            currentTimeSDF.timeZone = TimeZone.getTimeZone("UTC")
+
+            val current = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.ENGLISH)
+            current.timeZone = TimeZone.getDefault()
+            //            String currentDate = current.format(new Date());
+            val sdfUTC = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.000'Z'", Locale.ENGLISH)
+            sdfUTC.timeZone = TimeZone.getTimeZone("UTC")
+
+
+            val formattedTime = if (time.isEmpty()) currentTimeSDF.format(Date()) else time
+            val dateString = "$year-$month-$dayOfMonth $formattedTime"
+            Log.e(
+                "Date",
+                "current " + dateString + " " + "UTC " + sdfUTC.format(current.parse(dateString))
+            )
+            return sdfUTC.format(current.parse(dateString))
+        } catch (e: java.lang.Exception) {
+            Log.e("exception", e.toString())
+        }
+        return null
+    }
+    fun share(message: String, context: Context) {
+        val sendIntent = Intent()
+        sendIntent.setAction(Intent.ACTION_SEND)
+        sendIntent.setType("text/plain")
+        sendIntent.putExtra(
+            Intent.EXTRA_TEXT,
+            """
+            ${context.getString(R.string.share_message)}
+            $message
+            """.trimIndent()
+        )
+
+        context.startActivity(sendIntent)
     }
 
 }

@@ -86,7 +86,7 @@
             tools:itemCount="3"
             tools:listitem="@layout/dependent_managers_row" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.moddakir.moddakir.ui.widget.ButtonCalibriBold
             android:id="@+id/saveSessionPreferences"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

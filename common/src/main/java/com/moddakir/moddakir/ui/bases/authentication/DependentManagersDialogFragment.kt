@@ -1,7 +1,9 @@
 package com.moddakir.moddakir.ui.bases.authentication
 
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Intent
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -10,14 +12,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.Toast
+import androidx.core.view.ViewCompat
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moddakirapps.R
 import com.example.moddakirapps.databinding.FragmentDependentManagersDialogBinding
+import com.moddakir.moddakir.App.Companion.ColorPrimary
+import com.moddakir.moddakir.App.Companion.SecondColor
 import com.moddakir.moddakir.adapter.DependentManagersAdapter
 import com.moddakir.moddakir.network.model.Student
+import com.moddakir.moddakir.ui.widget.ButtonCalibriBold
 import com.moddakir.moddakir.utils.AccountPreference
 import com.moddakir.moddakir.viewModel.AutViewModel
 
@@ -60,6 +66,7 @@ class DependentManagersDialogFragment() : DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setAppColor()
         layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         binding.rvDependentManagers.setLayoutManager(layoutManager)
         view.findViewById<View>(R.id.saveSessionPreferences).setOnClickListener { v: View? ->
@@ -95,5 +102,19 @@ class DependentManagersDialogFragment() : DialogFragment() {
             studentId = AccountPreference.getUser()!!.id
         }
         viewModel.getDependentManagers(studentId,false,pageNum,20)
+    }
+    private fun setAppColor() {
+        val listButtonPrimaryColors: List<ButtonCalibriBold> = listOf(binding.saveSessionPreferences)
+        setButtonsColor(listButtonPrimaryColors, ColorPrimary)
+    }
+    @SuppressLint("ResourceType")
+    fun setButtonsColor(
+        listButtonPrimaryColors: List<ButtonCalibriBold>,
+        color: String
+    ) {
+        for(i in listButtonPrimaryColors.indices){
+            ViewCompat.setBackgroundTintList(  listButtonPrimaryColors[i], ColorStateList.valueOf(
+                Color.parseColor(color)))
+        }
     }
 }

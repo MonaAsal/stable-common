@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="8dp">
+
+        <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+            android:id="@+id/sessiontext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/record_item"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+            android:id="@+id/sessiontype"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="3dp"
+            android:textColor="@color/purple"
+            android:textDirection="locale"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/sessionStatus"
+            app:layout_constraintStart_toEndOf="@+id/sessiontext"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="تلاشسيشي شيشس يشسيشسيشي شسي شسي شسي شوه" />
+
+        <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+            android:id="@+id/sessionStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/notCompleted"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/soura_li"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sessiontype">
+
+            <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+                android:id="@+id/fromsoura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:text="@string/fromsoura"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toStartOf="@+id/fromsouraname"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sessiontype" />
+
+            <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+                android:id="@+id/fromsouraname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_weight="1"
+                android:textColor="@color/purple"
+                android:textSize="15dp"
+                app:layout_constraintStart_toEndOf="@+id/fromsoura"
+                app:layout_constraintTop_toTopOf="@+id/fromsoura"
+                tools:text="Al Omran" />
+
+            <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+                android:id="@+id/tosoura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:text="@string/tosoura"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/fromsoura" />
+
+            <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+                android:id="@+id/tosouraname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_weight="1"
+                android:textColor="@color/purple"
+                android:textSize="15dp"
+                app:layout_constraintStart_toEndOf="@+id/tosoura"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Al Omran" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/aya_li"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/soura_li">
+
+
+            <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+                android:id="@+id/fromaya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:text="@string/fromaya"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+                android:id="@+id/fromayanum"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:textColor="@color/purple"
+                android:textSize="15dp"
+                app:layout_constraintStart_toEndOf="@+id/fromaya"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="حرف" />
+
+            <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+                android:id="@+id/toaya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:text="@string/toaya"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toStartOf="@+id/toayanum"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+                android:id="@+id/toayanum"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:textColor="@color/purple"
+                android:textSize="15dp"
+                app:layout_constraintStart_toEndOf="@+id/toaya"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="10" />
+
+
+        </LinearLayout>
+
+        <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+            android:id="@+id/assignment_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:gravity="start"
+            android:text="@string/assignmentValue"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/aya_li" />
+
+        <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+            android:id="@+id/assignment_value_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_weight="1"
+            android:textColor="@color/purple"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/assignment_tv"
+            app:layout_constraintStart_toEndOf="@+id/assignment_tv"
+            app:layout_constraintTop_toTopOf="@id/assignment_tv"
+            tools:text="1" />
+
+        <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+            android:id="@+id/words_errors_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:text="@string/wrong_words__errors"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/assignment_tv" />
+
+        <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+            android:id="@+id/words_errors_value_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_weight="1"
+            android:textColor="@color/purple"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/words_errors_tv"
+            app:layout_constraintStart_toEndOf="@+id/words_errors_tv"
+            app:layout_constraintTop_toTopOf="@id/words_errors_tv"
+            tools:text="1" />
+
+        <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+            android:id="@+id/hesitation_errors_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:text="@string/initiation__errors"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/words_errors_tv" />
+
+        <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+            android:id="@+id/hesitation_errors_value_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_weight="1"
+            android:textColor="@color/purple"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/hesitation_errors_tv"
+            app:layout_constraintStart_toEndOf="@+id/hesitation_errors_tv"
+            app:layout_constraintTop_toTopOf="@id/hesitation_errors_tv"
+            tools:text="1" />
+
+        <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+            android:id="@+id/tajweed_errors_rv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:text="@string/tajweed__errors"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hesitation_errors_tv" />
+
+        <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+            android:id="@+id/tajweed_errors_value_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_weight="1"
+            android:textColor="@color/purple"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tajweed_errors_rv"
+            app:layout_constraintStart_toEndOf="@+id/tajweed_errors_rv"
+            app:layout_constraintTop_toTopOf="@id/tajweed_errors_rv"
+            tools:text="1" />
+
+        <com.moddakir.moddakir.ui.widget.TextViewCalibriBold
+            android:id="@+id/commenttext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:gravity="start"
+            android:text="@string/comment"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toTopOf="@id/comment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tajweed_errors_rv" />
+
+        <com.moddakir.moddakir.ui.widget.TextViewUniqueLight
+            android:id="@+id/comment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="start"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toTopOf="@id/view"
+            app:layout_constraintEnd_toEndOf="@id/commenttext"
+            app:layout_constraintStart_toStartOf="@id/commenttext"
+            app:layout_constraintTop_toBottomOf="@id/commenttext"
+            tools:text="Good Job" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/lightGray"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/comment" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

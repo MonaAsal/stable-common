@@ -17,6 +17,7 @@ import com.moddakir.moddakir.App.Companion.ColorPrimary
 import com.moddakir.moddakir.App.Companion.SecondColor
 import com.moddakir.moddakir.adapter.MySpinnerProfileAdapter
 import com.moddakir.moddakir.network.Resource
+import com.moddakir.moddakir.network.model.FilterModel
 import com.moddakir.moddakir.network.model.User
 import com.moddakir.moddakir.network.model.base.BaseActivity
 import com.moddakir.moddakir.network.model.response.ModdakirResponse
@@ -29,7 +30,7 @@ import timber.log.Timber
 
 class JoinUsActivity : BaseActivity() {
     private var managerId: String = ""
-    private lateinit var universityDegList: ArrayList<com.moddakir.moddakir.network.model.FilterModel>
+    private lateinit var universityDegList: ArrayList<FilterModel>
     lateinit var otherSchoolTil: TextInputLayout
     private var programType: String = ""
     override val layoutId: Int get() = R.layout.activity_join_us
@@ -129,7 +130,7 @@ class JoinUsActivity : BaseActivity() {
                         false
                     )
             } else {
-                filterModel = com.moddakir.moddakir.network.model.FilterModel(
+                filterModel =FilterModel(
                     universityDegreesIds[i - 1],
                     universityDegrees[i - 1],
                     null,

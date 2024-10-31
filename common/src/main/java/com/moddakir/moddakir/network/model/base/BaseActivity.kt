@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.ViewCompat
 import androidx.lifecycle.LiveData
+import com.akexorcist.localizationactivity.ui.LocalizationActivity
 import com.moddakir.moddakir.App
 import com.moddakir.moddakir.App.Companion.context
 import com.moddakir.moddakir.helper.LocaleHelper
@@ -36,7 +37,7 @@ import io.flutter.embedding.engine.FlutterEngineCache
 
 @AndroidEntryPoint
 
-abstract class BaseActivity: AppCompatActivity() {
+abstract class BaseActivity: LocalizationActivity() {
     protected lateinit var baseViewModel: BaseViewModel
     abstract val layoutId: Int
     private var progressDialog:ProgressDialog= ProgressDialog()
@@ -44,10 +45,11 @@ abstract class BaseActivity: AppCompatActivity() {
     abstract fun observeViewModel()
     var forceUpdate = false
 
-    override fun attachBaseContext(base: Context?) {
-        super.attachBaseContext(LocaleHelper.onAttach(base!!))
+    override fun attachBaseContext(newBase: Context) {
+        LocaleHelper.onAttach(newBase)?.let { super.attachBaseContext(it) }
         val config = resources.configuration
-       context.resources.updateConfiguration(config, resources.displayMetrics)
+        context.resources.updateConfiguration(config, resources.displayMetrics)
+        super.attachBaseContext(newBase)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
