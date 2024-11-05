@@ -23,13 +23,10 @@ import com.moddakir.moddakir.ui.widget.ButtonUniqueLight
 import com.moddakir.moddakir.ui.widget.TextViewUniqueLight
 import com.moddakir.moddakir.utils.AccountPreference
 import com.moddakir.moddakir.utils.Utils
-import com.potyvideo.library.AndExoPlayerView
-import com.potyvideo.library.globalEnums.EnumAspectRatio
-import com.potyvideo.library.globalInterfaces.ExoPlayerCallBack
 import de.hdodenhof.circleimageview.CircleImageView
 import me.zhanghai.android.materialratingbar.MaterialRatingBar
 
-class CalLogAdapter(val exoPlayerCallBack: ExoPlayerCallBack, private val sessionListener: SessionListener) : RecyclerView.Adapter<CalLogAdapter.ViewHolder>()  {
+class CalLogAdapter( private val sessionListener: SessionListener) : RecyclerView.Adapter<CalLogAdapter.ViewHolder>()  {
     val utils:Utils= Utils()
     private var source: String? = null
     private var userID=""
@@ -48,7 +45,7 @@ class CalLogAdapter(val exoPlayerCallBack: ExoPlayerCallBack, private val sessio
         val session = callLogList!![position]
         holder.btnShowMore.textSize = 12f
         if (LocaleHelper.getLocale(App.context).toString() == "ar")
-            holder.andExoPlayerView.RotateIconInArabic();
+            //holder.andExoPlayerView.RotateIconInArabic();
         if (userID != null && session.call.studentId != userID) {
             holder.delete.visibility = View.GONE
         } else holder.delete.visibility = View.VISIBLE
@@ -69,7 +66,7 @@ class CalLogAdapter(val exoPlayerCallBack: ExoPlayerCallBack, private val sessio
         }
 
 
-        if (session.call.type == "Voice") {
+        /*if (session.call.type == "Voice") {
             holder.andExoPlayerView.setAspectRatio(EnumAspectRatio.ASPECT_MP3)
         } else {
             holder.andExoPlayerView.setAspectRatio(EnumAspectRatio.ASPECT_1_1)
@@ -79,7 +76,7 @@ class CalLogAdapter(val exoPlayerCallBack: ExoPlayerCallBack, private val sessio
             holder.andExoPlayerView.visibility = View.VISIBLE
         } else {
             holder.andExoPlayerView.visibility = View.GONE
-        }
+        }*/
         if (session.call.recordUrl == null || session.call.recordUrl.isEmpty()) {
             holder.ivShare.visibility = View.GONE
         } else {
@@ -111,7 +108,7 @@ class CalLogAdapter(val exoPlayerCallBack: ExoPlayerCallBack, private val sessio
                 holder.itemView.context
             )
         }
-        holder.andExoPlayerView.setExoPlayerCallBack(object : ExoPlayerCallBack {
+       /* holder.andExoPlayerView.setExoPlayerCallBack(object : ExoPlayerCallBack {
             override fun onError() {
             }
 
@@ -122,7 +119,7 @@ class CalLogAdapter(val exoPlayerCallBack: ExoPlayerCallBack, private val sessio
             override fun onPlay(AndExoPlayerView: AndExoPlayerView, pos: Int) {
             }
         })
-
+*/
 
         holder.ivShare.setOnClickListener { v: View? ->
             val link: String
@@ -165,17 +162,17 @@ class CalLogAdapter(val exoPlayerCallBack: ExoPlayerCallBack, private val sessio
         val btnShowMore: ButtonUniqueLight = view.findViewById(R.id.btn_show_more)
         val delete: ImageView = view.findViewById(R.id.delete)
         val ivShare: ImageView = view.findViewById(R.id.iv_share)
-        val andExoPlayerView: AndExoPlayerView = view.findViewById(R.id.andExoPlayerView)
+        //val andExoPlayerView: AndExoPlayerView = view.findViewById(R.id.andExoPlayerView)
 
     }
 
     override fun onViewAttachedToWindow(holder: ViewHolder) {
         super.onViewAttachedToWindow(holder)
         if (holder.isPlayed) {
-            if (holder.source != null && holder.source!!.trim { it <= ' ' }.isNotEmpty()) {
+           /* if (holder.source != null && holder.source!!.trim { it <= ' ' }.isNotEmpty()) {
                 holder.andExoPlayerView.initializePlayer()
                 holder.andExoPlayerView.setSource(holder.source)
-            }
+            }*/
         }
         holder.isPlayed = true
     }

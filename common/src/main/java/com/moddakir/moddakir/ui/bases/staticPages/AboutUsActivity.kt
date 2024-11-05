@@ -42,7 +42,7 @@ class AboutUsActivity : BaseActivity() {
         setContentView(binding.root)
         setAppColor()
         binding.toolbar.setTitle(resources.getString(R.string.about_moddakir))
-        binding.tvVersion.text = BuildConfig.VERSION_NAME
+       // binding.tvVersion.text = BuildConfig.VERSION_NAME
     }
 
 

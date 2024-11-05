@@ -6,18 +6,19 @@
     android:background="#fff"
     android:gravity="center"
     android:orientation="horizontal">
+    <!--
+        <com.potyvideo.library.AndExoPlayerView
+            android:id="@+id/andExoPlayerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:andexo_aspect_ratio="aspect_1_1"
+            app:andexo_full_screen="false"
+            app:andexo_play_when_ready="false"
+            app:andexo_show_controller="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+           -->
 
-    <com.potyvideo.library.AndExoPlayerView
-        android:id="@+id/andExoPlayerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:andexo_aspect_ratio="aspect_1_1"
-        app:andexo_full_screen="false"
-        app:andexo_play_when_ready="false"
-        app:andexo_show_controller="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>

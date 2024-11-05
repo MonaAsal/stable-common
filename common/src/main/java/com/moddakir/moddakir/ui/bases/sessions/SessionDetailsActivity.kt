@@ -25,9 +25,6 @@ import com.moddakir.moddakir.network.model.User
 import com.moddakir.moddakir.network.model.base.BaseActivity
 import com.moddakir.moddakir.utils.AccountPreference
 import com.moddakir.moddakir.viewModel.SessionsViewModel
-import com.potyvideo.library.AndExoPlayerView
-import com.potyvideo.library.globalEnums.EnumAspectRatio
-import com.potyvideo.library.globalInterfaces.ExoPlayerCallBack
 
 
 class SessionDetailsActivity :  BaseActivity() {
@@ -121,7 +118,7 @@ class SessionDetailsActivity :  BaseActivity() {
                         callLogModel.id
                     )
                 })
-                if (LocaleHelper.getLocale(this).toString() == "ar")
+               /* if (LocaleHelper.getLocale(this).toString() == "ar")
                     binding.audio.andExoPlayerView.RotateIconInArabic()
                 if (callLogModel.call.type == "Voice") {
                     binding.audio.andExoPlayerView.setAspectRatio(EnumAspectRatio.ASPECT_MP3)
@@ -144,6 +141,7 @@ class SessionDetailsActivity :  BaseActivity() {
                 } else {
                     binding.audio.andExoPlayerView.visibility = View.GONE
                 }
+                */
             }
         }
 

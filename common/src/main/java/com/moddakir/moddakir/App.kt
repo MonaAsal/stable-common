@@ -14,7 +14,7 @@ import com.moddakir.moddakir.utils.Utils
 import dagger.hilt.android.HiltAndroidApp
 
 
-@HiltAndroidApp
+
 public class App : Application(), DefaultLifecycleObserver{
 
     override fun onCreate() {

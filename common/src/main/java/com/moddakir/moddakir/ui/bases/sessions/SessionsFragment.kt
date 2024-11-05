@@ -35,13 +35,11 @@ import com.moddakir.moddakir.utils.AccountPreference
 import com.moddakir.moddakir.utils.Utils
 import com.moddakir.moddakir.utils.observe
 import com.moddakir.moddakir.viewModel.SessionsViewModel
-import com.potyvideo.library.AndExoPlayerView
-import com.potyvideo.library.globalInterfaces.ExoPlayerCallBack
 import java.util.Calendar
 import java.util.Date
 
 class SessionsFragment : BaseFragment(), DatePickerDialog.OnDateSetListener, SessionListener {
-    private var currentAndExoPlayerView: AndExoPlayerView? = null
+    //private var currentAndExoPlayerView: AndExoPlayerView? = null
     var currentAndExoPlayerViewPos: Int = -1
     private lateinit var dialog :Dialog
     private lateinit var teachers: Spinner
@@ -248,7 +246,7 @@ class SessionsFragment : BaseFragment(), DatePickerDialog.OnDateSetListener, Ses
     private fun setupCallLogRV() {
         val layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         binding.rvCallLog.setLayoutManager(layoutManager)
-         callLogAdapter = CalLogAdapter(object : ExoPlayerCallBack {
+        /* callLogAdapter = CalLogAdapter(object : ExoPlayerCallBack {
             override fun onError() {}
             override fun onPlay() {}
             override fun onPlay(andExoPlayerView: AndExoPlayerView, pos: Int) {
@@ -258,7 +256,7 @@ class SessionsFragment : BaseFragment(), DatePickerDialog.OnDateSetListener, Ses
                 this@SessionsFragment.currentAndExoPlayerView = andExoPlayerView
                 this@SessionsFragment.currentAndExoPlayerViewPos = pos
             }
-        }, this)
+        }, this)*/
         binding.rvCallLog.setAdapter(callLogAdapter)
         binding.rvCallLog.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {

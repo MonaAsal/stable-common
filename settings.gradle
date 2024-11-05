@@ -2,6 +2,7 @@ pluginManagement {
     repositories {
         google()
         mavenCentral()
+        mavenLocal()
         gradlePluginPortal()
         maven { url "https://jitpack.io" }
         maven { url "https://maven.google.com" }
@@ -22,6 +23,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        mavenLocal()
         maven {
             url 'D:\\androidApps\\quran\\repo'
         }
@@ -38,4 +40,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ModdakirCommon"
 include ':common'
-include ':library'

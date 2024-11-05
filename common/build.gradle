@@ -1,10 +1,11 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.dagger.hilt.android'
     id "kotlin-kapt"
     id "kotlin-parcelize"
     id "androidx.navigation.safeargs.kotlin"
+    id 'maven-publish'
 }
 
 android {
@@ -18,7 +19,6 @@ android {
         namespace("com.example.moddakirapps")
     }
     defaultConfig {
-        applicationId "com.example.moddakirapps"
         minSdk 24
         targetSdk 34
         versionCode 1
@@ -130,7 +130,6 @@ dependencies {
     implementation "com.google.dagger:hilt-android:$hilt_version"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.activity:activity:1.9.2'
-    implementation project(':library')
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
 
@@ -240,7 +239,15 @@ dependencies {
 
 
 }
-kapt {
-    correctErrorTypes = true
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId 'com.github.MonaAdelAsal'
+                artifactId 'common-moddakir'
+                version '1.0.0'
+            }
+        }
+    }
 }
-
